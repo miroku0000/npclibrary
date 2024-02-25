@@ -1,0 +1,311 @@
+
+    <html>
+    <head>
+    <title>Lumberjack Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>Lumberjack</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Lumberjack\out-20240218-234135.png' target='_blank'>
+                        <img src='female_halfling_Lumberjack\out-20240218-234135.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 48957</p>
+                        <p>Prompt: slender attractive female D&D Halfling Lumberjack  with electric hazel eyes, a captivating  mouth,  a angular nose, and silky strawberry blonde hair wearing a snug black wollen waistcoat, white rumpled leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Lumberjack\out-20240218-234200.png' target='_blank'>
+                        <img src='female_halfling_Lumberjack\out-20240218-234200.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 65270</p>
+                        <p>Prompt: slender attractive female D&D Halfling Lumberjack  with electric hazel eyes, a captivating  mouth,  a angular nose, and silky strawberry blonde hair wearing a snug black wollen waistcoat, white rumpled leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Lumberjack\out-20240218-234225.png' target='_blank'>
+                        <img src='female_halfling_Lumberjack\out-20240218-234225.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 37141</p>
+                        <p>Prompt: slender attractive female D&D Halfling Lumberjack  with electric hazel eyes, a captivating  mouth,  a angular nose, and silky strawberry blonde hair wearing a snug black wollen waistcoat, white rumpled leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Lumberjack\out-20240218-234251.png' target='_blank'>
+                        <img src='female_halfling_Lumberjack\out-20240218-234251.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 17336</p>
+                        <p>Prompt: slender attractive female D&D Halfling Lumberjack  with electric hazel eyes, a captivating  mouth,  a angular nose, and silky strawberry blonde hair wearing a snug black wollen waistcoat, white rumpled leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Lumberjack\out-20240218-232948.png' target='_blank'>
+                        <img src='male_elf_Lumberjack\out-20240218-232948.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 19007</p>
+                        <p>Prompt: petite attractive male Lord of The Rings Elf Lumberjack  with intense hazel eyes, a pouty  mouth,  a snub nose, and glossy red hair wearing a tight-fitting black embroidered waistcoat, grey close-fitting leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Lumberjack\out-20240218-233013.png' target='_blank'>
+                        <img src='male_elf_Lumberjack\out-20240218-233013.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 20953</p>
+                        <p>Prompt: petite attractive male Lord of The Rings Elf Lumberjack  with intense hazel eyes, a pouty  mouth,  a snub nose, and glossy red hair wearing a tight-fitting black embroidered waistcoat, grey close-fitting leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Lumberjack\out-20240218-233036.png' target='_blank'>
+                        <img src='male_elf_Lumberjack\out-20240218-233036.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 33222</p>
+                        <p>Prompt: petite attractive male Lord of The Rings Elf Lumberjack  with intense hazel eyes, a pouty  mouth,  a snub nose, and glossy red hair wearing a tight-fitting black embroidered waistcoat, grey close-fitting leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Lumberjack\out-20240218-233101.png' target='_blank'>
+                        <img src='male_elf_Lumberjack\out-20240218-233101.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 23107</p>
+                        <p>Prompt: petite attractive male Lord of The Rings Elf Lumberjack  with intense hazel eyes, a pouty  mouth,  a snub nose, and glossy red hair wearing a tight-fitting black embroidered waistcoat, grey close-fitting leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Lumberjack\out-20240219-230348.png' target='_blank'>
+                        <img src='male_elf_Lumberjack\out-20240219-230348.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 42472</p>
+                        <p>Prompt: petite charming male Lord of The Rings Elf Lumberjack  with expressive blue eyes, a tempting  mouth,  a broad nose, and curly black hair wearing a tight-fitting coral ornate waistcoat, black shimmering leggings and brown wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Lumberjack\out-20240219-230409.png' target='_blank'>
+                        <img src='male_elf_Lumberjack\out-20240219-230409.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 28324</p>
+                        <p>Prompt: petite charming male Lord of The Rings Elf Lumberjack  with expressive blue eyes, a tempting  mouth,  a broad nose, and curly black hair wearing a tight-fitting coral ornate waistcoat, black shimmering leggings and brown wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Lumberjack\out-20240219-230452.png' target='_blank'>
+                        <img src='male_elf_Lumberjack\out-20240219-230452.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 6366</p>
+                        <p>Prompt: petite charming male Lord of The Rings Elf Lumberjack  with expressive blue eyes, a tempting  mouth,  a broad nose, and curly black hair wearing a tight-fitting coral ornate waistcoat, black shimmering leggings and brown wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_Lumberjack\out-20240221-145531.png' target='_blank'>
+                        <img src='male_human_Lumberjack\out-20240221-145531.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 57144</p>
+                        <p>Prompt:  average looking male human Lumberjack  with piercing amber eyes, a seductive  mouth,  a prominent nose, and frizzy red hair wearing a form-fitting black ornate waistcoat, matching black rumpled leggings and brown woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_Lumberjack\out-20240221-183511.png' target='_blank'>
+                        <img src='male_human_Lumberjack\out-20240221-183511.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 11377</p>
+                        <p>Prompt: petite plain looking male human Lumberjack  with radiant hazel eyes, an alluring  mouth,  a dainty nose, and straight silver hair wearing a tailored black simple waistcoat, grey loose-fitting leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_Lumberjack\out-20240219-113935.png' target='_blank'>
+                        <img src='male_tabaxi_Lumberjack\out-20240219-113935.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 26430</p>
+                        <p>Prompt:  ordinary looking male tabaxi fluffy humanoid catlike person covered in fur Lumberjack  with mesmerizing violet eyes, a captivating  mouth,  a hawklike nose, and wavy sandy hair wearing a comfortable turquoise plain waistcoat, black sturdy leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_Lumberjack\out-20240219-113958.png' target='_blank'>
+                        <img src='male_tabaxi_Lumberjack\out-20240219-113958.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 46951</p>
+                        <p>Prompt:  ordinary looking male tabaxi fluffy humanoid catlike person covered in fur Lumberjack  with mesmerizing violet eyes, a captivating  mouth,  a hawklike nose, and wavy sandy hair wearing a comfortable turquoise plain waistcoat, black sturdy leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

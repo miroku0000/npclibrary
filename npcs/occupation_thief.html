@@ -1,0 +1,375 @@
+
+    <html>
+    <head>
+    <title>Thief Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>Thief</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_Thief\out-20240219-112224.png' target='_blank'>
+                        <img src='female_dwarf_Thief\out-20240219-112224.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 2965</p>
+                        <p>Prompt: sturdy extrodanarily attractive female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Thief  with mysterious emerald eyes, a sensouos  mouth,  a delicate nose, and curly silver hair wearing a tapered blue wollen waistcoat, red close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_Thief\out-20240219-112308.png' target='_blank'>
+                        <img src='female_dwarf_Thief\out-20240219-112308.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 50088</p>
+                        <p>Prompt: sturdy extrodanarily attractive female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Thief  with mysterious emerald eyes, a sensouos  mouth,  a delicate nose, and curly silver hair wearing a tapered blue wollen waistcoat, red close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_Thief\out-20240219-112330.png' target='_blank'>
+                        <img src='female_dwarf_Thief\out-20240219-112330.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 48584</p>
+                        <p>Prompt: sturdy extrodanarily attractive female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Thief  with mysterious emerald eyes, a sensouos  mouth,  a delicate nose, and curly silver hair wearing a tapered blue wollen waistcoat, red close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Thief\out-20240219-084452.png' target='_blank'>
+                        <img src='male_dwarf_Thief\out-20240219-084452.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 20720</p>
+                        <p>Prompt: gangly attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Thief  with soulful grey eyes, an alluring  mouth,  a prominent nose, and straight golden hair wearing a loose-fitting white simple waistcoat, matching white rumpled leggings and white buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Thief\out-20240219-084516.png' target='_blank'>
+                        <img src='male_dwarf_Thief\out-20240219-084516.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 31780</p>
+                        <p>Prompt: gangly attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Thief  with soulful grey eyes, an alluring  mouth,  a prominent nose, and straight golden hair wearing a loose-fitting white simple waistcoat, matching white rumpled leggings and white buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Thief\out-20240219-084539.png' target='_blank'>
+                        <img src='male_dwarf_Thief\out-20240219-084539.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 64989</p>
+                        <p>Prompt: gangly attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Thief  with soulful grey eyes, an alluring  mouth,  a prominent nose, and straight golden hair wearing a loose-fitting white simple waistcoat, matching white rumpled leggings and white buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Thief\out-20240219-084602.png' target='_blank'>
+                        <img src='male_dwarf_Thief\out-20240219-084602.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 51620</p>
+                        <p>Prompt: gangly attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Thief  with soulful grey eyes, an alluring  mouth,  a prominent nose, and straight golden hair wearing a loose-fitting white simple waistcoat, matching white rumpled leggings and white buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Thief\out-20240219-025719.png' target='_blank'>
+                        <img src='male_elf_Thief\out-20240219-025719.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 54815</p>
+                        <p>Prompt: slender charming male Lord of The Rings Elf Thief  with dreamy emerald eyes, a tempting  mouth,  a delicate nose, and shiny platinum hair wearing a tight-fitting coral wollen waistcoat, black ragged woolen leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Thief\out-20240219-025743.png' target='_blank'>
+                        <img src='male_elf_Thief\out-20240219-025743.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 38385</p>
+                        <p>Prompt: slender charming male Lord of The Rings Elf Thief  with dreamy emerald eyes, a tempting  mouth,  a delicate nose, and shiny platinum hair wearing a tight-fitting coral wollen waistcoat, black ragged woolen leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Thief\out-20240219-075331.png' target='_blank'>
+                        <img src='male_elf_Thief\out-20240219-075331.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 62806</p>
+                        <p>Prompt: sturdy attractive male Lord of The Rings Elf Thief  with enigmatic brown eyes, an irresistable  mouth,  a broad nose, and curly golden hair wearing a tapered black ornate waistcoat, matching black lightweight leggings and brown wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Thief\out-20240219-075353.png' target='_blank'>
+                        <img src='male_elf_Thief\out-20240219-075353.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 10063</p>
+                        <p>Prompt: sturdy attractive male Lord of The Rings Elf Thief  with enigmatic brown eyes, an irresistable  mouth,  a broad nose, and curly golden hair wearing a tapered black ornate waistcoat, matching black lightweight leggings and brown wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Thief\out-20240219-075416.png' target='_blank'>
+                        <img src='male_elf_Thief\out-20240219-075416.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 33085</p>
+                        <p>Prompt: sturdy attractive male Lord of The Rings Elf Thief  with enigmatic brown eyes, an irresistable  mouth,  a broad nose, and curly golden hair wearing a tapered black ornate waistcoat, matching black lightweight leggings and brown wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Thief\out-20240219-075440.png' target='_blank'>
+                        <img src='male_elf_Thief\out-20240219-075440.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 46476</p>
+                        <p>Prompt: sturdy attractive male Lord of The Rings Elf Thief  with enigmatic brown eyes, an irresistable  mouth,  a broad nose, and curly golden hair wearing a tapered black ornate waistcoat, matching black lightweight leggings and brown wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Thief\out-20240220-173127.png' target='_blank'>
+                        <img src='male_elf_Thief\out-20240220-173127.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 29337</p>
+                        <p>Prompt: slender average looking male Lord of The Rings Elf Thief  with dreamy turquoise eyes, a plump  mouth,  a crooked nose, and coarse golden hair wearing a snug red very elegant waistcoat, black ragged woolen leggings and matching red rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_Thief\out-20240219-084759.png' target='_blank'>
+                        <img src='male_halfling_Thief\out-20240219-084759.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 27570</p>
+                        <p>Prompt: broad-shouldered attractive male D&D Halfling Thief  with enigmatic emerald eyes, an irresistable  mouth,  a broad nose, and frizzy ashen hair wearing a tight-fitting white velvet-lined waistcoat, matching white ragged woolen leggings and white woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_Thief\out-20240219-084822.png' target='_blank'>
+                        <img src='male_halfling_Thief\out-20240219-084822.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: 41648</p>
+                        <p>Prompt: broad-shouldered attractive male D&D Halfling Thief  with enigmatic emerald eyes, an irresistable  mouth,  a broad nose, and frizzy ashen hair wearing a tight-fitting white velvet-lined waistcoat, matching white ragged woolen leggings and white woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_Thief\out-20240219-084845.png' target='_blank'>
+                        <img src='male_halfling_Thief\out-20240219-084845.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: 2348</p>
+                        <p>Prompt: broad-shouldered attractive male D&D Halfling Thief  with enigmatic emerald eyes, an irresistable  mouth,  a broad nose, and frizzy ashen hair wearing a tight-fitting white velvet-lined waistcoat, matching white ragged woolen leggings and white woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_Thief\out-20240220-113326.png' target='_blank'>
+                        <img src='male_human_Thief\out-20240220-113326.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-17")'>Details</button>
+                    <div class='details' id='details-17'>
+                        <p>Seed: 27919</p>
+                        <p>Prompt: sturdy extrodanarily attractive male human Thief  with dreamy lavender eyes, a seductive  mouth,  a regal nose, and glossy silver hair wearing a loose-fitting coral wollen waistcoat, white ragged woolen leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_Thief\out-20240220-113515.png' target='_blank'>
+                        <img src='male_human_Thief\out-20240220-113515.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-18")'>Details</button>
+                    <div class='details' id='details-18'>
+                        <p>Seed: 12922</p>
+                        <p>Prompt: sturdy extrodanarily attractive male human Thief  with dreamy lavender eyes, a seductive  mouth,  a regal nose, and glossy silver hair wearing a loose-fitting coral wollen waistcoat, white ragged woolen leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

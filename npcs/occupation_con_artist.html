@@ -1,0 +1,503 @@
+
+    <html>
+    <head>
+    <title>Con artist Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>Con artist</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Con artist\out-20240219-185241.png' target='_blank'>
+                        <img src='female_elf_Con artist\out-20240219-185241.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 42242</p>
+                        <p>Prompt:  ugly female Lord of The Rings Elf Con artist  with alluring blue eyes, an alluring  mouth,  a petite nose, and wavy red hair wearing a form-fitting green simple waistcoat, white sturdy leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Con artist\out-20240219-185300.png' target='_blank'>
+                        <img src='female_elf_Con artist\out-20240219-185300.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 16961</p>
+                        <p>Prompt:  ugly female Lord of The Rings Elf Con artist  with alluring blue eyes, an alluring  mouth,  a petite nose, and wavy red hair wearing a form-fitting green simple waistcoat, white sturdy leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Con artist\out-20240219-185318.png' target='_blank'>
+                        <img src='female_elf_Con artist\out-20240219-185318.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 13915</p>
+                        <p>Prompt:  ugly female Lord of The Rings Elf Con artist  with alluring blue eyes, an alluring  mouth,  a petite nose, and wavy red hair wearing a form-fitting green simple waistcoat, white sturdy leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Con artist\out-20240219-185337.png' target='_blank'>
+                        <img src='female_elf_Con artist\out-20240219-185337.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 63347</p>
+                        <p>Prompt:  ugly female Lord of The Rings Elf Con artist  with alluring blue eyes, an alluring  mouth,  a petite nose, and wavy red hair wearing a form-fitting green simple waistcoat, white sturdy leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Con artist\out-20240219-225800.png' target='_blank'>
+                        <img src='female_elf_Con artist\out-20240219-225800.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 14483</p>
+                        <p>Prompt: slender attractive female Lord of The Rings Elf Con artist  with mesmerizing hazel eyes, a captivating  mouth,  a bulbous nose, and silky mahogany hair wearing a loose-fitting red velvet-lined waistcoat, black war-torn leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Con artist\out-20240219-225843.png' target='_blank'>
+                        <img src='female_elf_Con artist\out-20240219-225843.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 60789</p>
+                        <p>Prompt: slender attractive female Lord of The Rings Elf Con artist  with mesmerizing hazel eyes, a captivating  mouth,  a bulbous nose, and silky mahogany hair wearing a loose-fitting red velvet-lined waistcoat, black war-torn leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Con artist\out-20240219-225920.png' target='_blank'>
+                        <img src='female_elf_Con artist\out-20240219-225920.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 50922</p>
+                        <p>Prompt: slender attractive female Lord of The Rings Elf Con artist  with mesmerizing hazel eyes, a captivating  mouth,  a bulbous nose, and silky mahogany hair wearing a loose-fitting red velvet-lined waistcoat, black war-torn leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Con artist\out-20240219-230002.png' target='_blank'>
+                        <img src='female_elf_Con artist\out-20240219-230002.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 46426</p>
+                        <p>Prompt: slender attractive female Lord of The Rings Elf Con artist  with mesmerizing hazel eyes, a captivating  mouth,  a bulbous nose, and silky mahogany hair wearing a loose-fitting red velvet-lined waistcoat, black war-torn leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Con artist\out-20240219-082601.png' target='_blank'>
+                        <img src='male_elf_Con artist\out-20240219-082601.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 34698</p>
+                        <p>Prompt: broad-shouldered ordinary looking male Lord of The Rings Elf Con artist  with haunting blue eyes, a plump  mouth,  a angular nose, and curly platinum hair wearing a loose-fitting turquoise embroidered waistcoat, black war-torn leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Con artist\out-20240219-082625.png' target='_blank'>
+                        <img src='male_elf_Con artist\out-20240219-082625.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 50162</p>
+                        <p>Prompt: broad-shouldered ordinary looking male Lord of The Rings Elf Con artist  with haunting blue eyes, a plump  mouth,  a angular nose, and curly platinum hair wearing a loose-fitting turquoise embroidered waistcoat, black war-torn leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Con artist\out-20240219-082649.png' target='_blank'>
+                        <img src='male_elf_Con artist\out-20240219-082649.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 8709</p>
+                        <p>Prompt: broad-shouldered ordinary looking male Lord of The Rings Elf Con artist  with haunting blue eyes, a plump  mouth,  a angular nose, and curly platinum hair wearing a loose-fitting turquoise embroidered waistcoat, black war-torn leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Con artist\out-20240219-082714.png' target='_blank'>
+                        <img src='male_elf_Con artist\out-20240219-082714.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 19632</p>
+                        <p>Prompt: broad-shouldered ordinary looking male Lord of The Rings Elf Con artist  with haunting blue eyes, a plump  mouth,  a angular nose, and curly platinum hair wearing a loose-fitting turquoise embroidered waistcoat, black war-torn leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Con artist\out-20240221-111009.png' target='_blank'>
+                        <img src='female_halfling_Con artist\out-20240221-111009.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 59766</p>
+                        <p>Prompt:  plain looking female D&D Halfling Con artist  with soulful brown eyes, an alluring  mouth,  a thin nose, and curly sandy hair wearing a comfortable coral ornate waistcoat, black ragged woolen leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Con artist\out-20240221-132251.png' target='_blank'>
+                        <img src='female_halfling_Con artist\out-20240221-132251.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 57947</p>
+                        <p>Prompt: slender charming female D&D Halfling Con artist  with radiant amber eyes, an enchanting  mouth,  a straight nose, and glossy golden hair wearing a loose-fitting turquoise ornate waistcoat, black lightweight leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_Con artist\out-20240221-160308.png' target='_blank'>
+                        <img src='male_halfling_Con artist\out-20240221-160308.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 34556</p>
+                        <p>Prompt: petite charming male D&D Halfling Con artist  with mesmerizing lavender eyes, an enchanting  mouth,  a straight nose, and curly chestnut hair wearing a tailored black simple waistcoat, grey close-fitting leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi female'>
+                    <div class='additional-info'>Female, Tabaxi</div>
+                    <a href='female_tabaxi_Con artist\out-20240219-035823.png' target='_blank'>
+                        <img src='female_tabaxi_Con artist\out-20240219-035823.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: 704</p>
+                        <p>Prompt: slender plain looking female tabaxi fluffy humanoid catlike person covered in fur Con artist  with enigmatic violet eyes, a luscious  mouth,  a button nose, and silky mahogany hair wearing a loose-fitting black very elegant waistcoat, matching black finely made leggings and brown velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Con artist\out-20240219-104115.png' target='_blank'>
+                        <img src='male_dwarf_Con artist\out-20240219-104115.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: 41337</p>
+                        <p>Prompt: broad-shouldered ugly male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Con artist  with mesmerizing green eyes, a sensouos  mouth,  a dainty nose, and straight golden hair wearing a tailored coral very elegant waistcoat, white loose-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Con artist\out-20240219-104141.png' target='_blank'>
+                        <img src='male_dwarf_Con artist\out-20240219-104141.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-17")'>Details</button>
+                    <div class='details' id='details-17'>
+                        <p>Seed: 23108</p>
+                        <p>Prompt: broad-shouldered ugly male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Con artist  with mesmerizing green eyes, a sensouos  mouth,  a dainty nose, and straight golden hair wearing a tailored coral very elegant waistcoat, white loose-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Con artist\out-20240219-104207.png' target='_blank'>
+                        <img src='male_dwarf_Con artist\out-20240219-104207.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-18")'>Details</button>
+                    <div class='details' id='details-18'>
+                        <p>Seed: 5349</p>
+                        <p>Prompt: broad-shouldered ugly male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Con artist  with mesmerizing green eyes, a sensouos  mouth,  a dainty nose, and straight golden hair wearing a tailored coral very elegant waistcoat, white loose-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Con artist\out-20240219-104234.png' target='_blank'>
+                        <img src='male_dwarf_Con artist\out-20240219-104234.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-19")'>Details</button>
+                    <div class='details' id='details-19'>
+                        <p>Seed: 21718</p>
+                        <p>Prompt: broad-shouldered ugly male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Con artist  with mesmerizing green eyes, a sensouos  mouth,  a dainty nose, and straight golden hair wearing a tailored coral very elegant waistcoat, white loose-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Con artist\out-20240220-131045.png' target='_blank'>
+                        <img src='male_dwarf_Con artist\out-20240220-131045.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-20")'>Details</button>
+                    <div class='details' id='details-20'>
+                        <p>Seed: 35398</p>
+                        <p>Prompt: broad-shouldered plain looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Con artist  with soulful blue eyes, a eloquent  mouth,  a regal nose, and thick chestnut hair wearing a tailored coral finely-tailored waistcoat, black war-torn leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Con artist\out-20240220-131233.png' target='_blank'>
+                        <img src='male_dwarf_Con artist\out-20240220-131233.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-21")'>Details</button>
+                    <div class='details' id='details-21'>
+                        <p>Seed: 34561</p>
+                        <p>Prompt: broad-shouldered plain looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Con artist  with soulful blue eyes, a eloquent  mouth,  a regal nose, and thick chestnut hair wearing a tailored coral finely-tailored waistcoat, black war-torn leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Con artist\out-20240221-111852.png' target='_blank'>
+                        <img src='male_dwarf_Con artist\out-20240221-111852.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-22")'>Details</button>
+                    <div class='details' id='details-22'>
+                        <p>Seed: 35795</p>
+                        <p>Prompt: slender extrodanarily attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Con artist  with intense turquoise eyes, a delicate  mouth,  a prominent nose, and frizzy silver hair wearing a form-fitting blue wollen waistcoat, matching blue ragged woolen leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_Con artist\out-20240219-044433.png' target='_blank'>
+                        <img src='male_human_Con artist\out-20240219-044433.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-23")'>Details</button>
+                    <div class='details' id='details-23'>
+                        <p>Seed: 43761</p>
+                        <p>Prompt: towering ordinary looking male human Con artist  with haunting lavender eyes, an irresistable  mouth,  a chisiled nose, and curly platinum hair wearing a snug white plain waistcoat, matching white reinforced leggings and white sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_Con artist\out-20240219-044454.png' target='_blank'>
+                        <img src='male_human_Con artist\out-20240219-044454.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-24")'>Details</button>
+                    <div class='details' id='details-24'>
+                        <p>Seed: 51276</p>
+                        <p>Prompt: towering ordinary looking male human Con artist  with haunting lavender eyes, an irresistable  mouth,  a chisiled nose, and curly platinum hair wearing a snug white plain waistcoat, matching white reinforced leggings and white sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_Con artist\out-20240219-044516.png' target='_blank'>
+                        <img src='male_human_Con artist\out-20240219-044516.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-25")'>Details</button>
+                    <div class='details' id='details-25'>
+                        <p>Seed: 26677</p>
+                        <p>Prompt: towering ordinary looking male human Con artist  with haunting lavender eyes, an irresistable  mouth,  a chisiled nose, and curly platinum hair wearing a snug white plain waistcoat, matching white reinforced leggings and white sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_Con artist\out-20240219-044538.png' target='_blank'>
+                        <img src='male_human_Con artist\out-20240219-044538.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-26")'>Details</button>
+                    <div class='details' id='details-26'>
+                        <p>Seed: 9953</p>
+                        <p>Prompt: towering ordinary looking male human Con artist  with haunting lavender eyes, an irresistable  mouth,  a chisiled nose, and curly platinum hair wearing a snug white plain waistcoat, matching white reinforced leggings and white sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

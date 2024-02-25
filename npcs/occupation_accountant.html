@@ -1,0 +1,199 @@
+
+    <html>
+    <head>
+    <title>Accountant Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>Accountant</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'gnome')">Gnome</button><button onclick="filterImages('race', 'orc')">Orc</button><button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_Accountant\out-20240219-043329.png' target='_blank'>
+                        <img src='male_gnome_Accountant\out-20240219-043329.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 34573</p>
+                        <p>Prompt:  plain looking male gnome Accountan  with enigmatic hazel eyes, a seductive  mouth,  a bulbous nose, and coarse golden hair wearing a tight-fitting coral ornate waistcoat, black close-fitting leggings and brown fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_Accountant\out-20240219-043355.png' target='_blank'>
+                        <img src='male_gnome_Accountant\out-20240219-043355.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 17639</p>
+                        <p>Prompt:  plain looking male gnome Accountan  with enigmatic hazel eyes, a seductive  mouth,  a bulbous nose, and coarse golden hair wearing a tight-fitting coral ornate waistcoat, black close-fitting leggings and brown fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_Accountant\out-20240219-043451.png' target='_blank'>
+                        <img src='male_gnome_Accountant\out-20240219-043451.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 37279</p>
+                        <p>Prompt:  plain looking male gnome Accountan  with enigmatic hazel eyes, a seductive  mouth,  a bulbous nose, and coarse golden hair wearing a tight-fitting coral ornate waistcoat, black close-fitting leggings and brown fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image orc male'>
+                    <div class='additional-info'>Male, Orc</div>
+                    <a href='male_orc_Accountant\out-20240220-222457.png' target='_blank'>
+                        <img src='male_orc_Accountant\out-20240220-222457.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 31448</p>
+                        <p>Prompt: towering attractive male Lord of The Rings orc Accountant  with radiant violet eyes, a sensouos  mouth,  a bulbous nose, and frizzy ashen hair wearing a tight-fitting coral wollen waistcoat, black reinforced leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 16</p>
+                    </div>
+                </div>
+                
+                <div class='image orc male'>
+                    <div class='additional-info'>Male, Orc</div>
+                    <a href='male_orc_Accountant\out-20240220-222514.png' target='_blank'>
+                        <img src='male_orc_Accountant\out-20240220-222514.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 2914</p>
+                        <p>Prompt: towering attractive male Lord of The Rings orc Accountant  with radiant violet eyes, a sensouos  mouth,  a bulbous nose, and frizzy ashen hair wearing a tight-fitting coral wollen waistcoat, black reinforced leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 16</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_Accountant\out-20240219-225255.png' target='_blank'>
+                        <img src='male_tabaxi_Accountant\out-20240219-225255.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 21673</p>
+                        <p>Prompt:  average looking male tabaxi fluffy humanoid catlike person covered in fur Accountant  with transfixing amber eyes, a seductive  mouth,  a bulbous nose, and frizzy ashen hair wearing a form-fitting blue wollen waistcoat, black war-torn leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_Accountant\out-20240219-225333.png' target='_blank'>
+                        <img src='male_tabaxi_Accountant\out-20240219-225333.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 57379</p>
+                        <p>Prompt:  average looking male tabaxi fluffy humanoid catlike person covered in fur Accountant  with transfixing amber eyes, a seductive  mouth,  a bulbous nose, and frizzy ashen hair wearing a form-fitting blue wollen waistcoat, black war-torn leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_Accountant\out-20240219-225410.png' target='_blank'>
+                        <img src='male_tabaxi_Accountant\out-20240219-225410.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 7009</p>
+                        <p>Prompt:  average looking male tabaxi fluffy humanoid catlike person covered in fur Accountant  with transfixing amber eyes, a seductive  mouth,  a bulbous nose, and frizzy ashen hair wearing a form-fitting blue wollen waistcoat, black war-torn leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

@@ -1,0 +1,535 @@
+
+    <html>
+    <head>
+    <title>Doctor Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>Doctor</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'gnome')">Gnome</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Doctor\out-20240218-233126.png' target='_blank'>
+                        <img src='female_elf_Doctor\out-20240218-233126.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 35161</p>
+                        <p>Prompt:  average looking female Lord of The Rings Elf Doctor  with mesmerizing amber eyes, an alluring  mouth,  a angular nose, and curly golden hair wearing a tight-fitting green simple waistcoat, white lightweight leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Doctor\out-20240218-233151.png' target='_blank'>
+                        <img src='female_elf_Doctor\out-20240218-233151.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 50683</p>
+                        <p>Prompt:  average looking female Lord of The Rings Elf Doctor  with mesmerizing amber eyes, an alluring  mouth,  a angular nose, and curly golden hair wearing a tight-fitting green simple waistcoat, white lightweight leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Doctor\out-20240218-233216.png' target='_blank'>
+                        <img src='female_elf_Doctor\out-20240218-233216.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 60319</p>
+                        <p>Prompt:  average looking female Lord of The Rings Elf Doctor  with mesmerizing amber eyes, an alluring  mouth,  a angular nose, and curly golden hair wearing a tight-fitting green simple waistcoat, white lightweight leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Doctor\out-20240218-233241.png' target='_blank'>
+                        <img src='female_elf_Doctor\out-20240218-233241.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 20242</p>
+                        <p>Prompt:  average looking female Lord of The Rings Elf Doctor  with mesmerizing amber eyes, an alluring  mouth,  a angular nose, and curly golden hair wearing a tight-fitting green simple waistcoat, white lightweight leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Doctor\out-20240219-035155.png' target='_blank'>
+                        <img src='female_elf_Doctor\out-20240219-035155.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 54844</p>
+                        <p>Prompt: towering extrodanarily attractive female Lord of The Rings Elf Doctor  with alluring violet eyes, an enchanting  mouth,  a broad nose, and wavy auburn hair wearing a tailored black very elegant waistcoat, grey sturdy leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Doctor\out-20240219-035218.png' target='_blank'>
+                        <img src='female_elf_Doctor\out-20240219-035218.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 4263</p>
+                        <p>Prompt: towering extrodanarily attractive female Lord of The Rings Elf Doctor  with alluring violet eyes, an enchanting  mouth,  a broad nose, and wavy auburn hair wearing a tailored black very elegant waistcoat, grey sturdy leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Doctor\out-20240219-035240.png' target='_blank'>
+                        <img src='female_elf_Doctor\out-20240219-035240.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 32051</p>
+                        <p>Prompt: towering extrodanarily attractive female Lord of The Rings Elf Doctor  with alluring violet eyes, an enchanting  mouth,  a broad nose, and wavy auburn hair wearing a tailored black very elegant waistcoat, grey sturdy leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Doctor\out-20240219-035302.png' target='_blank'>
+                        <img src='female_elf_Doctor\out-20240219-035302.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 22511</p>
+                        <p>Prompt: towering extrodanarily attractive female Lord of The Rings Elf Doctor  with alluring violet eyes, an enchanting  mouth,  a broad nose, and wavy auburn hair wearing a tailored black very elegant waistcoat, grey sturdy leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Doctor\out-20240219-105001.png' target='_blank'>
+                        <img src='female_elf_Doctor\out-20240219-105001.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 37182</p>
+                        <p>Prompt:  extrodanarily attractive female Lord of The Rings Elf Doctor  with intense brown eyes, a seductive  mouth,  a petite nose, and curly silver hair wearing a loose-fitting red embroidered waistcoat, black close-fitting leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Doctor\out-20240219-105025.png' target='_blank'>
+                        <img src='female_elf_Doctor\out-20240219-105025.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 32492</p>
+                        <p>Prompt:  extrodanarily attractive female Lord of The Rings Elf Doctor  with intense brown eyes, a seductive  mouth,  a petite nose, and curly silver hair wearing a loose-fitting red embroidered waistcoat, black close-fitting leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Doctor\out-20240219-105048.png' target='_blank'>
+                        <img src='female_elf_Doctor\out-20240219-105048.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 19152</p>
+                        <p>Prompt:  extrodanarily attractive female Lord of The Rings Elf Doctor  with intense brown eyes, a seductive  mouth,  a petite nose, and curly silver hair wearing a loose-fitting red embroidered waistcoat, black close-fitting leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Doctor\out-20240219-105113.png' target='_blank'>
+                        <img src='female_elf_Doctor\out-20240219-105113.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 22756</p>
+                        <p>Prompt:  extrodanarily attractive female Lord of The Rings Elf Doctor  with intense brown eyes, a seductive  mouth,  a petite nose, and curly silver hair wearing a loose-fitting red embroidered waistcoat, black close-fitting leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Doctor\out-20240218-224212.png' target='_blank'>
+                        <img src='female_gnome_Doctor\out-20240218-224212.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: N/A</p>
+                        <p>Model: N/A</p>
+                        <p>Width: N/Apx</p>
+                        <p>Height: N/Apx</p>
+                        <p>Steps: N/A</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Doctor\out-20240218-224235.png' target='_blank'>
+                        <img src='female_gnome_Doctor\out-20240218-224235.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 46605</p>
+                        <p>Prompt: gangly ordinary looking female gnome Doctor  with dreamy green eyes, a captivating  mouth,  a regal nose, and coarse blonde hair wearing a loose-fitting green very elegant waistcoat, white ragged woolen leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Doctor\out-20240218-224321.png' target='_blank'>
+                        <img src='female_gnome_Doctor\out-20240218-224321.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: N/A</p>
+                        <p>Model: N/A</p>
+                        <p>Width: N/Apx</p>
+                        <p>Height: N/Apx</p>
+                        <p>Steps: N/A</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Doctor\out-20240220-135719.png' target='_blank'>
+                        <img src='female_gnome_Doctor\out-20240220-135719.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: 22252</p>
+                        <p>Prompt: gangly plain looking female gnome Doctor  with alluring lavender eyes, a pouty  mouth,  a hawklike nose, and frizzy strawberry blonde hair wearing a comfortable white very elegant waistcoat, matching white sturdy leggings and white velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Doctor\out-20240220-135854.png' target='_blank'>
+                        <img src='female_gnome_Doctor\out-20240220-135854.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: 62239</p>
+                        <p>Prompt: gangly plain looking female gnome Doctor  with alluring lavender eyes, a pouty  mouth,  a hawklike nose, and frizzy strawberry blonde hair wearing a comfortable white very elegant waistcoat, matching white sturdy leggings and white velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Doctor\out-20240218-223058.png' target='_blank'>
+                        <img src='female_halfling_Doctor\out-20240218-223058.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-17")'>Details</button>
+                    <div class='details' id='details-17'>
+                        <p>Seed: 6064</p>
+                        <p>Prompt: sturdy ugly female D&D Halfling Doctor  with alluring hazel eyes, a pouty  mouth,  a regal nose, and frizzy platinum hair wearing a form-fitting blue plain waistcoat, red sturdy leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Doctor\out-20240218-223120.png' target='_blank'>
+                        <img src='female_halfling_Doctor\out-20240218-223120.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-18")'>Details</button>
+                    <div class='details' id='details-18'>
+                        <p>Seed: 10267</p>
+                        <p>Prompt: sturdy ugly female D&D Halfling Doctor  with alluring hazel eyes, a pouty  mouth,  a regal nose, and frizzy platinum hair wearing a form-fitting blue plain waistcoat, red sturdy leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Doctor\out-20240218-223146.png' target='_blank'>
+                        <img src='female_halfling_Doctor\out-20240218-223146.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-19")'>Details</button>
+                    <div class='details' id='details-19'>
+                        <p>Seed: 62322</p>
+                        <p>Prompt: sturdy ugly female D&D Halfling Doctor  with alluring hazel eyes, a pouty  mouth,  a regal nose, and frizzy platinum hair wearing a form-fitting blue plain waistcoat, red sturdy leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Doctor\out-20240218-223215.png' target='_blank'>
+                        <img src='female_halfling_Doctor\out-20240218-223215.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-20")'>Details</button>
+                    <div class='details' id='details-20'>
+                        <p>Seed: 41027</p>
+                        <p>Prompt: sturdy ugly female D&D Halfling Doctor  with alluring hazel eyes, a pouty  mouth,  a regal nose, and frizzy platinum hair wearing a form-fitting blue plain waistcoat, red sturdy leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Doctor\out-20240220-152458.png' target='_blank'>
+                        <img src='female_halfling_Doctor\out-20240220-152458.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-21")'>Details</button>
+                    <div class='details' id='details-21'>
+                        <p>Seed: 33371</p>
+                        <p>Prompt: towering average looking female D&D Halfling Doctor  with transfixing amber eyes, a eloquent  mouth,  a snub nose, and shiny sandy hair wearing a comfortable red simple waistcoat, black war-torn leggings and matching red sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Doctor\out-20240220-152637.png' target='_blank'>
+                        <img src='female_halfling_Doctor\out-20240220-152637.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-22")'>Details</button>
+                    <div class='details' id='details-22'>
+                        <p>Seed: 53052</p>
+                        <p>Prompt: towering average looking female D&D Halfling Doctor  with transfixing amber eyes, a eloquent  mouth,  a snub nose, and shiny sandy hair wearing a comfortable red simple waistcoat, black war-torn leggings and matching red sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_Doctor\out-20240219-215217.png' target='_blank'>
+                        <img src='male_halfling_Doctor\out-20240219-215217.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-23")'>Details</button>
+                    <div class='details' id='details-23'>
+                        <p>Seed: 1984</p>
+                        <p>Prompt: sturdy attractive male D&D Halfling Doctor  with piercing emerald eyes, a captivating  mouth,  a bulbous nose, and glossy platinum hair wearing a tight-fitting blue velvet-lined waistcoat, matching blue rumpled leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_Doctor\out-20240219-215249.png' target='_blank'>
+                        <img src='male_halfling_Doctor\out-20240219-215249.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-24")'>Details</button>
+                    <div class='details' id='details-24'>
+                        <p>Seed: 15342</p>
+                        <p>Prompt: sturdy attractive male D&D Halfling Doctor  with piercing emerald eyes, a captivating  mouth,  a bulbous nose, and glossy platinum hair wearing a tight-fitting blue velvet-lined waistcoat, matching blue rumpled leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_Doctor\out-20240219-215326.png' target='_blank'>
+                        <img src='male_halfling_Doctor\out-20240219-215326.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-25")'>Details</button>
+                    <div class='details' id='details-25'>
+                        <p>Seed: 32398</p>
+                        <p>Prompt: sturdy attractive male D&D Halfling Doctor  with piercing emerald eyes, a captivating  mouth,  a bulbous nose, and glossy platinum hair wearing a tight-fitting blue velvet-lined waistcoat, matching blue rumpled leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_Doctor\out-20240219-215406.png' target='_blank'>
+                        <img src='male_halfling_Doctor\out-20240219-215406.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-26")'>Details</button>
+                    <div class='details' id='details-26'>
+                        <p>Seed: 51930</p>
+                        <p>Prompt: sturdy attractive male D&D Halfling Doctor  with piercing emerald eyes, a captivating  mouth,  a bulbous nose, and glossy platinum hair wearing a tight-fitting blue velvet-lined waistcoat, matching blue rumpled leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Doctor\out-20240220-134057.png' target='_blank'>
+                        <img src='female_human_Doctor\out-20240220-134057.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-27")'>Details</button>
+                    <div class='details' id='details-27'>
+                        <p>Seed: 4209</p>
+                        <p>Prompt: broad-shouldered extrodanarily attractive female human Doctor  with sparkling grey eyes, an alluring  mouth,  a chisiled nose, and shiny mahogany hair wearing a snug coral plain waistcoat, black finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Doctor\out-20240220-134240.png' target='_blank'>
+                        <img src='female_human_Doctor\out-20240220-134240.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-28")'>Details</button>
+                    <div class='details' id='details-28'>
+                        <p>Seed: 34418</p>
+                        <p>Prompt: broad-shouldered extrodanarily attractive female human Doctor  with sparkling grey eyes, an alluring  mouth,  a chisiled nose, and shiny mahogany hair wearing a snug coral plain waistcoat, black finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

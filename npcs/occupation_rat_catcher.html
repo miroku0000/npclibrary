@@ -1,0 +1,951 @@
+
+    <html>
+    <head>
+    <title>rat catcher Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>rat catcher</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240221-185459.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240221-185459.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 65351</p>
+                        <p>Prompt: towering charming male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with bewitching blue eyes, a seductive  mouth,  a snub nose, and thick sandy hair wearing a comfortable red wollen waistcoat, black rumpled leggings and matching red scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240221-190303.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240221-190303.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 57293</p>
+                        <p>Prompt: gangly plain looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with electric hazel eyes, a delicate  mouth,  a dainty nose, and curly  hair wearing a comfortable blue simple waistcoat, black close-fitting leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240221-192059.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240221-192059.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 60822</p>
+                        <p>Prompt: gangly ugly male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with mysterious brown eyes, a eloquent  mouth,  a angular nose, and shiny chestnut hair wearing a loose-fitting turquoise embroidered waistcoat, black finely made leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240221-192414.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240221-192414.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 61890</p>
+                        <p>Prompt: sturdy ordinary looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with intense blue eyes, a plump  mouth,  a petite nose, and wavy red hair wearing a snug black wollen waistcoat, white reinforced leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240221-194512.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240221-194512.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 1218</p>
+                        <p>Prompt: broad-shouldered average looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with alluring turquoise eyes, an alluring  mouth,  a angular nose, and frizzy chestnut hair wearing a comfortable blue finely-tailored waistcoat, black reinforced leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240221-195211.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240221-195211.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 52491</p>
+                        <p>Prompt: slender plain looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with sparkling violet eyes, an irresistable  mouth,  a hawklike nose, and straight sandy hair wearing a tailored turquoise ornate waistcoat, black rumpled leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240221-205947.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240221-205947.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 1144</p>
+                        <p>Prompt: slender plain looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with radiant green eyes, a plump  mouth,  a bulbous nose, and wavy mahogany hair wearing a form-fitting coral velvet-lined waistcoat, black finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240221-210116.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240221-210116.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 32850</p>
+                        <p>Prompt: sturdy average looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with mesmerizing brown eyes, a tempting  mouth,  a bulbous nose, and shiny black hair wearing a comfortable black very elegant waistcoat, grey rumpled leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240221-212154.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240221-212154.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 63342</p>
+                        <p>Prompt: sturdy average looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with haunting lavender eyes, an alluring  mouth,  a crooked nose, and wavy golden hair wearing a tight-fitting blue velvet-lined waistcoat, red reinforced leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240221-214550.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240221-214550.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 14450</p>
+                        <p>Prompt: sturdy charming male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with alluring green eyes, a tempting  mouth,  a snub nose, and straight  hair wearing a tapered coral velvet-lined waistcoat, black ragged woolen leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240221-231907.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240221-231907.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 18452</p>
+                        <p>Prompt: towering ugly male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with expressive lavender eyes, an enchanting  mouth,  a petite nose, and silky golden hair wearing a tapered coral very elegant waistcoat, white close-fitting leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240221-232250.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240221-232250.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 61822</p>
+                        <p>Prompt:  charming male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with radiant turquoise eyes, an alluring  mouth,  a prominent nose, and straight auburn hair wearing a tapered green embroidered waistcoat, white finely made leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240221-232648.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240221-232648.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 60806</p>
+                        <p>Prompt: sturdy ugly male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with electric blue eyes, a tempting  mouth,  a hawklike nose, and silky auburn hair wearing a loose-fitting green ornate waistcoat, white shimmering leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240221-233836.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240221-233836.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 34797</p>
+                        <p>Prompt: sturdy plain looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with mesmerizing grey eyes, a eloquent  mouth,  a straight nose, and glossy auburn hair wearing a tight-fitting turquoise embroidered waistcoat, black loose-fitting leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240221-234257.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240221-234257.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 12761</p>
+                        <p>Prompt: broad-shouldered extrodanarily attractive male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with sparkling lavender eyes, a plump  mouth,  a hawklike nose, and thick sandy hair wearing a comfortable grey finely-tailored waistcoat, black lightweight leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-000204.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-000204.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: 27920</p>
+                        <p>Prompt: towering plain looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with radiant turquoise eyes, a pouty  mouth,  a crooked nose, and thick mahogany hair wearing a snug blue ornate waistcoat, matching blue reinforced leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-001432.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-001432.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: 62790</p>
+                        <p>Prompt: gangly extrodanarily attractive male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with transfixing violet eyes, an alluring  mouth,  a chisiled nose, and glossy red hair wearing a tight-fitting blue simple waistcoat, red lightweight leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-003213.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-003213.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-17")'>Details</button>
+                    <div class='details' id='details-17'>
+                        <p>Seed: 44858</p>
+                        <p>Prompt:  plain looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with mesmerizing violet eyes, a sensouos  mouth,  a dainty nose, and thick chestnut hair wearing a snug blue simple waistcoat, black ragged woolen leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-005224.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-005224.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-18")'>Details</button>
+                    <div class='details' id='details-18'>
+                        <p>Seed: 52167</p>
+                        <p>Prompt: towering charming male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with piercing lavender eyes, a captivating  mouth,  a angular nose, and silky ashen hair wearing a snug blue simple waistcoat, black war-torn leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-005751.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-005751.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-19")'>Details</button>
+                    <div class='details' id='details-19'>
+                        <p>Seed: 22733</p>
+                        <p>Prompt: gangly ugly male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with intense violet eyes, a seductive  mouth,  a thin nose, and curly chestnut hair wearing a tailored coral ornate waistcoat, black shimmering leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-010639.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-010639.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-20")'>Details</button>
+                    <div class='details' id='details-20'>
+                        <p>Seed: 31399</p>
+                        <p>Prompt: towering charming male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with bewitching hazel eyes, a luscious  mouth,  a petite nose, and wavy ashen hair wearing a form-fitting coral finely-tailored waistcoat, white ragged woolen leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-012932.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-012932.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-21")'>Details</button>
+                    <div class='details' id='details-21'>
+                        <p>Seed: 27136</p>
+                        <p>Prompt: gangly plain looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with soulful violet eyes, an enchanting  mouth,  a crooked nose, and coarse strawberry blonde hair wearing a loose-fitting red finely-tailored waistcoat, black sturdy leggings and matching red woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-013154.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-013154.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-22")'>Details</button>
+                    <div class='details' id='details-22'>
+                        <p>Seed: 7881</p>
+                        <p>Prompt: petite average looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with radiant emerald eyes, a captivating  mouth,  a prominent nose, and thick silver hair wearing a tight-fitting black ornate waistcoat, matching black sturdy leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-014738.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-014738.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-23")'>Details</button>
+                    <div class='details' id='details-23'>
+                        <p>Seed: 48348</p>
+                        <p>Prompt: broad-shouldered charming male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with enigmatic turquoise eyes, a tempting  mouth,  a crooked nose, and coarse sandy hair wearing a comfortable coral embroidered waistcoat, black finely made leggings and brown fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-015252.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-015252.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-24")'>Details</button>
+                    <div class='details' id='details-24'>
+                        <p>Seed: 50476</p>
+                        <p>Prompt: broad-shouldered ordinary looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with radiant brown eyes, a luscious  mouth,  a snub nose, and glossy sandy hair wearing a form-fitting red ornate waistcoat, black lightweight leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-072616.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-072616.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-25")'>Details</button>
+                    <div class='details' id='details-25'>
+                        <p>Seed: 38584</p>
+                        <p>Prompt: petite ugly male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with piercing brown eyes, a luscious  mouth,  a prominent nose, and shiny chestnut hair wearing a snug red very elegant waistcoat, black sturdy leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-073407.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-073407.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-26")'>Details</button>
+                    <div class='details' id='details-26'>
+                        <p>Seed: 3495</p>
+                        <p>Prompt: sturdy charming male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with radiant turquoise eyes, a eloquent  mouth,  a regal nose, and coarse sandy hair wearing a snug red ornate waistcoat, black finely made leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-073934.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-073934.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-27")'>Details</button>
+                    <div class='details' id='details-27'>
+                        <p>Seed: 1829</p>
+                        <p>Prompt: sturdy charming male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with mysterious emerald eyes, a tempting  mouth,  a delicate nose, and glossy silver hair wearing a snug black very elegant waistcoat, matching black shimmering leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-081248.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-081248.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-28")'>Details</button>
+                    <div class='details' id='details-28'>
+                        <p>Seed: 27684</p>
+                        <p>Prompt: towering ugly male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with transfixing brown eyes, a delicate  mouth,  a dainty nose, and shiny black hair wearing a comfortable red wollen waistcoat, black shimmering leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-081404.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-081404.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-29")'>Details</button>
+                    <div class='details' id='details-29'>
+                        <p>Seed: 53543</p>
+                        <p>Prompt:  extrodanarily attractive male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with electric amber eyes, a plump  mouth,  a thin nose, and silky chestnut hair wearing a tapered grey ornate waistcoat, black lightweight leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-081752.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-081752.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-30")'>Details</button>
+                    <div class='details' id='details-30'>
+                        <p>Seed: 30052</p>
+                        <p>Prompt: sturdy attractive male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with piercing blue eyes, a plump  mouth,  a crooked nose, and glossy sandy hair wearing a loose-fitting blue velvet-lined waistcoat, red sturdy leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-082309.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-082309.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-31")'>Details</button>
+                    <div class='details' id='details-31'>
+                        <p>Seed: 39582</p>
+                        <p>Prompt: broad-shouldered average looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with soulful brown eyes, an irresistable  mouth,  a thin nose, and glossy black hair wearing a tapered black embroidered waistcoat, matching black ragged woolen leggings and brown rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-092445.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-092445.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-32")'>Details</button>
+                    <div class='details' id='details-32'>
+                        <p>Seed: 13605</p>
+                        <p>Prompt:  plain looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with haunting turquoise eyes, a captivating  mouth,  a broad nose, and thick auburn hair wearing a tight-fitting black embroidered waistcoat, grey rumpled leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-095345.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-095345.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-33")'>Details</button>
+                    <div class='details' id='details-33'>
+                        <p>Seed: 25745</p>
+                        <p>Prompt: broad-shouldered charming male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with piercing amber eyes, a luscious  mouth,  a prominent nose, and glossy black hair wearing a tailored red wollen waistcoat, black shimmering leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-113942.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-113942.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-34")'>Details</button>
+                    <div class='details' id='details-34'>
+                        <p>Seed: 56142</p>
+                        <p>Prompt:  ordinary looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with piercing blue eyes, a seductive  mouth,  a delicate nose, and glossy mahogany hair wearing a tapered coral ornate waistcoat, black finely made leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-114947.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-114947.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-35")'>Details</button>
+                    <div class='details' id='details-35'>
+                        <p>Seed: 61220</p>
+                        <p>Prompt: sturdy plain looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with haunting grey eyes, a sensouos  mouth,  a straight nose, and thick black hair wearing a form-fitting blue embroidered waistcoat, black ragged woolen leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-123142.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-123142.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-36")'>Details</button>
+                    <div class='details' id='details-36'>
+                        <p>Seed: 25103</p>
+                        <p>Prompt: towering ugly male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with soulful brown eyes, a captivating  mouth,  a thin nose, and silky chestnut hair wearing a tight-fitting blue very elegant waistcoat, red loose-fitting leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-125202.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-125202.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-37")'>Details</button>
+                    <div class='details' id='details-37'>
+                        <p>Seed: 12964</p>
+                        <p>Prompt: slender average looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with transfixing turquoise eyes, a pouty  mouth,  a bulbous nose, and wavy golden hair wearing a tight-fitting red finely-tailored waistcoat, black lightweight leggings and matching red wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-125318.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-125318.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-38")'>Details</button>
+                    <div class='details' id='details-38'>
+                        <p>Seed: 27655</p>
+                        <p>Prompt: sturdy ordinary looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with mesmerizing brown eyes, an enchanting  mouth,  a prominent nose, and glossy ashen hair wearing a tailored coral plain waistcoat, black loose-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-130846.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-130846.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-39")'>Details</button>
+                    <div class='details' id='details-39'>
+                        <p>Seed: 55184</p>
+                        <p>Prompt: towering average looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with expressive grey eyes, a eloquent  mouth,  a dainty nose, and coarse black hair wearing a comfortable black ornate waistcoat, matching black reinforced leggings and brown wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-131236.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-131236.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-40")'>Details</button>
+                    <div class='details' id='details-40'>
+                        <p>Seed: 50296</p>
+                        <p>Prompt: petite ugly male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with transfixing emerald eyes, a eloquent  mouth,  a bulbous nose, and coarse black hair wearing a form-fitting coral embroidered waistcoat, black rumpled leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-134535.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-134535.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-41")'>Details</button>
+                    <div class='details' id='details-41'>
+                        <p>Seed: 1179</p>
+                        <p>Prompt:  average looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with intense violet eyes, a delicate  mouth,  a button nose, and thick mahogany hair wearing a tailored grey plain waistcoat, black loose-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-135205.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-135205.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-42")'>Details</button>
+                    <div class='details' id='details-42'>
+                        <p>Seed: 17201</p>
+                        <p>Prompt: gangly ordinary looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with electric emerald eyes, a sensouos  mouth,  a crooked nose, and thick sandy hair wearing a snug coral finely-tailored waistcoat, white close-fitting leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-141455.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-141455.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-43")'>Details</button>
+                    <div class='details' id='details-43'>
+                        <p>Seed: 30825</p>
+                        <p>Prompt: gangly attractive male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with bewitching brown eyes, an irresistable  mouth,  a crooked nose, and curly sandy hair wearing a loose-fitting coral ornate waistcoat, black ragged woolen leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-143259.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-143259.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-44")'>Details</button>
+                    <div class='details' id='details-44'>
+                        <p>Seed: 185</p>
+                        <p>Prompt: sturdy charming male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with radiant brown eyes, a eloquent  mouth,  a broad nose, and frizzy black hair wearing a loose-fitting coral wollen waistcoat, black lightweight leggings and brown buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-143417.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-143417.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-45")'>Details</button>
+                    <div class='details' id='details-45'>
+                        <p>Seed: 52138</p>
+                        <p>Prompt: towering average looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with piercing hazel eyes, a seductive  mouth,  a straight nose, and thick red hair wearing a tailored green plain waistcoat, white close-fitting leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-151910.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-151910.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-46")'>Details</button>
+                    <div class='details' id='details-46'>
+                        <p>Seed: 263</p>
+                        <p>Prompt: sturdy charming male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with piercing blue eyes, a sensouos  mouth,  a angular nose, and thick black hair wearing a tailored coral finely-tailored waistcoat, white loose-fitting leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-153946.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-153946.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-47")'>Details</button>
+                    <div class='details' id='details-47'>
+                        <p>Seed: 60049</p>
+                        <p>Prompt: broad-shouldered average looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with expressive emerald eyes, a delicate  mouth,  a angular nose, and straight  hair wearing a tight-fitting coral ornate waistcoat, black close-fitting leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-155628.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-155628.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-48")'>Details</button>
+                    <div class='details' id='details-48'>
+                        <p>Seed: 63266</p>
+                        <p>Prompt: gangly ordinary looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with piercing amber eyes, a captivating  mouth,  a thin nose, and coarse golden hair wearing a tapered coral velvet-lined waistcoat, white lightweight leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-160538.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-160538.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-49")'>Details</button>
+                    <div class='details' id='details-49'>
+                        <p>Seed: 15826</p>
+                        <p>Prompt: sturdy ugly male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with enigmatic hazel eyes, a tempting  mouth,  a chisiled nose, and thick silver hair wearing a tailored green very elegant waistcoat, white reinforced leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-163007.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-163007.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-50")'>Details</button>
+                    <div class='details' id='details-50'>
+                        <p>Seed: 37717</p>
+                        <p>Prompt: petite plain looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with soulful brown eyes, a luscious  mouth,  a straight nose, and silky auburn hair wearing a snug red very elegant waistcoat, black war-torn leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-164418.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-164418.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-51")'>Details</button>
+                    <div class='details' id='details-51'>
+                        <p>Seed: 2903</p>
+                        <p>Prompt: gangly average looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with enigmatic violet eyes, an enchanting  mouth,  a broad nose, and straight chestnut hair wearing a form-fitting blue plain waistcoat, matching blue sturdy leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-164535.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-164535.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-52")'>Details</button>
+                    <div class='details' id='details-52'>
+                        <p>Seed: 12601</p>
+                        <p>Prompt: gangly ordinary looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with sparkling brown eyes, a delicate  mouth,  a delicate nose, and shiny mahogany hair wearing a tight-fitting red embroidered waistcoat, black rumpled leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-190316.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-190316.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-53")'>Details</button>
+                    <div class='details' id='details-53'>
+                        <p>Seed: 37426</p>
+                        <p>Prompt: towering plain looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with transfixing brown eyes, a luscious  mouth,  a hawklike nose, and shiny mahogany hair wearing a tight-fitting red embroidered waistcoat, black finely made leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_rat catcher\out-20240222-190439.png' target='_blank'>
+                        <img src='male_tabaxi_rat catcher\out-20240222-190439.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-54")'>Details</button>
+                    <div class='details' id='details-54'>
+                        <p>Seed: 53692</p>
+                        <p>Prompt: towering ordinary looking male tabaxi fluffy humanoid catlike person covered in fur rat catcher  with dreamy brown eyes, a luscious  mouth,  a button nose, and straight black hair wearing a snug coral velvet-lined waistcoat, black shimmering leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

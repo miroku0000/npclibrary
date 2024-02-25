@@ -1,0 +1,487 @@
+
+    <html>
+    <head>
+    <title>Scholar Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>Scholar</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_Scholar\out-20240219-100741.png' target='_blank'>
+                        <img src='female_dwarf_Scholar\out-20240219-100741.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 2368</p>
+                        <p>Prompt: sturdy attractive female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Scholar  with soulful violet eyes, a tempting  mouth,  a crooked nose, and glossy chestnut hair wearing a tailored coral ornate waistcoat, black close-fitting leggings and brown buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_Scholar\out-20240219-100805.png' target='_blank'>
+                        <img src='female_dwarf_Scholar\out-20240219-100805.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 41333</p>
+                        <p>Prompt: sturdy attractive female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Scholar  with soulful violet eyes, a tempting  mouth,  a crooked nose, and glossy chestnut hair wearing a tailored coral ornate waistcoat, black close-fitting leggings and brown buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_Scholar\out-20240219-100828.png' target='_blank'>
+                        <img src='female_dwarf_Scholar\out-20240219-100828.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 46574</p>
+                        <p>Prompt: sturdy attractive female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Scholar  with soulful violet eyes, a tempting  mouth,  a crooked nose, and glossy chestnut hair wearing a tailored coral ornate waistcoat, black close-fitting leggings and brown buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_Scholar\out-20240219-100852.png' target='_blank'>
+                        <img src='female_dwarf_Scholar\out-20240219-100852.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 25540</p>
+                        <p>Prompt: sturdy attractive female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Scholar  with soulful violet eyes, a tempting  mouth,  a crooked nose, and glossy chestnut hair wearing a tailored coral ornate waistcoat, black close-fitting leggings and brown buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Scholar\out-20240219-035627.png' target='_blank'>
+                        <img src='male_dwarf_Scholar\out-20240219-035627.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 63843</p>
+                        <p>Prompt: petite average looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Scholar  with intense lavender eyes, a captivating  mouth,  a regal nose, and coarse chestnut hair wearing a comfortable black wollen waistcoat, matching black lightweight leggings and brown sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Scholar\out-20240219-035651.png' target='_blank'>
+                        <img src='male_dwarf_Scholar\out-20240219-035651.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 3313</p>
+                        <p>Prompt: petite average looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Scholar  with intense lavender eyes, a captivating  mouth,  a regal nose, and coarse chestnut hair wearing a comfortable black wollen waistcoat, matching black lightweight leggings and brown sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Scholar\out-20240219-035713.png' target='_blank'>
+                        <img src='male_dwarf_Scholar\out-20240219-035713.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 3074</p>
+                        <p>Prompt: petite average looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Scholar  with intense lavender eyes, a captivating  mouth,  a regal nose, and coarse chestnut hair wearing a comfortable black wollen waistcoat, matching black lightweight leggings and brown sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Scholar\out-20240219-035736.png' target='_blank'>
+                        <img src='male_dwarf_Scholar\out-20240219-035736.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 60096</p>
+                        <p>Prompt: petite average looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Scholar  with intense lavender eyes, a captivating  mouth,  a regal nose, and coarse chestnut hair wearing a comfortable black wollen waistcoat, matching black lightweight leggings and brown sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Scholar\out-20240221-100825.png' target='_blank'>
+                        <img src='male_dwarf_Scholar\out-20240221-100825.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 17021</p>
+                        <p>Prompt: gangly average looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Scholar  with enigmatic hazel eyes, a sensouos  mouth,  a thin nose, and glossy platinum hair wearing a tight-fitting black simple waistcoat, matching black war-torn leggings and brown sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Scholar\out-20240219-102631.png' target='_blank'>
+                        <img src='female_elf_Scholar\out-20240219-102631.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 22347</p>
+                        <p>Prompt: petite ugly female Lord of The Rings Elf Scholar  with alluring brown eyes, a pouty  mouth,  a prominent nose, and shiny red hair wearing a snug coral very elegant waistcoat, black ragged woolen leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Scholar\out-20240219-102656.png' target='_blank'>
+                        <img src='female_elf_Scholar\out-20240219-102656.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 21190</p>
+                        <p>Prompt: petite ugly female Lord of The Rings Elf Scholar  with alluring brown eyes, a pouty  mouth,  a prominent nose, and shiny red hair wearing a snug coral very elegant waistcoat, black ragged woolen leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Scholar\out-20240219-102722.png' target='_blank'>
+                        <img src='female_elf_Scholar\out-20240219-102722.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 14049</p>
+                        <p>Prompt: petite ugly female Lord of The Rings Elf Scholar  with alluring brown eyes, a pouty  mouth,  a prominent nose, and shiny red hair wearing a snug coral very elegant waistcoat, black ragged woolen leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Scholar\out-20240219-102746.png' target='_blank'>
+                        <img src='female_elf_Scholar\out-20240219-102746.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 1679</p>
+                        <p>Prompt: petite ugly female Lord of The Rings Elf Scholar  with alluring brown eyes, a pouty  mouth,  a prominent nose, and shiny red hair wearing a snug coral very elegant waistcoat, black ragged woolen leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Scholar\out-20240220-104825.png' target='_blank'>
+                        <img src='female_elf_Scholar\out-20240220-104825.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 60586</p>
+                        <p>Prompt: slender plain looking female Lord of The Rings Elf Scholar  with sparkling hazel eyes, an enchanting  mouth,  a petite nose, and coarse platinum hair wearing a form-fitting red very elegant waistcoat, black finely made leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Scholar\out-20240220-105007.png' target='_blank'>
+                        <img src='female_elf_Scholar\out-20240220-105007.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 19763</p>
+                        <p>Prompt: slender plain looking female Lord of The Rings Elf Scholar  with sparkling hazel eyes, an enchanting  mouth,  a petite nose, and coarse platinum hair wearing a form-fitting red very elegant waistcoat, black finely made leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Scholar\out-20240221-145318.png' target='_blank'>
+                        <img src='female_halfling_Scholar\out-20240221-145318.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: 21452</p>
+                        <p>Prompt: towering ordinary looking female D&D Halfling Scholar  with electric grey eyes, a tempting  mouth,  a delicate nose, and shiny silver hair wearing a loose-fitting black wollen waistcoat, matching black sturdy leggings and brown felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Scholar\out-20240219-031014.png' target='_blank'>
+                        <img src='female_human_Scholar\out-20240219-031014.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: 37699</p>
+                        <p>Prompt: slender ugly female human Scholar  with piercing blue eyes, an irresistable  mouth,  a button nose, and frizzy golden hair wearing a comfortable blue embroidered waistcoat, black war-torn leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Scholar\out-20240219-031036.png' target='_blank'>
+                        <img src='female_human_Scholar\out-20240219-031036.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-17")'>Details</button>
+                    <div class='details' id='details-17'>
+                        <p>Seed: 29119</p>
+                        <p>Prompt: slender ugly female human Scholar  with piercing blue eyes, an irresistable  mouth,  a button nose, and frizzy golden hair wearing a comfortable blue embroidered waistcoat, black war-torn leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Scholar\out-20240219-031058.png' target='_blank'>
+                        <img src='female_human_Scholar\out-20240219-031058.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-18")'>Details</button>
+                    <div class='details' id='details-18'>
+                        <p>Seed: 58420</p>
+                        <p>Prompt: slender ugly female human Scholar  with piercing blue eyes, an irresistable  mouth,  a button nose, and frizzy golden hair wearing a comfortable blue embroidered waistcoat, black war-torn leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Scholar\out-20240219-031122.png' target='_blank'>
+                        <img src='female_human_Scholar\out-20240219-031122.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-19")'>Details</button>
+                    <div class='details' id='details-19'>
+                        <p>Seed: 20489</p>
+                        <p>Prompt: slender ugly female human Scholar  with piercing blue eyes, an irresistable  mouth,  a button nose, and frizzy golden hair wearing a comfortable blue embroidered waistcoat, black war-torn leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Scholar\out-20240220-230925.png' target='_blank'>
+                        <img src='female_human_Scholar\out-20240220-230925.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-20")'>Details</button>
+                    <div class='details' id='details-20'>
+                        <p>Seed: 34009</p>
+                        <p>Prompt:  extrodanarily attractive female human Scholar  with piercing emerald eyes, a eloquent  mouth,  a chisiled nose, and straight strawberry blonde hair wearing a comfortable coral embroidered waistcoat, black finely made leggings and brown sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_Scholar\out-20240221-085502.png' target='_blank'>
+                        <img src='male_human_Scholar\out-20240221-085502.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-21")'>Details</button>
+                    <div class='details' id='details-21'>
+                        <p>Seed: 20331</p>
+                        <p>Prompt: towering charming male human Scholar  with expressive amber eyes, a plump  mouth,  a thin nose, and straight sandy hair wearing a tight-fitting white simple waistcoat, matching white war-torn leggings and white sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi female'>
+                    <div class='additional-info'>Female, Tabaxi</div>
+                    <a href='female_tabaxi_Scholar\out-20240219-093332.png' target='_blank'>
+                        <img src='female_tabaxi_Scholar\out-20240219-093332.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-22")'>Details</button>
+                    <div class='details' id='details-22'>
+                        <p>Seed: 24375</p>
+                        <p>Prompt: sturdy average looking female tabaxi fluffy humanoid catlike person covered in fur Scholar  with mesmerizing violet eyes, a pouty  mouth,  a dainty nose, and silky chestnut hair wearing a loose-fitting black simple waistcoat, matching black lightweight leggings and brown rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi female'>
+                    <div class='additional-info'>Female, Tabaxi</div>
+                    <a href='female_tabaxi_Scholar\out-20240219-093419.png' target='_blank'>
+                        <img src='female_tabaxi_Scholar\out-20240219-093419.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-23")'>Details</button>
+                    <div class='details' id='details-23'>
+                        <p>Seed: 22921</p>
+                        <p>Prompt: sturdy average looking female tabaxi fluffy humanoid catlike person covered in fur Scholar  with mesmerizing violet eyes, a pouty  mouth,  a dainty nose, and silky chestnut hair wearing a loose-fitting black simple waistcoat, matching black lightweight leggings and brown rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi female'>
+                    <div class='additional-info'>Female, Tabaxi</div>
+                    <a href='female_tabaxi_Scholar\out-20240219-094123.png' target='_blank'>
+                        <img src='female_tabaxi_Scholar\out-20240219-094123.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-24")'>Details</button>
+                    <div class='details' id='details-24'>
+                        <p>Seed: 46062</p>
+                        <p>Prompt: towering ordinary looking female tabaxi fluffy humanoid catlike person covered in fur Scholar  with alluring grey eyes, a sensouos  mouth,  a hawklike nose, and shiny sandy hair wearing a tapered black plain waistcoat, matching black ragged woolen leggings and brown felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi female'>
+                    <div class='additional-info'>Female, Tabaxi</div>
+                    <a href='female_tabaxi_Scholar\out-20240219-094211.png' target='_blank'>
+                        <img src='female_tabaxi_Scholar\out-20240219-094211.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-25")'>Details</button>
+                    <div class='details' id='details-25'>
+                        <p>Seed: 866</p>
+                        <p>Prompt: towering ordinary looking female tabaxi fluffy humanoid catlike person covered in fur Scholar  with alluring grey eyes, a sensouos  mouth,  a hawklike nose, and shiny sandy hair wearing a tapered black plain waistcoat, matching black ragged woolen leggings and brown felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

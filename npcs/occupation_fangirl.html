@@ -1,0 +1,343 @@
+
+    <html>
+    <head>
+    <title>fangirl Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>fangirl</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_fangirl\out-20240219-201931.png' target='_blank'>
+                        <img src='female_human_fangirl\out-20240219-201931.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: N/A</p>
+                        <p>Model: N/A</p>
+                        <p>Width: N/Apx</p>
+                        <p>Height: N/Apx</p>
+                        <p>Steps: N/A</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_fangirl\out-20240219-201951.png' target='_blank'>
+                        <img src='female_human_fangirl\out-20240219-201951.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 49429</p>
+                        <p>Prompt: slender average looking female tabaxi fluffy humanoid catlike person covered in fur bartender  with electric green eyes, a delicate  mouth,  a hawklike nose, and coarse auburn hair wearing a snug coral embroidered waistcoat, black close-fitting leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_fangirl\out-20240221-105927.png' target='_blank'>
+                        <img src='female_human_fangirl\out-20240221-105927.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 21413</p>
+                        <p>Prompt: towering ordinary looking female tabaxi fluffy humanoid catlike person covered in fur Soldier  with transfixing grey eyes, a tempting  mouth,  a straight nose, and shiny silver hair wearing a snug blue very elegant waistcoat, red shimmering leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_fangirl\out-20240222-122254.png' target='_blank'>
+                        <img src='female_human_fangirl\out-20240222-122254.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 51364</p>
+                        <p>Prompt: petite extrodanarily attractive female tabaxi fluffy humanoid catlike person covered in fur rat catcher  with piercing lavender eyes, a luscious  mouth,  a straight nose, and silky strawberry blonde hair wearing a loose-fitting coral simple waistcoat, black war-torn leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_fangirl\out-20240222-171518.png' target='_blank'>
+                        <img src='female_human_fangirl\out-20240222-171518.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 41375</p>
+                        <p>Prompt: sturdy plain looking female tabaxi fluffy humanoid catlike person covered in fur rat catcher  with radiant brown eyes, a luscious  mouth,  a button nose, and coarse blonde hair wearing a tapered coral ornate waistcoat, white lightweight leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_fangirl\out-20240222-181514.png' target='_blank'>
+                        <img src='female_human_fangirl\out-20240222-181514.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 2826</p>
+                        <p>Prompt: towering extrodanarily attractive female tabaxi fluffy humanoid catlike person covered in fur rat catcher  with intense blue eyes, a tempting  mouth,  a snub nose, and glossy ashen hair wearing a snug black ornate waistcoat, grey lightweight leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_fangirl\out-20240222-182012.png' target='_blank'>
+                        <img src='female_human_fangirl\out-20240222-182012.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 35603</p>
+                        <p>Prompt:  average looking female tabaxi fluffy humanoid catlike person covered in fur rat catcher  with intense hazel eyes, a sensouos  mouth,  a crooked nose, and thick blonde hair wearing a snug blue plain waistcoat, black sturdy leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_fangirl\out-20240222-183118.png' target='_blank'>
+                        <img src='female_human_fangirl\out-20240222-183118.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 60314</p>
+                        <p>Prompt: gangly average looking female tabaxi fluffy humanoid catlike person covered in fur rat catcher  with dreamy lavender eyes, a eloquent  mouth,  a broad nose, and straight strawberry blonde hair wearing a tight-fitting red embroidered waistcoat, black finely made leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_fangirl\out-20240222-184717.png' target='_blank'>
+                        <img src='female_human_fangirl\out-20240222-184717.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 31188</p>
+                        <p>Prompt: sturdy ordinary looking female tabaxi fluffy humanoid catlike person covered in fur rat catcher  with electric grey eyes, a captivating  mouth,  a straight nose, and wavy strawberry blonde hair wearing a snug blue very elegant waistcoat, matching blue rumpled leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_fangirl\out-20240222-185254.png' target='_blank'>
+                        <img src='female_human_fangirl\out-20240222-185254.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 33030</p>
+                        <p>Prompt: petite attractive female tabaxi fluffy humanoid catlike person covered in fur rat catcher  with radiant turquoise eyes, an irresistable  mouth,  a snub nose, and silky sandy hair wearing a loose-fitting white very elegant waistcoat, matching white loose-fitting leggings and white fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_fangirl\out-20240222-185749.png' target='_blank'>
+                        <img src='female_human_fangirl\out-20240222-185749.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 15184</p>
+                        <p>Prompt: gangly charming female tabaxi fluffy humanoid catlike person covered in fur rat catcher  with electric brown eyes, a tempting  mouth,  a button nose, and glossy auburn hair wearing a tapered blue simple waistcoat, red reinforced leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_fangirl\out-20240222-185914.png' target='_blank'>
+                        <img src='female_human_fangirl\out-20240222-185914.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 38190</p>
+                        <p>Prompt: petite plain looking female tabaxi fluffy humanoid catlike person covered in fur rat catcher  with piercing lavender eyes, a seductive  mouth,  a snub nose, and coarse silver hair wearing a form-fitting black simple waistcoat, grey close-fitting leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_fangirl\out-20240222-190033.png' target='_blank'>
+                        <img src='female_human_fangirl\out-20240222-190033.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 4044</p>
+                        <p>Prompt: petite attractive female tabaxi fluffy humanoid catlike person covered in fur rat catcher  with mysterious green eyes, a tempting  mouth,  a petite nose, and glossy sandy hair wearing a snug black wollen waistcoat, matching black loose-fitting leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_fangirl\out-20240222-190155.png' target='_blank'>
+                        <img src='female_human_fangirl\out-20240222-190155.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 6660</p>
+                        <p>Prompt: broad-shouldered ugly female tabaxi fluffy humanoid catlike person covered in fur rat catcher  with mesmerizing blue eyes, a tempting  mouth,  a broad nose, and thick silver hair wearing a snug coral simple waistcoat, white finely made leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_fangirl\out-20240222-192517.png' target='_blank'>
+                        <img src='female_human_fangirl\out-20240222-192517.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 49635</p>
+                        <p>Prompt:  average looking female tabaxi fluffy humanoid catlike person covered in fur rat catcher  with alluring grey eyes, a seductive  mouth,  a broad nose, and shiny red hair wearing a tight-fitting grey velvet-lined waistcoat, black war-torn leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_fangirl\out-20240222-193654.png' target='_blank'>
+                        <img src='female_human_fangirl\out-20240222-193654.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: 50554</p>
+                        <p>Prompt:  ordinary looking female tabaxi fluffy humanoid catlike person covered in fur rat catcher  with transfixing grey eyes, a tempting  mouth,  a crooked nose, and silky mahogany hair wearing a comfortable black finely-tailored waistcoat, white sturdy leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_fangirl\out-20240222-194340.png' target='_blank'>
+                        <img src='female_human_fangirl\out-20240222-194340.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: 18831</p>
+                        <p>Prompt: slender extrodanarily attractive female tabaxi fluffy humanoid catlike person covered in fur rat catcher  with dreamy emerald eyes, a delicate  mouth,  a prominent nose, and silky  hair wearing a tapered coral plain waistcoat, black sturdy leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

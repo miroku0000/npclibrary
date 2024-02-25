@@ -1,0 +1,375 @@
+
+    <html>
+    <head>
+    <title>Town cryer Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>Town cryer</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'gnome')">Gnome</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_Town cryer\out-20240219-111343.png' target='_blank'>
+                        <img src='female_dwarf_Town cryer\out-20240219-111343.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 41438</p>
+                        <p>Prompt: sturdy charming female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Town cryer  with sparkling amber eyes, an alluring  mouth,  a straight nose, and silky strawberry blonde hair wearing a comfortable coral simple waistcoat, black loose-fitting leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_Town cryer\out-20240219-111406.png' target='_blank'>
+                        <img src='female_dwarf_Town cryer\out-20240219-111406.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 39431</p>
+                        <p>Prompt: sturdy charming female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Town cryer  with sparkling amber eyes, an alluring  mouth,  a straight nose, and silky strawberry blonde hair wearing a comfortable coral simple waistcoat, black loose-fitting leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_Town cryer\out-20240219-111430.png' target='_blank'>
+                        <img src='female_dwarf_Town cryer\out-20240219-111430.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 9587</p>
+                        <p>Prompt: sturdy charming female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Town cryer  with sparkling amber eyes, an alluring  mouth,  a straight nose, and silky strawberry blonde hair wearing a comfortable coral simple waistcoat, black loose-fitting leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Town cryer\out-20240219-003727.png' target='_blank'>
+                        <img src='male_dwarf_Town cryer\out-20240219-003727.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 43728</p>
+                        <p>Prompt: broad-shouldered attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Town cryer  with expressive emerald eyes, a luscious  mouth,  a button nose, and silky blonde hair wearing a tailored coral velvet-lined waistcoat, white reinforced leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Town cryer\out-20240219-003823.png' target='_blank'>
+                        <img src='male_dwarf_Town cryer\out-20240219-003823.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 36676</p>
+                        <p>Prompt: broad-shouldered attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Town cryer  with expressive emerald eyes, a luscious  mouth,  a button nose, and silky blonde hair wearing a tailored coral velvet-lined waistcoat, white reinforced leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Town cryer\out-20240220-224949.png' target='_blank'>
+                        <img src='female_human_Town cryer\out-20240220-224949.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 32407</p>
+                        <p>Prompt: sturdy ugly female human Town cryer  with intense brown eyes, an enchanting  mouth,  a crooked nose, and shiny  hair wearing a form-fitting black finely-tailored waistcoat, matching black lightweight leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Town cryer\out-20240220-225115.png' target='_blank'>
+                        <img src='female_human_Town cryer\out-20240220-225115.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 57773</p>
+                        <p>Prompt: sturdy ugly female human Town cryer  with intense brown eyes, an enchanting  mouth,  a crooked nose, and shiny  hair wearing a form-fitting black finely-tailored waistcoat, matching black lightweight leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi female'>
+                    <div class='additional-info'>Female, Tabaxi</div>
+                    <a href='female_tabaxi_Town cryer\out-20240219-013948.png' target='_blank'>
+                        <img src='female_tabaxi_Town cryer\out-20240219-013948.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 60215</p>
+                        <p>Prompt: towering average looking female tabaxi fluffy humanoid catlike person covered in fur Town cryer  with alluring grey eyes, a eloquent  mouth,  a delicate nose, and shiny  hair wearing a tight-fitting black very elegant waistcoat, grey loose-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_Town cryer\out-20240219-092230.png' target='_blank'>
+                        <img src='male_gnome_Town cryer\out-20240219-092230.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 48362</p>
+                        <p>Prompt:  ordinary looking male gnome Town cryer  with electric emerald eyes, an irresistable  mouth,  a thin nose, and frizzy chestnut hair wearing a tailored red simple waistcoat, black reinforced leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_Town cryer\out-20240219-092253.png' target='_blank'>
+                        <img src='male_gnome_Town cryer\out-20240219-092253.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 53522</p>
+                        <p>Prompt:  ordinary looking male gnome Town cryer  with electric emerald eyes, an irresistable  mouth,  a thin nose, and frizzy chestnut hair wearing a tailored red simple waistcoat, black reinforced leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_Town cryer\out-20240219-092317.png' target='_blank'>
+                        <img src='male_gnome_Town cryer\out-20240219-092317.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 59613</p>
+                        <p>Prompt:  ordinary looking male gnome Town cryer  with electric emerald eyes, an irresistable  mouth,  a thin nose, and frizzy chestnut hair wearing a tailored red simple waistcoat, black reinforced leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_Town cryer\out-20240219-092342.png' target='_blank'>
+                        <img src='male_gnome_Town cryer\out-20240219-092342.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 32128</p>
+                        <p>Prompt:  ordinary looking male gnome Town cryer  with electric emerald eyes, an irresistable  mouth,  a thin nose, and frizzy chestnut hair wearing a tailored red simple waistcoat, black reinforced leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_Town cryer\out-20240219-100300.png' target='_blank'>
+                        <img src='male_gnome_Town cryer\out-20240219-100300.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 50220</p>
+                        <p>Prompt:  attractive male gnome Town cryer  with mesmerizing brown eyes, a eloquent  mouth,  a crooked nose, and silky auburn hair wearing a form-fitting coral very elegant waistcoat, black ragged woolen leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_Town cryer\out-20240219-100347.png' target='_blank'>
+                        <img src='male_gnome_Town cryer\out-20240219-100347.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 50676</p>
+                        <p>Prompt:  attractive male gnome Town cryer  with mesmerizing brown eyes, a eloquent  mouth,  a crooked nose, and silky auburn hair wearing a form-fitting coral very elegant waistcoat, black ragged woolen leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_Town cryer\out-20240220-084318.png' target='_blank'>
+                        <img src='male_gnome_Town cryer\out-20240220-084318.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 1941</p>
+                        <p>Prompt: slender ugly male gnome Town cryer  with dreamy emerald eyes, a captivating  mouth,  a hawklike nose, and thick golden hair wearing a loose-fitting blue embroidered waistcoat, matching blue close-fitting leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_Town cryer\out-20240220-084449.png' target='_blank'>
+                        <img src='male_gnome_Town cryer\out-20240220-084449.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: 4418</p>
+                        <p>Prompt: slender ugly male gnome Town cryer  with dreamy emerald eyes, a captivating  mouth,  a hawklike nose, and thick golden hair wearing a loose-fitting blue embroidered waistcoat, matching blue close-fitting leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_Town cryer\out-20240219-053749.png' target='_blank'>
+                        <img src='male_halfling_Town cryer\out-20240219-053749.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: 51603</p>
+                        <p>Prompt: broad-shouldered charming male D&D Halfling Town cryer  with radiant violet eyes, a sensouos  mouth,  a petite nose, and silky mahogany hair wearing a comfortable black wollen waistcoat, matching black reinforced leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_Town cryer\out-20240219-053812.png' target='_blank'>
+                        <img src='male_halfling_Town cryer\out-20240219-053812.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-17")'>Details</button>
+                    <div class='details' id='details-17'>
+                        <p>Seed: 36618</p>
+                        <p>Prompt: broad-shouldered charming male D&D Halfling Town cryer  with radiant violet eyes, a sensouos  mouth,  a petite nose, and silky mahogany hair wearing a comfortable black wollen waistcoat, matching black reinforced leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_Town cryer\out-20240219-053834.png' target='_blank'>
+                        <img src='male_halfling_Town cryer\out-20240219-053834.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-18")'>Details</button>
+                    <div class='details' id='details-18'>
+                        <p>Seed: 62063</p>
+                        <p>Prompt: broad-shouldered charming male D&D Halfling Town cryer  with radiant violet eyes, a sensouos  mouth,  a petite nose, and silky mahogany hair wearing a comfortable black wollen waistcoat, matching black reinforced leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

@@ -1,0 +1,343 @@
+
+    <html>
+    <head>
+    <title>Stonemason Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>Stonemason</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'gnome')">Gnome</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_Stonemason\out-20240219-034729.png' target='_blank'>
+                        <img src='female_dwarf_Stonemason\out-20240219-034729.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 60169</p>
+                        <p>Prompt: sturdy extrodanarily attractive female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Stonemason  with sparkling violet eyes, a tempting  mouth,  a broad nose, and wavy chestnut hair wearing a comfortable white plain waistcoat, matching white shimmering leggings and white fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_Stonemason\out-20240219-034813.png' target='_blank'>
+                        <img src='female_dwarf_Stonemason\out-20240219-034813.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 34170</p>
+                        <p>Prompt: sturdy extrodanarily attractive female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Stonemason  with sparkling violet eyes, a tempting  mouth,  a broad nose, and wavy chestnut hair wearing a comfortable white plain waistcoat, matching white shimmering leggings and white fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_Stonemason\out-20240219-084319.png' target='_blank'>
+                        <img src='female_dwarf_Stonemason\out-20240219-084319.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 12487</p>
+                        <p>Prompt: sturdy extrodanarily attractive female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Stonemason  with haunting green eyes, a seductive  mouth,  a thin nose, and glossy blonde hair wearing a loose-fitting black wollen waistcoat, white loose-fitting leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_Stonemason\out-20240219-084406.png' target='_blank'>
+                        <img src='female_dwarf_Stonemason\out-20240219-084406.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 52116</p>
+                        <p>Prompt: sturdy extrodanarily attractive female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Stonemason  with haunting green eyes, a seductive  mouth,  a thin nose, and glossy blonde hair wearing a loose-fitting black wollen waistcoat, white loose-fitting leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Stonemason\out-20240219-091529.png' target='_blank'>
+                        <img src='female_gnome_Stonemason\out-20240219-091529.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 42915</p>
+                        <p>Prompt: petite ugly female gnome Stonemason  with enigmatic green eyes, a seductive  mouth,  a crooked nose, and frizzy black hair wearing a tight-fitting blue embroidered waistcoat, black close-fitting leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Stonemason\out-20240219-091552.png' target='_blank'>
+                        <img src='female_gnome_Stonemason\out-20240219-091552.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 59711</p>
+                        <p>Prompt: petite ugly female gnome Stonemason  with enigmatic green eyes, a seductive  mouth,  a crooked nose, and frizzy black hair wearing a tight-fitting blue embroidered waistcoat, black close-fitting leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Stonemason\out-20240219-195955.png' target='_blank'>
+                        <img src='female_gnome_Stonemason\out-20240219-195955.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 12600</p>
+                        <p>Prompt: broad-shouldered plain looking female gnome Stonemason  with alluring violet eyes, a tempting  mouth,  a button nose, and straight blonde hair wearing a tapered blue velvet-lined waistcoat, black finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Stonemason\out-20240219-200016.png' target='_blank'>
+                        <img src='female_gnome_Stonemason\out-20240219-200016.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 10207</p>
+                        <p>Prompt: broad-shouldered plain looking female gnome Stonemason  with alluring violet eyes, a tempting  mouth,  a button nose, and straight blonde hair wearing a tapered blue velvet-lined waistcoat, black finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Stonemason\out-20240219-200037.png' target='_blank'>
+                        <img src='female_gnome_Stonemason\out-20240219-200037.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 49487</p>
+                        <p>Prompt: broad-shouldered plain looking female gnome Stonemason  with alluring violet eyes, a tempting  mouth,  a button nose, and straight blonde hair wearing a tapered blue velvet-lined waistcoat, black finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_Stonemason\out-20240221-175416.png' target='_blank'>
+                        <img src='male_gnome_Stonemason\out-20240221-175416.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 4757</p>
+                        <p>Prompt: towering ugly male gnome Stonemason  with bewitching blue eyes, a sensouos  mouth,  a chisiled nose, and curly strawberry blonde hair wearing a snug black plain waistcoat, grey ragged woolen leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_Stonemason\out-20240219-040949.png' target='_blank'>
+                        <img src='male_human_Stonemason\out-20240219-040949.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 21806</p>
+                        <p>Prompt: slender average looking male human Stonemason  with piercing turquoise eyes, a luscious  mouth,  a prominent nose, and frizzy chestnut hair wearing a snug black embroidered waistcoat, grey close-fitting leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_Stonemason\out-20240219-041011.png' target='_blank'>
+                        <img src='male_human_Stonemason\out-20240219-041011.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 7422</p>
+                        <p>Prompt: slender average looking male human Stonemason  with piercing turquoise eyes, a luscious  mouth,  a prominent nose, and frizzy chestnut hair wearing a snug black embroidered waistcoat, grey close-fitting leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_Stonemason\out-20240219-041033.png' target='_blank'>
+                        <img src='male_human_Stonemason\out-20240219-041033.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 51410</p>
+                        <p>Prompt: slender average looking male human Stonemason  with piercing turquoise eyes, a luscious  mouth,  a prominent nose, and frizzy chestnut hair wearing a snug black embroidered waistcoat, grey close-fitting leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_Stonemason\out-20240219-041055.png' target='_blank'>
+                        <img src='male_human_Stonemason\out-20240219-041055.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 11083</p>
+                        <p>Prompt: slender average looking male human Stonemason  with piercing turquoise eyes, a luscious  mouth,  a prominent nose, and frizzy chestnut hair wearing a snug black embroidered waistcoat, grey close-fitting leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_Stonemason\out-20240221-164416.png' target='_blank'>
+                        <img src='male_human_Stonemason\out-20240221-164416.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 30161</p>
+                        <p>Prompt: sturdy attractive male human Stonemason  with transfixing lavender eyes, a eloquent  mouth,  a regal nose, and glossy sandy hair wearing a form-fitting blue velvet-lined waistcoat, red reinforced leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_Stonemason\out-20240219-071942.png' target='_blank'>
+                        <img src='male_tabaxi_Stonemason\out-20240219-071942.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: 61324</p>
+                        <p>Prompt:  extrodanarily attractive male tabaxi fluffy humanoid catlike person covered in fur Stonemason  with sparkling blue eyes, a delicate  mouth,  a button nose, and straight auburn hair wearing a snug coral velvet-lined waistcoat, black finely made leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_Stonemason\out-20240219-072048.png' target='_blank'>
+                        <img src='male_tabaxi_Stonemason\out-20240219-072048.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: 60617</p>
+                        <p>Prompt:  extrodanarily attractive male tabaxi fluffy humanoid catlike person covered in fur Stonemason  with sparkling blue eyes, a delicate  mouth,  a button nose, and straight auburn hair wearing a snug coral velvet-lined waistcoat, black finely made leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

@@ -1,0 +1,343 @@
+
+    <html>
+    <head>
+    <title>bookkeeper Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>bookkeeper</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bookkeeper\out-20240219-202351.png' target='_blank'>
+                        <img src='female_elf_bookkeeper\out-20240219-202351.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 20256</p>
+                        <p>Prompt: broad-shouldered ugly female Lord of The Rings Elf bookkeeper  with bewitching emerald eyes, an alluring  mouth,  a regal nose, and curly mahogany hair wearing a comfortable black plain waistcoat, matching black lightweight leggings and brown velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bookkeeper\out-20240219-202410.png' target='_blank'>
+                        <img src='female_elf_bookkeeper\out-20240219-202410.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 49402</p>
+                        <p>Prompt: broad-shouldered ugly female Lord of The Rings Elf bookkeeper  with bewitching emerald eyes, an alluring  mouth,  a regal nose, and curly mahogany hair wearing a comfortable black plain waistcoat, matching black lightweight leggings and brown velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bookkeeper\out-20240219-202429.png' target='_blank'>
+                        <img src='female_elf_bookkeeper\out-20240219-202429.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 37109</p>
+                        <p>Prompt: slender extrodanarily attractive female Lord of The Rings Elf bookkeeper  with enigmatic lavender eyes, an alluring  mouth,  a bulbous nose, and thick silver hair wearing a loose-fitting coral plain waistcoat, white lightweight leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bookkeeper\out-20240219-202447.png' target='_blank'>
+                        <img src='female_elf_bookkeeper\out-20240219-202447.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 38249</p>
+                        <p>Prompt: slender extrodanarily attractive female Lord of The Rings Elf bookkeeper  with enigmatic lavender eyes, an alluring  mouth,  a bulbous nose, and thick silver hair wearing a loose-fitting coral plain waistcoat, white lightweight leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bookkeeper\out-20240219-202508.png' target='_blank'>
+                        <img src='female_elf_bookkeeper\out-20240219-202508.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 293</p>
+                        <p>Prompt: petite charming female Lord of The Rings Elf bookkeeper  with mesmerizing green eyes, a captivating  mouth,  a thin nose, and coarse strawberry blonde hair wearing a loose-fitting green simple waistcoat, white shimmering leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bookkeeper\out-20240219-202528.png' target='_blank'>
+                        <img src='female_elf_bookkeeper\out-20240219-202528.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 52022</p>
+                        <p>Prompt: petite charming female Lord of The Rings Elf bookkeeper  with mesmerizing green eyes, a captivating  mouth,  a thin nose, and coarse strawberry blonde hair wearing a loose-fitting green simple waistcoat, white shimmering leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bookkeeper\out-20240219-202547.png' target='_blank'>
+                        <img src='female_elf_bookkeeper\out-20240219-202547.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 45049</p>
+                        <p>Prompt: towering ordinary looking female Lord of The Rings Elf bookkeeper  with intense turquoise eyes, a luscious  mouth,  a prominent nose, and straight red hair wearing a comfortable black wollen waistcoat, white war-torn leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bookkeeper\out-20240219-202607.png' target='_blank'>
+                        <img src='female_elf_bookkeeper\out-20240219-202607.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 8999</p>
+                        <p>Prompt: towering ordinary looking female Lord of The Rings Elf bookkeeper  with intense turquoise eyes, a luscious  mouth,  a prominent nose, and straight red hair wearing a comfortable black wollen waistcoat, white war-torn leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bookkeeper\out-20240219-202628.png' target='_blank'>
+                        <img src='female_elf_bookkeeper\out-20240219-202628.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 8458</p>
+                        <p>Prompt:  attractive female Lord of The Rings Elf bookkeeper  with electric blue eyes, a sensouos  mouth,  a prominent nose, and curly golden hair wearing a tight-fitting red very elegant waistcoat, black reinforced leggings and matching red woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bookkeeper\out-20240219-202649.png' target='_blank'>
+                        <img src='female_elf_bookkeeper\out-20240219-202649.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 49028</p>
+                        <p>Prompt:  attractive female Lord of The Rings Elf bookkeeper  with electric blue eyes, a sensouos  mouth,  a prominent nose, and curly golden hair wearing a tight-fitting red very elegant waistcoat, black reinforced leggings and matching red woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bookkeeper\out-20240219-202710.png' target='_blank'>
+                        <img src='female_elf_bookkeeper\out-20240219-202710.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 28105</p>
+                        <p>Prompt: towering attractive female Lord of The Rings Elf bookkeeper  with mysterious green eyes, a eloquent  mouth,  a regal nose, and glossy black hair wearing a tight-fitting blue finely-tailored waistcoat, red loose-fitting leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bookkeeper\out-20240219-202733.png' target='_blank'>
+                        <img src='female_elf_bookkeeper\out-20240219-202733.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 47268</p>
+                        <p>Prompt: towering attractive female Lord of The Rings Elf bookkeeper  with mysterious green eyes, a eloquent  mouth,  a regal nose, and glossy black hair wearing a tight-fitting blue finely-tailored waistcoat, red loose-fitting leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bookkeeper\out-20240219-202756.png' target='_blank'>
+                        <img src='female_elf_bookkeeper\out-20240219-202756.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 52132</p>
+                        <p>Prompt:  average looking female Lord of The Rings Elf bookkeeper  with haunting violet eyes, an enchanting  mouth,  a dainty nose, and curly silver hair wearing a form-fitting coral embroidered waistcoat, black close-fitting leggings and brown felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bookkeeper\out-20240219-202819.png' target='_blank'>
+                        <img src='female_elf_bookkeeper\out-20240219-202819.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 11000</p>
+                        <p>Prompt:  average looking female Lord of The Rings Elf bookkeeper  with haunting violet eyes, an enchanting  mouth,  a dainty nose, and curly silver hair wearing a form-fitting coral embroidered waistcoat, black close-fitting leggings and brown felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bookkeeper\out-20240219-202842.png' target='_blank'>
+                        <img src='female_elf_bookkeeper\out-20240219-202842.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 38331</p>
+                        <p>Prompt: sturdy ugly female Lord of The Rings Elf bookkeeper  with enigmatic violet eyes, a tempting  mouth,  a straight nose, and curly ashen hair wearing a form-fitting black embroidered waistcoat, matching black reinforced leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bookkeeper\out-20240219-202951.png' target='_blank'>
+                        <img src='female_elf_bookkeeper\out-20240219-202951.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: 31439</p>
+                        <p>Prompt: towering ordinary looking female Lord of The Rings Elf bookkeeper  with mysterious lavender eyes, an enchanting  mouth,  a angular nose, and thick sandy hair wearing a comfortable grey wollen waistcoat, black ragged woolen leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bookkeeper\out-20240219-203038.png' target='_blank'>
+                        <img src='female_elf_bookkeeper\out-20240219-203038.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: 20780</p>
+                        <p>Prompt: gangly ugly female Lord of The Rings Elf bookkeeper  with intense violet eyes, an alluring  mouth,  a hawklike nose, and curly strawberry blonde hair wearing a tight-fitting green plain waistcoat, white finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

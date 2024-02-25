@@ -1,0 +1,183 @@
+
+    <html>
+    <head>
+    <title>Washerwoman Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>Washerwoman</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_Washerwoman\out-20240219-051515.png' target='_blank'>
+                        <img src='female_dwarf_Washerwoman\out-20240219-051515.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 44979</p>
+                        <p>Prompt: sturdy charming female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Washerwoman  with expressive grey eyes, a seductive  mouth,  a snub nose, and coarse  hair wearing a tailored blue velvet-lined waistcoat, black lightweight leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Washerwoman\out-20240221-144912.png' target='_blank'>
+                        <img src='female_elf_Washerwoman\out-20240221-144912.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 65301</p>
+                        <p>Prompt: slender ordinary looking female Lord of The Rings Elf Washerwoman  with radiant violet eyes, a seductive  mouth,  a snub nose, and glossy strawberry blonde hair wearing a snug grey plain waistcoat, black loose-fitting leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Washerwoman\out-20240221-183036.png' target='_blank'>
+                        <img src='female_elf_Washerwoman\out-20240221-183036.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 32357</p>
+                        <p>Prompt: slender attractive female Lord of The Rings Elf Washerwoman  with enigmatic brown eyes, a plump  mouth,  a button nose, and curly strawberry blonde hair wearing a tight-fitting coral simple waistcoat, black war-torn leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Washerwoman\out-20240219-060918.png' target='_blank'>
+                        <img src='female_halfling_Washerwoman\out-20240219-060918.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 48342</p>
+                        <p>Prompt:  charming male D&D Halfling Washerwoman  with alluring emerald eyes, a sensouos  mouth,  a dainty nose, and silky chestnut hair wearing a tight-fitting coral embroidered waistcoat, white sturdy leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Washerwoman\out-20240219-060940.png' target='_blank'>
+                        <img src='female_halfling_Washerwoman\out-20240219-060940.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 27237</p>
+                        <p>Prompt:  charming male D&D Halfling Washerwoman  with alluring emerald eyes, a sensouos  mouth,  a dainty nose, and silky chestnut hair wearing a tight-fitting coral embroidered waistcoat, white sturdy leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Washerwoman\out-20240219-061001.png' target='_blank'>
+                        <img src='female_halfling_Washerwoman\out-20240219-061001.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 1327</p>
+                        <p>Prompt:  charming male D&D Halfling Washerwoman  with alluring emerald eyes, a sensouos  mouth,  a dainty nose, and silky chestnut hair wearing a tight-fitting coral embroidered waistcoat, white sturdy leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Washerwoman\out-20240219-061023.png' target='_blank'>
+                        <img src='female_halfling_Washerwoman\out-20240219-061023.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 35071</p>
+                        <p>Prompt:  charming male D&D Halfling Washerwoman  with alluring emerald eyes, a sensouos  mouth,  a dainty nose, and silky chestnut hair wearing a tight-fitting coral embroidered waistcoat, white sturdy leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

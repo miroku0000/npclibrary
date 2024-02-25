@@ -1,0 +1,455 @@
+
+    <html>
+    <head>
+    <title>Fortune teller Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>Fortune teller</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'gnome')">Gnome</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Fortune teller\out-20240219-015659.png' target='_blank'>
+                        <img src='female_gnome_Fortune teller\out-20240219-015659.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 30777</p>
+                        <p>Prompt:  charming female gnome Fortune teller  with piercing turquoise eyes, a plump  mouth,  a button nose, and shiny auburn hair wearing a comfortable black wollen waistcoat, matching black reinforced leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Fortune teller\out-20240219-015722.png' target='_blank'>
+                        <img src='female_gnome_Fortune teller\out-20240219-015722.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 49868</p>
+                        <p>Prompt:  charming female gnome Fortune teller  with piercing turquoise eyes, a plump  mouth,  a button nose, and shiny auburn hair wearing a comfortable black wollen waistcoat, matching black reinforced leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Fortune teller\out-20240219-015745.png' target='_blank'>
+                        <img src='female_gnome_Fortune teller\out-20240219-015745.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 61506</p>
+                        <p>Prompt:  charming female gnome Fortune teller  with piercing turquoise eyes, a plump  mouth,  a button nose, and shiny auburn hair wearing a comfortable black wollen waistcoat, matching black reinforced leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Fortune teller\out-20240219-015809.png' target='_blank'>
+                        <img src='female_gnome_Fortune teller\out-20240219-015809.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 47617</p>
+                        <p>Prompt:  charming female gnome Fortune teller  with piercing turquoise eyes, a plump  mouth,  a button nose, and shiny auburn hair wearing a comfortable black wollen waistcoat, matching black reinforced leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Fortune teller\out-20240219-041117.png' target='_blank'>
+                        <img src='female_gnome_Fortune teller\out-20240219-041117.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 32983</p>
+                        <p>Prompt: sturdy attractive female gnome Fortune teller  with mysterious emerald eyes, a tempting  mouth,  a bulbous nose, and thick  hair wearing a tailored coral velvet-lined waistcoat, white rumpled leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Fortune teller\out-20240219-041139.png' target='_blank'>
+                        <img src='female_gnome_Fortune teller\out-20240219-041139.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 1777</p>
+                        <p>Prompt: sturdy attractive female gnome Fortune teller  with mysterious emerald eyes, a tempting  mouth,  a bulbous nose, and thick  hair wearing a tailored coral velvet-lined waistcoat, white rumpled leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Fortune teller\out-20240219-041201.png' target='_blank'>
+                        <img src='female_gnome_Fortune teller\out-20240219-041201.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 36485</p>
+                        <p>Prompt: sturdy attractive female gnome Fortune teller  with mysterious emerald eyes, a tempting  mouth,  a bulbous nose, and thick  hair wearing a tailored coral velvet-lined waistcoat, white rumpled leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Fortune teller\out-20240219-041223.png' target='_blank'>
+                        <img src='female_gnome_Fortune teller\out-20240219-041223.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 47643</p>
+                        <p>Prompt: sturdy attractive female gnome Fortune teller  with mysterious emerald eyes, a tempting  mouth,  a bulbous nose, and thick  hair wearing a tailored coral velvet-lined waistcoat, white rumpled leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Fortune teller\out-20240219-110933.png' target='_blank'>
+                        <img src='female_gnome_Fortune teller\out-20240219-110933.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 51337</p>
+                        <p>Prompt: slender plain looking female gnome Fortune teller  with transfixing turquoise eyes, an irresistable  mouth,  a bulbous nose, and straight ashen hair wearing a tight-fitting coral very elegant waistcoat, white sturdy leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Fortune teller\out-20240219-195517.png' target='_blank'>
+                        <img src='female_gnome_Fortune teller\out-20240219-195517.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 24160</p>
+                        <p>Prompt: broad-shouldered average looking female gnome Fortune teller  with dreamy grey eyes, a pouty  mouth,  a bulbous nose, and coarse  hair wearing a comfortable green velvet-lined waistcoat, white shimmering leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Fortune teller\out-20240219-195540.png' target='_blank'>
+                        <img src='female_gnome_Fortune teller\out-20240219-195540.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 7613</p>
+                        <p>Prompt: broad-shouldered average looking female gnome Fortune teller  with dreamy grey eyes, a pouty  mouth,  a bulbous nose, and coarse  hair wearing a comfortable green velvet-lined waistcoat, white shimmering leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Fortune teller\out-20240219-195603.png' target='_blank'>
+                        <img src='female_gnome_Fortune teller\out-20240219-195603.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 33283</p>
+                        <p>Prompt: broad-shouldered average looking female gnome Fortune teller  with dreamy grey eyes, a pouty  mouth,  a bulbous nose, and coarse  hair wearing a comfortable green velvet-lined waistcoat, white shimmering leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Fortune teller\out-20240220-161153.png' target='_blank'>
+                        <img src='female_gnome_Fortune teller\out-20240220-161153.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 34605</p>
+                        <p>Prompt: petite charming female gnome Fortune teller  with transfixing emerald eyes, a sensouos  mouth,  a petite nose, and thick black hair wearing a form-fitting black finely-tailored waistcoat, white rumpled leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Fortune teller\out-20240220-161328.png' target='_blank'>
+                        <img src='female_gnome_Fortune teller\out-20240220-161328.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 9896</p>
+                        <p>Prompt: petite charming female gnome Fortune teller  with transfixing emerald eyes, a sensouos  mouth,  a petite nose, and thick black hair wearing a form-fitting black finely-tailored waistcoat, white rumpled leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Fortune teller\out-20240221-115855.png' target='_blank'>
+                        <img src='female_halfling_Fortune teller\out-20240221-115855.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 13019</p>
+                        <p>Prompt: towering average looking female D&D Halfling Fortune teller  with expressive violet eyes, an irresistable  mouth,  a crooked nose, and shiny ashen hair wearing a comfortable green finely-tailored waistcoat, white war-torn leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Fortune teller\out-20240219-063144.png' target='_blank'>
+                        <img src='female_human_Fortune teller\out-20240219-063144.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: 12206</p>
+                        <p>Prompt: towering attractive female human Fortune teller  with soulful grey eyes, an alluring  mouth,  a delicate nose, and thick black hair wearing a comfortable coral very elegant waistcoat, black sturdy leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Fortune teller\out-20240219-063206.png' target='_blank'>
+                        <img src='female_human_Fortune teller\out-20240219-063206.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: 56537</p>
+                        <p>Prompt: towering attractive female human Fortune teller  with soulful grey eyes, an alluring  mouth,  a delicate nose, and thick black hair wearing a comfortable coral very elegant waistcoat, black sturdy leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Fortune teller\out-20240219-063228.png' target='_blank'>
+                        <img src='female_human_Fortune teller\out-20240219-063228.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-17")'>Details</button>
+                    <div class='details' id='details-17'>
+                        <p>Seed: 1354</p>
+                        <p>Prompt: towering attractive female human Fortune teller  with soulful grey eyes, an alluring  mouth,  a delicate nose, and thick black hair wearing a comfortable coral very elegant waistcoat, black sturdy leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Fortune teller\out-20240219-063250.png' target='_blank'>
+                        <img src='female_human_Fortune teller\out-20240219-063250.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-18")'>Details</button>
+                    <div class='details' id='details-18'>
+                        <p>Seed: 26975</p>
+                        <p>Prompt: towering attractive female human Fortune teller  with soulful grey eyes, an alluring  mouth,  a delicate nose, and thick black hair wearing a comfortable coral very elegant waistcoat, black sturdy leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_Fortune teller\out-20240219-072239.png' target='_blank'>
+                        <img src='male_human_Fortune teller\out-20240219-072239.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-19")'>Details</button>
+                    <div class='details' id='details-19'>
+                        <p>Seed: 31769</p>
+                        <p>Prompt: sturdy attractive male human Fortune teller  with mysterious hazel eyes, an alluring  mouth,  a angular nose, and coarse platinum hair wearing a comfortable red embroidered waistcoat, black sturdy leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_Fortune teller\out-20240219-072301.png' target='_blank'>
+                        <img src='male_human_Fortune teller\out-20240219-072301.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-20")'>Details</button>
+                    <div class='details' id='details-20'>
+                        <p>Seed: 13377</p>
+                        <p>Prompt: sturdy attractive male human Fortune teller  with mysterious hazel eyes, an alluring  mouth,  a angular nose, and coarse platinum hair wearing a comfortable red embroidered waistcoat, black sturdy leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_Fortune teller\out-20240219-072323.png' target='_blank'>
+                        <img src='male_human_Fortune teller\out-20240219-072323.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-21")'>Details</button>
+                    <div class='details' id='details-21'>
+                        <p>Seed: 50859</p>
+                        <p>Prompt: sturdy attractive male human Fortune teller  with mysterious hazel eyes, an alluring  mouth,  a angular nose, and coarse platinum hair wearing a comfortable red embroidered waistcoat, black sturdy leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_Fortune teller\out-20240219-072345.png' target='_blank'>
+                        <img src='male_human_Fortune teller\out-20240219-072345.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-22")'>Details</button>
+                    <div class='details' id='details-22'>
+                        <p>Seed: 3035</p>
+                        <p>Prompt: sturdy attractive male human Fortune teller  with mysterious hazel eyes, an alluring  mouth,  a angular nose, and coarse platinum hair wearing a comfortable red embroidered waistcoat, black sturdy leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Fortune teller\out-20240221-145116.png' target='_blank'>
+                        <img src='male_dwarf_Fortune teller\out-20240221-145116.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-23")'>Details</button>
+                    <div class='details' id='details-23'>
+                        <p>Seed: 20132</p>
+                        <p>Prompt: broad-shouldered average looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Fortune teller  with soulful green eyes, a captivating  mouth,  a petite nose, and coarse sandy hair wearing a snug coral ornate waistcoat, black lightweight leggings and brown fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

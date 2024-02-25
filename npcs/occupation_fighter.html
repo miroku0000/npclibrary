@@ -1,0 +1,1191 @@
+
+    <html>
+    <head>
+    <title>fighter Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>fighter</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'gnome')">Gnome</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_fighter\out-20240219-020239.png' target='_blank'>
+                        <img src='female_dwarf_fighter\out-20240219-020239.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 2742</p>
+                        <p>Prompt:  plain looking female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. fighter  with enigmatic green eyes, a tempting  mouth,  a delicate nose, and shiny black hair wearing a comfortable white very elegant waistcoat, matching white loose-fitting leggings and white scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_fighter\out-20240218-193953.png' target='_blank'>
+                        <img src='male_dwarf_fighter\out-20240218-193953.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered ugly male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. fighter  with mesmerizing hazel eyes, a eloquent  mouth,  a petite nose, and coarse black hair wearing a tight-fitting red velvet-lined waistcoat, black war-torn leggings and matching red wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_fighter\out-20240218-194123.png' target='_blank'>
+                        <img src='male_dwarf_fighter\out-20240218-194123.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered ugly male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. fighter  with mesmerizing hazel eyes, a eloquent  mouth,  a petite nose, and coarse black hair wearing a tight-fitting red velvet-lined waistcoat, black war-torn leggings and matching red wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_fighter\out-20240218-194256.png' target='_blank'>
+                        <img src='male_dwarf_fighter\out-20240218-194256.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered ugly male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. fighter  with mesmerizing hazel eyes, a eloquent  mouth,  a petite nose, and coarse black hair wearing a tight-fitting red velvet-lined waistcoat, black war-torn leggings and matching red wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_fighter\out-20240218-194622.png' target='_blank'>
+                        <img src='male_dwarf_fighter\out-20240218-194622.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: N/A</p>
+                        <p>Model: N/A</p>
+                        <p>Width: N/Apx</p>
+                        <p>Height: N/Apx</p>
+                        <p>Steps: N/A</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_fighter\out-20240218-195006.png' target='_blank'>
+                        <img src='male_dwarf_fighter\out-20240218-195006.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered ugly male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. fighter  with mesmerizing hazel eyes, a eloquent  mouth,  a petite nose, and coarse black hair wearing a tight-fitting red velvet-lined waistcoat, black war-torn leggings and matching red wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_fighter\out-20240218-195206.png' target='_blank'>
+                        <img src='male_dwarf_fighter\out-20240218-195206.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered ugly male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. fighter  with mesmerizing hazel eyes, a eloquent  mouth,  a petite nose, and coarse black hair wearing a tight-fitting red velvet-lined waistcoat, black war-torn leggings and matching red wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_fighter\out-20240219-040225.png' target='_blank'>
+                        <img src='male_dwarf_fighter\out-20240219-040225.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 42893</p>
+                        <p>Prompt: slender attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. fighter  with expressive turquoise eyes, a plump  mouth,  a chisiled nose, and silky golden hair wearing a loose-fitting black finely-tailored waistcoat, matching black lightweight leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_fighter\out-20240219-040248.png' target='_blank'>
+                        <img src='male_dwarf_fighter\out-20240219-040248.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 36227</p>
+                        <p>Prompt: slender attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. fighter  with expressive turquoise eyes, a plump  mouth,  a chisiled nose, and silky golden hair wearing a loose-fitting black finely-tailored waistcoat, matching black lightweight leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_fighter\out-20240219-040309.png' target='_blank'>
+                        <img src='male_dwarf_fighter\out-20240219-040309.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 9074</p>
+                        <p>Prompt: slender attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. fighter  with expressive turquoise eyes, a plump  mouth,  a chisiled nose, and silky golden hair wearing a loose-fitting black finely-tailored waistcoat, matching black lightweight leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_fighter\out-20240219-040331.png' target='_blank'>
+                        <img src='male_dwarf_fighter\out-20240219-040331.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 17971</p>
+                        <p>Prompt: slender attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. fighter  with expressive turquoise eyes, a plump  mouth,  a chisiled nose, and silky golden hair wearing a loose-fitting black finely-tailored waistcoat, matching black lightweight leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_fighter\out-20240221-084012.png' target='_blank'>
+                        <img src='male_dwarf_fighter\out-20240221-084012.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 8494</p>
+                        <p>Prompt: towering extrodanarily attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. fighter  with electric lavender eyes, a seductive  mouth,  a thin nose, and frizzy red hair wearing a loose-fitting grey simple waistcoat, black finely made leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fighter\out-20240218-120655.png' target='_blank'>
+                        <img src='female_elf_fighter\out-20240218-120655.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ordinary looking female Lord of The Rings Elf fighter  with intense amber eyes, a tempting  mouth,  a prominent nose, and shiny platinum hair wearing a tight-fitting green wollen waistcoat, white close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fighter\out-20240218-120718.png' target='_blank'>
+                        <img src='female_elf_fighter\out-20240218-120718.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ordinary looking female Lord of The Rings Elf fighter  with intense amber eyes, a tempting  mouth,  a prominent nose, and shiny platinum hair wearing a tight-fitting green wollen waistcoat, white close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fighter\out-20240218-120742.png' target='_blank'>
+                        <img src='female_elf_fighter\out-20240218-120742.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ordinary looking female Lord of The Rings Elf fighter  with intense amber eyes, a tempting  mouth,  a prominent nose, and shiny platinum hair wearing a tight-fitting green wollen waistcoat, white close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fighter\out-20240218-120805.png' target='_blank'>
+                        <img src='female_elf_fighter\out-20240218-120805.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ordinary looking female Lord of The Rings Elf fighter  with intense amber eyes, a tempting  mouth,  a prominent nose, and shiny platinum hair wearing a tight-fitting green wollen waistcoat, white close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fighter\out-20240218-120828.png' target='_blank'>
+                        <img src='female_elf_fighter\out-20240218-120828.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ordinary looking female Lord of The Rings Elf fighter  with intense amber eyes, a tempting  mouth,  a prominent nose, and shiny platinum hair wearing a tight-fitting green wollen waistcoat, white close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fighter\out-20240218-120851.png' target='_blank'>
+                        <img src='female_elf_fighter\out-20240218-120851.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-17")'>Details</button>
+                    <div class='details' id='details-17'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ordinary looking female Lord of The Rings Elf fighter  with intense amber eyes, a tempting  mouth,  a prominent nose, and shiny platinum hair wearing a tight-fitting green wollen waistcoat, white close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fighter\out-20240218-120915.png' target='_blank'>
+                        <img src='female_elf_fighter\out-20240218-120915.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-18")'>Details</button>
+                    <div class='details' id='details-18'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ordinary looking female Lord of The Rings Elf fighter  with intense amber eyes, a tempting  mouth,  a prominent nose, and shiny platinum hair wearing a tight-fitting green wollen waistcoat, white close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fighter\out-20240218-120939.png' target='_blank'>
+                        <img src='female_elf_fighter\out-20240218-120939.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-19")'>Details</button>
+                    <div class='details' id='details-19'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ordinary looking female Lord of The Rings Elf fighter  with intense amber eyes, a tempting  mouth,  a prominent nose, and shiny platinum hair wearing a tight-fitting green wollen waistcoat, white close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fighter\out-20240218-121002.png' target='_blank'>
+                        <img src='female_elf_fighter\out-20240218-121002.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-20")'>Details</button>
+                    <div class='details' id='details-20'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ordinary looking female Lord of The Rings Elf fighter  with intense amber eyes, a tempting  mouth,  a prominent nose, and shiny platinum hair wearing a tight-fitting green wollen waistcoat, white close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fighter\out-20240218-121026.png' target='_blank'>
+                        <img src='female_elf_fighter\out-20240218-121026.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-21")'>Details</button>
+                    <div class='details' id='details-21'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ordinary looking female Lord of The Rings Elf fighter  with intense amber eyes, a tempting  mouth,  a prominent nose, and shiny platinum hair wearing a tight-fitting green wollen waistcoat, white close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fighter\out-20240218-175423.png' target='_blank'>
+                        <img src='female_elf_fighter\out-20240218-175423.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-22")'>Details</button>
+                    <div class='details' id='details-22'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: slender average looking female Lord of The Rings Elf fighter  with expressive brown eyes, a eloquent  mouth,  a angular nose, and silky  hair wearing a snug red plain waistcoat, black close-fitting leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fighter\out-20240218-180012.png' target='_blank'>
+                        <img src='female_elf_fighter\out-20240218-180012.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-23")'>Details</button>
+                    <div class='details' id='details-23'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: slender average looking female Lord of The Rings Elf fighter  with expressive brown eyes, a eloquent  mouth,  a angular nose, and silky  hair wearing a snug red plain waistcoat, black close-fitting leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fighter\out-20240218-180139.png' target='_blank'>
+                        <img src='female_elf_fighter\out-20240218-180139.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-24")'>Details</button>
+                    <div class='details' id='details-24'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: slender average looking female Lord of The Rings Elf fighter  with expressive brown eyes, a eloquent  mouth,  a angular nose, and silky  hair wearing a snug red plain waistcoat, black close-fitting leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fighter\out-20240218-180306.png' target='_blank'>
+                        <img src='female_elf_fighter\out-20240218-180306.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-25")'>Details</button>
+                    <div class='details' id='details-25'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: slender average looking female Lord of The Rings Elf fighter  with expressive brown eyes, a eloquent  mouth,  a angular nose, and silky  hair wearing a snug red plain waistcoat, black close-fitting leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fighter\out-20240218-180436.png' target='_blank'>
+                        <img src='female_elf_fighter\out-20240218-180436.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-26")'>Details</button>
+                    <div class='details' id='details-26'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: slender average looking female Lord of The Rings Elf fighter  with expressive brown eyes, a eloquent  mouth,  a angular nose, and silky  hair wearing a snug red plain waistcoat, black close-fitting leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fighter\out-20240218-180601.png' target='_blank'>
+                        <img src='female_elf_fighter\out-20240218-180601.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-27")'>Details</button>
+                    <div class='details' id='details-27'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: slender average looking female Lord of The Rings Elf fighter  with expressive brown eyes, a eloquent  mouth,  a angular nose, and silky  hair wearing a snug red plain waistcoat, black close-fitting leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fighter\out-20240219-020900.png' target='_blank'>
+                        <img src='female_elf_fighter\out-20240219-020900.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-28")'>Details</button>
+                    <div class='details' id='details-28'>
+                        <p>Seed: 9104</p>
+                        <p>Prompt: broad-shouldered average looking female Lord of The Rings Elf fighter  with bewitching green eyes, a pouty  mouth,  a regal nose, and straight golden hair wearing a tight-fitting grey velvet-lined waistcoat, black war-torn leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fighter\out-20240219-020922.png' target='_blank'>
+                        <img src='female_elf_fighter\out-20240219-020922.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-29")'>Details</button>
+                    <div class='details' id='details-29'>
+                        <p>Seed: 60001</p>
+                        <p>Prompt: broad-shouldered average looking female Lord of The Rings Elf fighter  with bewitching green eyes, a pouty  mouth,  a regal nose, and straight golden hair wearing a tight-fitting grey velvet-lined waistcoat, black war-torn leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fighter\out-20240219-020943.png' target='_blank'>
+                        <img src='female_elf_fighter\out-20240219-020943.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-30")'>Details</button>
+                    <div class='details' id='details-30'>
+                        <p>Seed: 56825</p>
+                        <p>Prompt: broad-shouldered average looking female Lord of The Rings Elf fighter  with bewitching green eyes, a pouty  mouth,  a regal nose, and straight golden hair wearing a tight-fitting grey velvet-lined waistcoat, black war-torn leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fighter\out-20240219-021005.png' target='_blank'>
+                        <img src='female_elf_fighter\out-20240219-021005.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-31")'>Details</button>
+                    <div class='details' id='details-31'>
+                        <p>Seed: 32549</p>
+                        <p>Prompt: broad-shouldered average looking female Lord of The Rings Elf fighter  with bewitching green eyes, a pouty  mouth,  a regal nose, and straight golden hair wearing a tight-fitting grey velvet-lined waistcoat, black war-torn leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_fighter\out-20240218-185436.png' target='_blank'>
+                        <img src='male_elf_fighter\out-20240218-185436.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-32")'>Details</button>
+                    <div class='details' id='details-32'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering ordinary looking male Lord of The Rings Elf fighter  with mesmerizing green eyes, a delicate  mouth,  a button nose, and frizzy strawberry blonde hair wearing a tailored black simple waistcoat, white shimmering leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_fighter\out-20240218-185724.png' target='_blank'>
+                        <img src='male_elf_fighter\out-20240218-185724.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-33")'>Details</button>
+                    <div class='details' id='details-33'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering ordinary looking male Lord of The Rings Elf fighter  with mesmerizing green eyes, a delicate  mouth,  a button nose, and frizzy strawberry blonde hair wearing a tailored black simple waistcoat, white shimmering leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_fighter\out-20240218-190311.png' target='_blank'>
+                        <img src='male_elf_fighter\out-20240218-190311.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-34")'>Details</button>
+                    <div class='details' id='details-34'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering ordinary looking male Lord of The Rings Elf fighter  with mesmerizing green eyes, a delicate  mouth,  a button nose, and frizzy strawberry blonde hair wearing a tailored black simple waistcoat, white shimmering leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_fighter\out-20240218-190440.png' target='_blank'>
+                        <img src='male_elf_fighter\out-20240218-190440.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-35")'>Details</button>
+                    <div class='details' id='details-35'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering ordinary looking male Lord of The Rings Elf fighter  with mesmerizing green eyes, a delicate  mouth,  a button nose, and frizzy strawberry blonde hair wearing a tailored black simple waistcoat, white shimmering leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_fighter\out-20240219-072832.png' target='_blank'>
+                        <img src='male_elf_fighter\out-20240219-072832.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-36")'>Details</button>
+                    <div class='details' id='details-36'>
+                        <p>Seed: 22913</p>
+                        <p>Prompt: broad-shouldered attractive male Lord of The Rings Elf Gravedigger  with piercing violet eyes, a pouty  mouth,  a angular nose, and glossy red hair wearing a tailored coral ornate waistcoat, black finely made leggings and brown rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_fighter\out-20240219-072854.png' target='_blank'>
+                        <img src='male_elf_fighter\out-20240219-072854.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-37")'>Details</button>
+                    <div class='details' id='details-37'>
+                        <p>Seed: 49543</p>
+                        <p>Prompt: broad-shouldered attractive male Lord of The Rings Elf Gravedigger  with piercing violet eyes, a pouty  mouth,  a angular nose, and glossy red hair wearing a tailored coral ornate waistcoat, black finely made leggings and brown rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_fighter\out-20240219-072916.png' target='_blank'>
+                        <img src='male_elf_fighter\out-20240219-072916.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-38")'>Details</button>
+                    <div class='details' id='details-38'>
+                        <p>Seed: 54506</p>
+                        <p>Prompt: broad-shouldered attractive male Lord of The Rings Elf Gravedigger  with piercing violet eyes, a pouty  mouth,  a angular nose, and glossy red hair wearing a tailored coral ornate waistcoat, black finely made leggings and brown rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_fighter\out-20240219-072938.png' target='_blank'>
+                        <img src='male_elf_fighter\out-20240219-072938.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-39")'>Details</button>
+                    <div class='details' id='details-39'>
+                        <p>Seed: 54588</p>
+                        <p>Prompt: broad-shouldered attractive male Lord of The Rings Elf Gravedigger  with piercing violet eyes, a pouty  mouth,  a angular nose, and glossy red hair wearing a tailored coral ornate waistcoat, black finely made leggings and brown rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_fighter\out-20240220-110540.png' target='_blank'>
+                        <img src='male_elf_fighter\out-20240220-110540.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-40")'>Details</button>
+                    <div class='details' id='details-40'>
+                        <p>Seed: 51979</p>
+                        <p>Prompt: sturdy extrodanarily attractive male Lord of The Rings Elf Gravedigger  with mesmerizing green eyes, a luscious  mouth,  a straight nose, and shiny red hair wearing a snug coral plain waistcoat, white lightweight leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_fighter\out-20240220-151056.png' target='_blank'>
+                        <img src='female_gnome_fighter\out-20240220-151056.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-41")'>Details</button>
+                    <div class='details' id='details-41'>
+                        <p>Seed: 19009</p>
+                        <p>Prompt: towering ordinary looking female gnome fighter  with transfixing blue eyes, an irresistable  mouth,  a petite nose, and coarse  hair wearing a loose-fitting blue very elegant waistcoat, black finely made leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_fighter\out-20240220-151241.png' target='_blank'>
+                        <img src='female_gnome_fighter\out-20240220-151241.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-42")'>Details</button>
+                    <div class='details' id='details-42'>
+                        <p>Seed: 44765</p>
+                        <p>Prompt: towering ordinary looking female gnome fighter  with transfixing blue eyes, an irresistable  mouth,  a petite nose, and coarse  hair wearing a loose-fitting blue very elegant waistcoat, black finely made leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_fighter\out-20240221-103422.png' target='_blank'>
+                        <img src='female_gnome_fighter\out-20240221-103422.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-43")'>Details</button>
+                    <div class='details' id='details-43'>
+                        <p>Seed: 51085</p>
+                        <p>Prompt: gangly attractive female gnome fighter  with radiant emerald eyes, an alluring  mouth,  a crooked nose, and silky golden hair wearing a form-fitting blue embroidered waistcoat, red close-fitting leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_fighter\out-20240218-165620.png' target='_blank'>
+                        <img src='female_human_fighter\out-20240218-165620.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-44")'>Details</button>
+                    <div class='details' id='details-44'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt:  plain looking female human fighter  with enigmatic amber eyes, an enchanting  mouth,  a chisiled nose, and curly golden hair wearing a tight-fitting turquoise very elegant waistcoat, black close-fitting leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_fighter\out-20240218-165648.png' target='_blank'>
+                        <img src='female_human_fighter\out-20240218-165648.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-45")'>Details</button>
+                    <div class='details' id='details-45'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt:  plain looking female human fighter  with enigmatic amber eyes, an enchanting  mouth,  a chisiled nose, and curly golden hair wearing a tight-fitting turquoise very elegant waistcoat, black close-fitting leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_fighter\out-20240218-165717.png' target='_blank'>
+                        <img src='female_human_fighter\out-20240218-165717.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-46")'>Details</button>
+                    <div class='details' id='details-46'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt:  plain looking female human fighter  with enigmatic amber eyes, an enchanting  mouth,  a chisiled nose, and curly golden hair wearing a tight-fitting turquoise very elegant waistcoat, black close-fitting leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_fighter\out-20240218-165745.png' target='_blank'>
+                        <img src='female_human_fighter\out-20240218-165745.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-47")'>Details</button>
+                    <div class='details' id='details-47'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt:  plain looking female human fighter  with enigmatic amber eyes, an enchanting  mouth,  a chisiled nose, and curly golden hair wearing a tight-fitting turquoise very elegant waistcoat, black close-fitting leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_fighter\out-20240219-070341.png' target='_blank'>
+                        <img src='male_human_fighter\out-20240219-070341.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-48")'>Details</button>
+                    <div class='details' id='details-48'>
+                        <p>Seed: 39437</p>
+                        <p>Prompt: towering charming male human barbarian  with radiant blue eyes, a tempting  mouth,  a dainty nose, and silky sandy hair wearing a tapered black simple waistcoat, grey sturdy leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi female'>
+                    <div class='additional-info'>Female, Tabaxi</div>
+                    <a href='female_tabaxi_fighter\out-20240218-160008.png' target='_blank'>
+                        <img src='female_tabaxi_fighter\out-20240218-160008.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-49")'>Details</button>
+                    <div class='details' id='details-49'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering charming female tabaxi fluffy humanoid catlike person covered in fur fighter  with enigmatic blue eyes, a tempting  mouth,  a prominent nose, and straight mahogany hair wearing a tapered black velvet-lined waistcoat, matching black reinforced leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_fighter\out-20240218-133528.png' target='_blank'>
+                        <img src='male_tabaxi_fighter\out-20240218-133528.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-50")'>Details</button>
+                    <div class='details' id='details-50'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy average looking male tabaxi fluffy humanoid catlike person covered in fur fighter  with expressive hazel eyes, a eloquent  mouth,  a angular nose, and curly auburn hair wearing a form-fitting black finely-tailored waistcoat, matching black war-torn leggings and brown scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_fighter\out-20240218-141155.png' target='_blank'>
+                        <img src='male_tabaxi_fighter\out-20240218-141155.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-51")'>Details</button>
+                    <div class='details' id='details-51'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: petite charming male tabaxi fluffy humanoid catlike person covered in fur fighter  with radiant lavender eyes, a delicate  mouth,  a petite nose, and coarse chestnut hair wearing a tailored green embroidered waistcoat, white finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_fighter\out-20240218-144833.png' target='_blank'>
+                        <img src='male_tabaxi_fighter\out-20240218-144833.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-52")'>Details</button>
+                    <div class='details' id='details-52'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: slender average looking male tabaxi fluffy humanoid catlike person covered in fur fighter  with soulful amber eyes, a captivating  mouth,  a dainty nose, and wavy ashen hair wearing a tight-fitting blue wollen waistcoat, matching blue close-fitting leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_fighter\out-20240218-144955.png' target='_blank'>
+                        <img src='male_tabaxi_fighter\out-20240218-144955.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-53")'>Details</button>
+                    <div class='details' id='details-53'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: slender average looking male tabaxi fluffy humanoid catlike person covered in fur fighter  with soulful amber eyes, a captivating  mouth,  a dainty nose, and wavy ashen hair wearing a tight-fitting blue wollen waistcoat, matching blue close-fitting leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_fighter\out-20240218-145022.png' target='_blank'>
+                        <img src='male_tabaxi_fighter\out-20240218-145022.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-54")'>Details</button>
+                    <div class='details' id='details-54'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering plain looking male tabaxi fluffy humanoid catlike person covered in fur fighter  with electric grey eyes, a luscious  mouth,  a thin nose, and frizzy mahogany hair wearing a loose-fitting blue embroidered waistcoat, black finely made leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_fighter\out-20240218-145405.png' target='_blank'>
+                        <img src='male_tabaxi_fighter\out-20240218-145405.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-55")'>Details</button>
+                    <div class='details' id='details-55'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy plain looking male tabaxi fluffy humanoid catlike person covered in fur fighter  with sparkling lavender eyes, a plump  mouth,  a chisiled nose, and glossy golden hair wearing a snug red simple waistcoat, black war-torn leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_fighter\out-20240218-145432.png' target='_blank'>
+                        <img src='male_tabaxi_fighter\out-20240218-145432.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-56")'>Details</button>
+                    <div class='details' id='details-56'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy plain looking male tabaxi fluffy humanoid catlike person covered in fur fighter  with sparkling lavender eyes, a plump  mouth,  a chisiled nose, and glossy golden hair wearing a snug red simple waistcoat, black war-torn leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_fighter\out-20240218-145458.png' target='_blank'>
+                        <img src='male_tabaxi_fighter\out-20240218-145458.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-57")'>Details</button>
+                    <div class='details' id='details-57'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy plain looking male tabaxi fluffy humanoid catlike person covered in fur fighter  with sparkling lavender eyes, a plump  mouth,  a chisiled nose, and glossy golden hair wearing a snug red simple waistcoat, black war-torn leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_fighter\out-20240218-151713.png' target='_blank'>
+                        <img src='male_tabaxi_fighter\out-20240218-151713.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-58")'>Details</button>
+                    <div class='details' id='details-58'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: petite ugly male tabaxi fluffy humanoid catlike person covered in fur fighter  with mesmerizing emerald eyes, a seductive  mouth,  a regal nose, and coarse auburn hair wearing a tight-fitting black ornate waistcoat, grey ragged woolen leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_fighter\out-20240218-152620.png' target='_blank'>
+                        <img src='male_tabaxi_fighter\out-20240218-152620.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-59")'>Details</button>
+                    <div class='details' id='details-59'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering charming male tabaxi fluffy humanoid catlike person covered in fur fighter  with electric amber eyes, a eloquent  mouth,  a regal nose, and thick black hair wearing a tight-fitting grey embroidered waistcoat, black war-torn leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_fighter\out-20240218-152649.png' target='_blank'>
+                        <img src='male_tabaxi_fighter\out-20240218-152649.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-60")'>Details</button>
+                    <div class='details' id='details-60'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering charming male tabaxi fluffy humanoid catlike person covered in fur fighter  with electric amber eyes, a eloquent  mouth,  a regal nose, and thick black hair wearing a tight-fitting grey embroidered waistcoat, black war-torn leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_fighter\out-20240218-152716.png' target='_blank'>
+                        <img src='male_tabaxi_fighter\out-20240218-152716.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-61")'>Details</button>
+                    <div class='details' id='details-61'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering charming male tabaxi fluffy humanoid catlike person covered in fur fighter  with electric amber eyes, a eloquent  mouth,  a regal nose, and thick black hair wearing a tight-fitting grey embroidered waistcoat, black war-torn leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_fighter\out-20240218-152744.png' target='_blank'>
+                        <img src='male_tabaxi_fighter\out-20240218-152744.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-62")'>Details</button>
+                    <div class='details' id='details-62'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering charming male tabaxi fluffy humanoid catlike person covered in fur fighter  with electric amber eyes, a eloquent  mouth,  a regal nose, and thick black hair wearing a tight-fitting grey embroidered waistcoat, black war-torn leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_fighter\out-20240218-232147.png' target='_blank'>
+                        <img src='male_tabaxi_fighter\out-20240218-232147.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-63")'>Details</button>
+                    <div class='details' id='details-63'>
+                        <p>Seed: 24275</p>
+                        <p>Prompt: sturdy ordinary looking male tabaxi fluffy humanoid catlike person covered in fur fighter  with radiant grey eyes, a seductive  mouth,  a chisiled nose, and frizzy black hair wearing a snug coral ornate waistcoat, white ragged woolen leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_fighter\out-20240218-232212.png' target='_blank'>
+                        <img src='male_tabaxi_fighter\out-20240218-232212.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-64")'>Details</button>
+                    <div class='details' id='details-64'>
+                        <p>Seed: 32592</p>
+                        <p>Prompt: sturdy ordinary looking male tabaxi fluffy humanoid catlike person covered in fur fighter  with radiant grey eyes, a seductive  mouth,  a chisiled nose, and frizzy black hair wearing a snug coral ornate waistcoat, white ragged woolen leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_fighter\out-20240219-023552.png' target='_blank'>
+                        <img src='male_halfling_fighter\out-20240219-023552.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-65")'>Details</button>
+                    <div class='details' id='details-65'>
+                        <p>Seed: 56784</p>
+                        <p>Prompt: sturdy ordinary looking male D&D Halfling fighter  with electric turquoise eyes, a plump  mouth,  a crooked nose, and wavy chestnut hair wearing a tight-fitting black simple waistcoat, grey rumpled leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_fighter\out-20240219-023614.png' target='_blank'>
+                        <img src='male_halfling_fighter\out-20240219-023614.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-66")'>Details</button>
+                    <div class='details' id='details-66'>
+                        <p>Seed: 60283</p>
+                        <p>Prompt: sturdy ordinary looking male D&D Halfling fighter  with electric turquoise eyes, a plump  mouth,  a crooked nose, and wavy chestnut hair wearing a tight-fitting black simple waistcoat, grey rumpled leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_fighter\out-20240219-023639.png' target='_blank'>
+                        <img src='male_halfling_fighter\out-20240219-023639.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-67")'>Details</button>
+                    <div class='details' id='details-67'>
+                        <p>Seed: 37509</p>
+                        <p>Prompt: sturdy ordinary looking male D&D Halfling fighter  with electric turquoise eyes, a plump  mouth,  a crooked nose, and wavy chestnut hair wearing a tight-fitting black simple waistcoat, grey rumpled leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_fighter\out-20240219-023704.png' target='_blank'>
+                        <img src='male_halfling_fighter\out-20240219-023704.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-68")'>Details</button>
+                    <div class='details' id='details-68'>
+                        <p>Seed: 52079</p>
+                        <p>Prompt: sturdy ordinary looking male D&D Halfling fighter  with electric turquoise eyes, a plump  mouth,  a crooked nose, and wavy chestnut hair wearing a tight-fitting black simple waistcoat, grey rumpled leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_fighter\out-20240221-085252.png' target='_blank'>
+                        <img src='male_halfling_fighter\out-20240221-085252.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-69")'>Details</button>
+                    <div class='details' id='details-69'>
+                        <p>Seed: 23974</p>
+                        <p>Prompt: towering extrodanarily attractive male D&D Halfling fighter  with haunting amber eyes, a sensouos  mouth,  a straight nose, and coarse strawberry blonde hair wearing a snug turquoise velvet-lined waistcoat, black shimmering leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

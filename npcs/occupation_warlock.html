@@ -1,0 +1,791 @@
+
+    <html>
+    <head>
+    <title>warlock Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>warlock</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'gnome')">Gnome</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_warlock\out-20240219-033538.png' target='_blank'>
+                        <img src='female_gnome_warlock\out-20240219-033538.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 5795</p>
+                        <p>Prompt: gangly charming female gnome warlock  with alluring brown eyes, a captivating  mouth,  a broad nose, and silky mahogany hair wearing a tapered blue very elegant waistcoat, red lightweight leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_warlock\out-20240219-033600.png' target='_blank'>
+                        <img src='female_gnome_warlock\out-20240219-033600.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 5694</p>
+                        <p>Prompt: gangly charming female gnome warlock  with alluring brown eyes, a captivating  mouth,  a broad nose, and silky mahogany hair wearing a tapered blue very elegant waistcoat, red lightweight leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_warlock\out-20240219-033623.png' target='_blank'>
+                        <img src='female_gnome_warlock\out-20240219-033623.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 10853</p>
+                        <p>Prompt: gangly charming female gnome warlock  with alluring brown eyes, a captivating  mouth,  a broad nose, and silky mahogany hair wearing a tapered blue very elegant waistcoat, red lightweight leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_warlock\out-20240219-033647.png' target='_blank'>
+                        <img src='female_gnome_warlock\out-20240219-033647.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 16773</p>
+                        <p>Prompt: gangly charming female gnome warlock  with alluring brown eyes, a captivating  mouth,  a broad nose, and silky mahogany hair wearing a tapered blue very elegant waistcoat, red lightweight leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_warlock\out-20240219-034348.png' target='_blank'>
+                        <img src='male_gnome_warlock\out-20240219-034348.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 20337</p>
+                        <p>Prompt: slender extrodanarily attractive male gnome warlock  with mesmerizing lavender eyes, an alluring  mouth,  a regal nose, and shiny chestnut hair wearing a tight-fitting black simple waistcoat, grey war-torn leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_warlock\out-20240219-034410.png' target='_blank'>
+                        <img src='male_gnome_warlock\out-20240219-034410.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 6233</p>
+                        <p>Prompt: slender extrodanarily attractive male gnome warlock  with mesmerizing lavender eyes, an alluring  mouth,  a regal nose, and shiny chestnut hair wearing a tight-fitting black simple waistcoat, grey war-torn leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_warlock\out-20240218-232807.png' target='_blank'>
+                        <img src='female_human_warlock\out-20240218-232807.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 5255</p>
+                        <p>Prompt: petite average looking female human warlock  with expressive brown eyes, a delicate  mouth,  a thin nose, and straight blonde hair wearing a loose-fitting red finely-tailored waistcoat, black reinforced leggings and matching red scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_warlock\out-20240218-232859.png' target='_blank'>
+                        <img src='female_human_warlock\out-20240218-232859.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 4836</p>
+                        <p>Prompt: petite average looking female human warlock  with expressive brown eyes, a delicate  mouth,  a thin nose, and straight blonde hair wearing a loose-fitting red finely-tailored waistcoat, black reinforced leggings and matching red scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_warlock\out-20240218-232923.png' target='_blank'>
+                        <img src='female_human_warlock\out-20240218-232923.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 56103</p>
+                        <p>Prompt: petite average looking female human warlock  with expressive brown eyes, a delicate  mouth,  a thin nose, and straight blonde hair wearing a loose-fitting red finely-tailored waistcoat, black reinforced leggings and matching red scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_warlock\out-20240218-162022.png' target='_blank'>
+                        <img src='male_human_warlock\out-20240218-162022.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt:  attractive male human warlock  with piercing turquoise eyes, an alluring  mouth,  a bulbous nose, and coarse mahogany hair wearing a snug coral simple waistcoat, white finely made leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_warlock\out-20240218-162059.png' target='_blank'>
+                        <img src='male_human_warlock\out-20240218-162059.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt:  attractive male human warlock  with piercing turquoise eyes, an alluring  mouth,  a bulbous nose, and coarse mahogany hair wearing a snug coral simple waistcoat, white finely made leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_warlock\out-20240218-162136.png' target='_blank'>
+                        <img src='male_human_warlock\out-20240218-162136.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt:  attractive male human warlock  with piercing turquoise eyes, an alluring  mouth,  a bulbous nose, and coarse mahogany hair wearing a snug coral simple waistcoat, white finely made leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_warlock\out-20240218-162214.png' target='_blank'>
+                        <img src='male_human_warlock\out-20240218-162214.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt:  attractive male human warlock  with piercing turquoise eyes, an alluring  mouth,  a bulbous nose, and coarse mahogany hair wearing a snug coral simple waistcoat, white finely made leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_warlock\out-20240218-162253.png' target='_blank'>
+                        <img src='male_human_warlock\out-20240218-162253.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: gangly extrodanarily attractive male human warlock  with expressive amber eyes, a captivating  mouth,  a broad nose, and wavy sandy hair wearing a loose-fitting black embroidered waistcoat, matching black reinforced leggings and brown scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_warlock\out-20240218-162331.png' target='_blank'>
+                        <img src='male_human_warlock\out-20240218-162331.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: gangly extrodanarily attractive male human warlock  with expressive amber eyes, a captivating  mouth,  a broad nose, and wavy sandy hair wearing a loose-fitting black embroidered waistcoat, matching black reinforced leggings and brown scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_warlock\out-20240218-162444.png' target='_blank'>
+                        <img src='male_human_warlock\out-20240218-162444.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: gangly extrodanarily attractive male human warlock  with expressive amber eyes, a captivating  mouth,  a broad nose, and wavy sandy hair wearing a loose-fitting black embroidered waistcoat, matching black reinforced leggings and brown scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi female'>
+                    <div class='additional-info'>Female, Tabaxi</div>
+                    <a href='female_tabaxi_warlock\out-20240218-130556.png' target='_blank'>
+                        <img src='female_tabaxi_warlock\out-20240218-130556.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy extrodanarily attractive female tabaxi fluffy humanoid catlike person warlock  with haunting amber eyes, an alluring  mouth,  a thin nose, and frizzy mahogany hair wearing a tailored blue simple waistcoat, matching blue war-torn leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi female'>
+                    <div class='additional-info'>Female, Tabaxi</div>
+                    <a href='female_tabaxi_warlock\out-20240218-130647.png' target='_blank'>
+                        <img src='female_tabaxi_warlock\out-20240218-130647.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-17")'>Details</button>
+                    <div class='details' id='details-17'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy extrodanarily attractive female tabaxi fluffy humanoid catlike person warlock  with haunting amber eyes, an alluring  mouth,  a thin nose, and frizzy mahogany hair wearing a tailored blue simple waistcoat, matching blue war-torn leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi female'>
+                    <div class='additional-info'>Female, Tabaxi</div>
+                    <a href='female_tabaxi_warlock\out-20240218-133018.png' target='_blank'>
+                        <img src='female_tabaxi_warlock\out-20240218-133018.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-18")'>Details</button>
+                    <div class='details' id='details-18'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy plain looking female tabaxi fluffy humanoid catlike person covered in fur warlock  with radiant green eyes, a pouty  mouth,  a button nose, and shiny red hair wearing a tight-fitting red very elegant waistcoat, black war-torn leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi female'>
+                    <div class='additional-info'>Female, Tabaxi</div>
+                    <a href='female_tabaxi_warlock\out-20240218-140049.png' target='_blank'>
+                        <img src='female_tabaxi_warlock\out-20240218-140049.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-19")'>Details</button>
+                    <div class='details' id='details-19'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt:  ugly female tabaxi fluffy humanoid catlike person covered in fur warlock  with mesmerizing blue eyes, a sensouos  mouth,  a angular nose, and straight golden hair wearing a tailored green wollen waistcoat, white shimmering leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi female'>
+                    <div class='additional-info'>Female, Tabaxi</div>
+                    <a href='female_tabaxi_warlock\out-20240218-154907.png' target='_blank'>
+                        <img src='female_tabaxi_warlock\out-20240218-154907.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-20")'>Details</button>
+                    <div class='details' id='details-20'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered ugly female tabaxi fluffy humanoid catlike person covered in fur warlock  with mysterious lavender eyes, an irresistable  mouth,  a broad nose, and straight strawberry blonde hair wearing a tailored coral embroidered waistcoat, black sturdy leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi female'>
+                    <div class='additional-info'>Female, Tabaxi</div>
+                    <a href='female_tabaxi_warlock\out-20240218-154955.png' target='_blank'>
+                        <img src='female_tabaxi_warlock\out-20240218-154955.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-21")'>Details</button>
+                    <div class='details' id='details-21'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered ugly female tabaxi fluffy humanoid catlike person covered in fur warlock  with mysterious lavender eyes, an irresistable  mouth,  a broad nose, and straight strawberry blonde hair wearing a tailored coral embroidered waistcoat, black sturdy leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_warlock\out-20240218-143822.png' target='_blank'>
+                        <img src='male_tabaxi_warlock\out-20240218-143822.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-22")'>Details</button>
+                    <div class='details' id='details-22'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy extrodanarily attractive male tabaxi fluffy humanoid catlike person covered in fur warlock  with alluring lavender eyes, a tempting  mouth,  a broad nose, and glossy mahogany hair wearing a snug green wollen waistcoat, white shimmering leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_warlock\out-20240218-144106.png' target='_blank'>
+                        <img src='male_tabaxi_warlock\out-20240218-144106.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-23")'>Details</button>
+                    <div class='details' id='details-23'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: petite ordinary looking male tabaxi fluffy humanoid catlike person covered in fur warlock  with radiant turquoise eyes, a plump  mouth,  a regal nose, and shiny strawberry blonde hair wearing a snug red wollen waistcoat, black shimmering leggings and matching red wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_warlock\out-20240218-144132.png' target='_blank'>
+                        <img src='male_tabaxi_warlock\out-20240218-144132.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-24")'>Details</button>
+                    <div class='details' id='details-24'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: petite ordinary looking male tabaxi fluffy humanoid catlike person covered in fur warlock  with radiant turquoise eyes, a plump  mouth,  a regal nose, and shiny strawberry blonde hair wearing a snug red wollen waistcoat, black shimmering leggings and matching red wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_warlock\out-20240218-144159.png' target='_blank'>
+                        <img src='male_tabaxi_warlock\out-20240218-144159.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-25")'>Details</button>
+                    <div class='details' id='details-25'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: petite ordinary looking male tabaxi fluffy humanoid catlike person covered in fur warlock  with radiant turquoise eyes, a plump  mouth,  a regal nose, and shiny strawberry blonde hair wearing a snug red wollen waistcoat, black shimmering leggings and matching red wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_warlock\out-20240218-150510.png' target='_blank'>
+                        <img src='male_tabaxi_warlock\out-20240218-150510.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-26")'>Details</button>
+                    <div class='details' id='details-26'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ordinary looking male tabaxi fluffy humanoid catlike person covered in fur warlock  with radiant amber eyes, a delicate  mouth,  a delicate nose, and shiny strawberry blonde hair wearing a snug black simple waistcoat, matching black war-torn leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_warlock\out-20240218-150610.png' target='_blank'>
+                        <img src='male_tabaxi_warlock\out-20240218-150610.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-27")'>Details</button>
+                    <div class='details' id='details-27'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ordinary looking male tabaxi fluffy humanoid catlike person covered in fur warlock  with radiant amber eyes, a delicate  mouth,  a delicate nose, and shiny strawberry blonde hair wearing a snug black simple waistcoat, matching black war-torn leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_warlock\out-20240218-150637.png' target='_blank'>
+                        <img src='male_tabaxi_warlock\out-20240218-150637.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-28")'>Details</button>
+                    <div class='details' id='details-28'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ordinary looking male tabaxi fluffy humanoid catlike person covered in fur warlock  with radiant amber eyes, a delicate  mouth,  a delicate nose, and shiny strawberry blonde hair wearing a snug black simple waistcoat, matching black war-torn leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_warlock\out-20240218-151027.png' target='_blank'>
+                        <img src='male_tabaxi_warlock\out-20240218-151027.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-29")'>Details</button>
+                    <div class='details' id='details-29'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: slender attractive male tabaxi fluffy humanoid catlike person covered in fur warlock  with expressive turquoise eyes, a delicate  mouth,  a regal nose, and curly silver hair wearing a loose-fitting blue finely-tailored waistcoat, red loose-fitting leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_warlock\out-20240218-154534.png' target='_blank'>
+                        <img src='male_tabaxi_warlock\out-20240218-154534.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-30")'>Details</button>
+                    <div class='details' id='details-30'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: gangly attractive male tabaxi fluffy humanoid catlike person covered in fur warlock  with mesmerizing violet eyes, an enchanting  mouth,  a hawklike nose, and coarse mahogany hair wearing a snug red simple waistcoat, black ragged woolen leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_warlock\out-20240218-154605.png' target='_blank'>
+                        <img src='male_tabaxi_warlock\out-20240218-154605.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-31")'>Details</button>
+                    <div class='details' id='details-31'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: gangly attractive male tabaxi fluffy humanoid catlike person covered in fur warlock  with mesmerizing violet eyes, an enchanting  mouth,  a hawklike nose, and coarse mahogany hair wearing a snug red simple waistcoat, black ragged woolen leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_warlock\out-20240218-154640.png' target='_blank'>
+                        <img src='male_tabaxi_warlock\out-20240218-154640.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-32")'>Details</button>
+                    <div class='details' id='details-32'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: gangly attractive male tabaxi fluffy humanoid catlike person covered in fur warlock  with mesmerizing violet eyes, an enchanting  mouth,  a hawklike nose, and coarse mahogany hair wearing a snug red simple waistcoat, black ragged woolen leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_warlock\out-20240218-154717.png' target='_blank'>
+                        <img src='male_tabaxi_warlock\out-20240218-154717.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-33")'>Details</button>
+                    <div class='details' id='details-33'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: gangly attractive male tabaxi fluffy humanoid catlike person covered in fur warlock  with mesmerizing violet eyes, an enchanting  mouth,  a hawklike nose, and coarse mahogany hair wearing a snug red simple waistcoat, black ragged woolen leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_warlock\out-20240221-091030.png' target='_blank'>
+                        <img src='male_elf_warlock\out-20240221-091030.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-34")'>Details</button>
+                    <div class='details' id='details-34'>
+                        <p>Seed: 33220</p>
+                        <p>Prompt:  plain looking male Lord of The Rings Elf warlock  with soulful blue eyes, a plump  mouth,  a hawklike nose, and thick chestnut hair wearing a tapered green simple waistcoat, white shimmering leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_warlock\out-20240218-172955.png' target='_blank'>
+                        <img src='male_halfling_warlock\out-20240218-172955.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-35")'>Details</button>
+                    <div class='details' id='details-35'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered attractive male D&D Halfling warlock  with piercing amber eyes, a tempting  mouth,  a straight nose, and silky red hair wearing a form-fitting coral plain waistcoat, black reinforced leggings and brown woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_warlock\out-20240218-173020.png' target='_blank'>
+                        <img src='male_halfling_warlock\out-20240218-173020.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-36")'>Details</button>
+                    <div class='details' id='details-36'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered attractive male D&D Halfling warlock  with piercing amber eyes, a tempting  mouth,  a straight nose, and silky red hair wearing a form-fitting coral plain waistcoat, black reinforced leggings and brown woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_warlock\out-20240218-173046.png' target='_blank'>
+                        <img src='male_halfling_warlock\out-20240218-173046.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-37")'>Details</button>
+                    <div class='details' id='details-37'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered attractive male D&D Halfling warlock  with piercing amber eyes, a tempting  mouth,  a straight nose, and silky red hair wearing a form-fitting coral plain waistcoat, black reinforced leggings and brown woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_warlock\out-20240218-173112.png' target='_blank'>
+                        <img src='male_halfling_warlock\out-20240218-173112.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-38")'>Details</button>
+                    <div class='details' id='details-38'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered attractive male D&D Halfling warlock  with piercing amber eyes, a tempting  mouth,  a straight nose, and silky red hair wearing a form-fitting coral plain waistcoat, black reinforced leggings and brown woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_warlock\out-20240218-173136.png' target='_blank'>
+                        <img src='male_halfling_warlock\out-20240218-173136.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-39")'>Details</button>
+                    <div class='details' id='details-39'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered attractive male D&D Halfling warlock  with piercing amber eyes, a tempting  mouth,  a straight nose, and silky red hair wearing a form-fitting coral plain waistcoat, black reinforced leggings and brown woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_warlock\out-20240218-173202.png' target='_blank'>
+                        <img src='male_halfling_warlock\out-20240218-173202.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-40")'>Details</button>
+                    <div class='details' id='details-40'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered attractive male D&D Halfling warlock  with piercing amber eyes, a tempting  mouth,  a straight nose, and silky red hair wearing a form-fitting coral plain waistcoat, black reinforced leggings and brown woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_warlock\out-20240218-173226.png' target='_blank'>
+                        <img src='male_halfling_warlock\out-20240218-173226.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-41")'>Details</button>
+                    <div class='details' id='details-41'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered attractive male D&D Halfling warlock  with piercing amber eyes, a tempting  mouth,  a straight nose, and silky red hair wearing a form-fitting coral plain waistcoat, black reinforced leggings and brown woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_warlock\out-20240218-173251.png' target='_blank'>
+                        <img src='male_halfling_warlock\out-20240218-173251.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-42")'>Details</button>
+                    <div class='details' id='details-42'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered attractive male D&D Halfling warlock  with piercing amber eyes, a tempting  mouth,  a straight nose, and silky red hair wearing a form-fitting coral plain waistcoat, black reinforced leggings and brown woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_warlock\out-20240218-173314.png' target='_blank'>
+                        <img src='male_halfling_warlock\out-20240218-173314.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-43")'>Details</button>
+                    <div class='details' id='details-43'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered attractive male D&D Halfling warlock  with piercing amber eyes, a tempting  mouth,  a straight nose, and silky red hair wearing a form-fitting coral plain waistcoat, black reinforced leggings and brown woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_warlock\out-20240218-173339.png' target='_blank'>
+                        <img src='male_halfling_warlock\out-20240218-173339.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-44")'>Details</button>
+                    <div class='details' id='details-44'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered attractive male D&D Halfling warlock  with piercing amber eyes, a tempting  mouth,  a straight nose, and silky red hair wearing a form-fitting coral plain waistcoat, black reinforced leggings and brown woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

@@ -1,0 +1,1287 @@
+
+    <html>
+    <head>
+    <title>bard Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>bard</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'gnome')">Gnome</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bard\out-20240219-063608.png' target='_blank'>
+                        <img src='female_elf_bard\out-20240219-063608.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 57746</p>
+                        <p>Prompt:  attractive female Lord of The Rings Elf Barde  with haunting amber eyes, a pouty  mouth,  a dainty nose, and curly auburn hair wearing a loose-fitting black wollen waistcoat, matching black shimmering leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bard\out-20240219-063633.png' target='_blank'>
+                        <img src='female_elf_bard\out-20240219-063633.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 1148</p>
+                        <p>Prompt:  attractive female Lord of The Rings Elf Barde  with haunting amber eyes, a pouty  mouth,  a dainty nose, and curly auburn hair wearing a loose-fitting black wollen waistcoat, matching black shimmering leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bard\out-20240219-063657.png' target='_blank'>
+                        <img src='female_elf_bard\out-20240219-063657.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 19505</p>
+                        <p>Prompt:  attractive female Lord of The Rings Elf Barde  with haunting amber eyes, a pouty  mouth,  a dainty nose, and curly auburn hair wearing a loose-fitting black wollen waistcoat, matching black shimmering leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bard\out-20240219-063721.png' target='_blank'>
+                        <img src='female_elf_bard\out-20240219-063721.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 39872</p>
+                        <p>Prompt:  attractive female Lord of The Rings Elf Barde  with haunting amber eyes, a pouty  mouth,  a dainty nose, and curly auburn hair wearing a loose-fitting black wollen waistcoat, matching black shimmering leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bard\out-20240220-163943.png' target='_blank'>
+                        <img src='female_elf_bard\out-20240220-163943.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 64581</p>
+                        <p>Prompt: slender charming female Lord of The Rings Elf bard  with bewitching grey eyes, an irresistable  mouth,  a bulbous nose, and shiny auburn hair wearing a tapered coral ornate waistcoat, black rumpled leggings and brown sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bard\out-20240220-164122.png' target='_blank'>
+                        <img src='female_elf_bard\out-20240220-164122.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 63488</p>
+                        <p>Prompt: slender charming female Lord of The Rings Elf bard  with bewitching grey eyes, an irresistable  mouth,  a bulbous nose, and shiny auburn hair wearing a tapered coral ornate waistcoat, black rumpled leggings and brown sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_bard\out-20240221-172804.png' target='_blank'>
+                        <img src='female_elf_bard\out-20240221-172804.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 34291</p>
+                        <p>Prompt: broad-shouldered plain looking female Lord of The Rings Elf Barde  with enigmatic hazel eyes, an enchanting  mouth,  a hawklike nose, and frizzy platinum hair wearing a snug coral embroidered waistcoat, white shimmering leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_bard\out-20240219-185641.png' target='_blank'>
+                        <img src='male_elf_bard\out-20240219-185641.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 13653</p>
+                        <p>Prompt: sturdy charming male Lord of The Rings Elf Barde  with haunting green eyes, an enchanting  mouth,  a crooked nose, and wavy black hair wearing a tight-fitting red embroidered waistcoat, black sturdy leggings and matching red fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_bard\out-20240219-185702.png' target='_blank'>
+                        <img src='male_elf_bard\out-20240219-185702.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 13900</p>
+                        <p>Prompt: sturdy charming male Lord of The Rings Elf Barde  with haunting green eyes, an enchanting  mouth,  a crooked nose, and wavy black hair wearing a tight-fitting red embroidered waistcoat, black sturdy leggings and matching red fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_bard\out-20240219-185722.png' target='_blank'>
+                        <img src='male_elf_bard\out-20240219-185722.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 43410</p>
+                        <p>Prompt: sturdy charming male Lord of The Rings Elf Barde  with haunting green eyes, an enchanting  mouth,  a crooked nose, and wavy black hair wearing a tight-fitting red embroidered waistcoat, black sturdy leggings and matching red fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_bard\out-20240219-185742.png' target='_blank'>
+                        <img src='male_elf_bard\out-20240219-185742.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 62713</p>
+                        <p>Prompt: sturdy charming male Lord of The Rings Elf Barde  with haunting green eyes, an enchanting  mouth,  a crooked nose, and wavy black hair wearing a tight-fitting red embroidered waistcoat, black sturdy leggings and matching red fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_bard\out-20240220-083116.png' target='_blank'>
+                        <img src='male_elf_bard\out-20240220-083116.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 15089</p>
+                        <p>Prompt: slender attractive male Lord of The Rings Elf Barde  with transfixing turquoise eyes, a pouty  mouth,  a snub nose, and coarse chestnut hair wearing a tapered black plain waistcoat, grey ragged woolen leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_bard\out-20240221-133543.png' target='_blank'>
+                        <img src='male_elf_bard\out-20240221-133543.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 60458</p>
+                        <p>Prompt: gangly ugly male Lord of The Rings Elf Barde  with alluring turquoise eyes, a delicate  mouth,  a straight nose, and thick blonde hair wearing a snug white simple waistcoat, matching white lightweight leggings and white fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_bard\out-20240221-161109.png' target='_blank'>
+                        <img src='female_gnome_bard\out-20240221-161109.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 34653</p>
+                        <p>Prompt: petite average looking female gnome Barde  with dreamy hazel eyes, a luscious  mouth,  a broad nose, and wavy sandy hair wearing a loose-fitting black embroidered waistcoat, grey lightweight leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_bard\out-20240220-174108.png' target='_blank'>
+                        <img src='male_gnome_bard\out-20240220-174108.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 47773</p>
+                        <p>Prompt: sturdy ordinary looking male gnome bard  with electric violet eyes, a eloquent  mouth,  a regal nose, and silky ashen hair wearing a form-fitting white wollen waistcoat, matching white close-fitting leggings and white buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_bard\out-20240220-174224.png' target='_blank'>
+                        <img src='male_gnome_bard\out-20240220-174224.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: 57018</p>
+                        <p>Prompt: sturdy ordinary looking male gnome bard  with electric violet eyes, a eloquent  mouth,  a regal nose, and silky ashen hair wearing a form-fitting white wollen waistcoat, matching white close-fitting leggings and white buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_bard\out-20240219-090514.png' target='_blank'>
+                        <img src='female_halfling_bard\out-20240219-090514.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: 34566</p>
+                        <p>Prompt: slender ugly female D&D Halfling bard  with transfixing turquoise eyes, a eloquent  mouth,  a angular nose, and thick red hair wearing a tapered blue velvet-lined waistcoat, black war-torn leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_bard\out-20240219-090538.png' target='_blank'>
+                        <img src='female_halfling_bard\out-20240219-090538.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-17")'>Details</button>
+                    <div class='details' id='details-17'>
+                        <p>Seed: 63937</p>
+                        <p>Prompt: slender ugly female D&D Halfling bard  with transfixing turquoise eyes, a eloquent  mouth,  a angular nose, and thick red hair wearing a tapered blue velvet-lined waistcoat, black war-torn leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_bard\out-20240219-090601.png' target='_blank'>
+                        <img src='female_halfling_bard\out-20240219-090601.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-18")'>Details</button>
+                    <div class='details' id='details-18'>
+                        <p>Seed: 55442</p>
+                        <p>Prompt: slender ugly female D&D Halfling bard  with transfixing turquoise eyes, a eloquent  mouth,  a angular nose, and thick red hair wearing a tapered blue velvet-lined waistcoat, black war-torn leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_bard\out-20240219-090624.png' target='_blank'>
+                        <img src='female_halfling_bard\out-20240219-090624.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-19")'>Details</button>
+                    <div class='details' id='details-19'>
+                        <p>Seed: 28650</p>
+                        <p>Prompt: slender ugly female D&D Halfling bard  with transfixing turquoise eyes, a eloquent  mouth,  a angular nose, and thick red hair wearing a tapered blue velvet-lined waistcoat, black war-torn leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_bard\out-20240218-163003.png' target='_blank'>
+                        <img src='female_human_bard\out-20240218-163003.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-20")'>Details</button>
+                    <div class='details' id='details-20'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered ordinary looking female human bard  with transfixing green eyes, an irresistable  mouth,  a prominent nose, and glossy platinum hair wearing a loose-fitting green velvet-lined waistcoat, white war-torn leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_bard\out-20240218-163035.png' target='_blank'>
+                        <img src='female_human_bard\out-20240218-163035.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-21")'>Details</button>
+                    <div class='details' id='details-21'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered ordinary looking female human bard  with transfixing green eyes, an irresistable  mouth,  a prominent nose, and glossy platinum hair wearing a loose-fitting green velvet-lined waistcoat, white war-torn leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_bard\out-20240218-163106.png' target='_blank'>
+                        <img src='female_human_bard\out-20240218-163106.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-22")'>Details</button>
+                    <div class='details' id='details-22'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered ordinary looking female human bard  with transfixing green eyes, an irresistable  mouth,  a prominent nose, and glossy platinum hair wearing a loose-fitting green velvet-lined waistcoat, white war-torn leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_bard\out-20240218-163138.png' target='_blank'>
+                        <img src='female_human_bard\out-20240218-163138.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-23")'>Details</button>
+                    <div class='details' id='details-23'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered ordinary looking female human bard  with transfixing green eyes, an irresistable  mouth,  a prominent nose, and glossy platinum hair wearing a loose-fitting green velvet-lined waistcoat, white war-torn leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_bard\out-20240218-164847.png' target='_blank'>
+                        <img src='female_human_bard\out-20240218-164847.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-24")'>Details</button>
+                    <div class='details' id='details-24'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy charming female human bard  with bewitching emerald eyes, a captivating  mouth,  a button nose, and thick sandy hair wearing a loose-fitting red embroidered waistcoat, black close-fitting leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_bard\out-20240218-164914.png' target='_blank'>
+                        <img src='female_human_bard\out-20240218-164914.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-25")'>Details</button>
+                    <div class='details' id='details-25'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy charming female human bard  with bewitching emerald eyes, a captivating  mouth,  a button nose, and thick sandy hair wearing a loose-fitting red embroidered waistcoat, black close-fitting leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_bard\out-20240218-164941.png' target='_blank'>
+                        <img src='female_human_bard\out-20240218-164941.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-26")'>Details</button>
+                    <div class='details' id='details-26'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy charming female human bard  with bewitching emerald eyes, a captivating  mouth,  a button nose, and thick sandy hair wearing a loose-fitting red embroidered waistcoat, black close-fitting leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_bard\out-20240218-165007.png' target='_blank'>
+                        <img src='female_human_bard\out-20240218-165007.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-27")'>Details</button>
+                    <div class='details' id='details-27'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy charming female human bard  with bewitching emerald eyes, a captivating  mouth,  a button nose, and thick sandy hair wearing a loose-fitting red embroidered waistcoat, black close-fitting leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_bard\out-20240218-165035.png' target='_blank'>
+                        <img src='female_human_bard\out-20240218-165035.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-28")'>Details</button>
+                    <div class='details' id='details-28'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering ugly female human bard  with expressive brown eyes, a delicate  mouth,  a thin nose, and wavy ashen hair wearing a form-fitting black embroidered waistcoat, matching black shimmering leggings and brown velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_bard\out-20240218-165103.png' target='_blank'>
+                        <img src='female_human_bard\out-20240218-165103.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-29")'>Details</button>
+                    <div class='details' id='details-29'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering ugly female human bard  with expressive brown eyes, a delicate  mouth,  a thin nose, and wavy ashen hair wearing a form-fitting black embroidered waistcoat, matching black shimmering leggings and brown velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_bard\out-20240218-165130.png' target='_blank'>
+                        <img src='female_human_bard\out-20240218-165130.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-30")'>Details</button>
+                    <div class='details' id='details-30'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering ugly female human bard  with expressive brown eyes, a delicate  mouth,  a thin nose, and wavy ashen hair wearing a form-fitting black embroidered waistcoat, matching black shimmering leggings and brown velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_bard\out-20240218-165157.png' target='_blank'>
+                        <img src='female_human_bard\out-20240218-165157.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-31")'>Details</button>
+                    <div class='details' id='details-31'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering ugly female human bard  with expressive brown eyes, a delicate  mouth,  a thin nose, and wavy ashen hair wearing a form-fitting black embroidered waistcoat, matching black shimmering leggings and brown velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_bard\out-20240218-161038.png' target='_blank'>
+                        <img src='male_human_bard\out-20240218-161038.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-32")'>Details</button>
+                    <div class='details' id='details-32'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: gangly extrodanarily attractive male human bard  with electric emerald eyes, a plump  mouth,  a bulbous nose, and curly silver hair wearing a comfortable red plain waistcoat, black finely made leggings and matching red felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_bard\out-20240218-161149.png' target='_blank'>
+                        <img src='male_human_bard\out-20240218-161149.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-33")'>Details</button>
+                    <div class='details' id='details-33'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: gangly extrodanarily attractive male human bard  with electric emerald eyes, a plump  mouth,  a bulbous nose, and curly silver hair wearing a comfortable red plain waistcoat, black finely made leggings and matching red felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_bard\out-20240218-163946.png' target='_blank'>
+                        <img src='male_human_bard\out-20240218-163946.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-34")'>Details</button>
+                    <div class='details' id='details-34'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered attractive male human bard  with mesmerizing grey eyes, a seductive  mouth,  a dainty nose, and frizzy blonde hair wearing a tight-fitting red very elegant waistcoat, black reinforced leggings and matching red scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_bard\out-20240218-164017.png' target='_blank'>
+                        <img src='male_human_bard\out-20240218-164017.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-35")'>Details</button>
+                    <div class='details' id='details-35'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered attractive male human bard  with mesmerizing grey eyes, a seductive  mouth,  a dainty nose, and frizzy blonde hair wearing a tight-fitting red very elegant waistcoat, black reinforced leggings and matching red scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_bard\out-20240218-164116.png' target='_blank'>
+                        <img src='male_human_bard\out-20240218-164116.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-36")'>Details</button>
+                    <div class='details' id='details-36'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ugly male human bard  with radiant brown eyes, a plump  mouth,  a prominent nose, and shiny strawberry blonde hair wearing a comfortable coral velvet-lined waistcoat, white ragged woolen leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_bard\out-20240218-164220.png' target='_blank'>
+                        <img src='male_human_bard\out-20240218-164220.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-37")'>Details</button>
+                    <div class='details' id='details-37'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ugly male human bard  with radiant brown eyes, a plump  mouth,  a prominent nose, and shiny strawberry blonde hair wearing a comfortable coral velvet-lined waistcoat, white ragged woolen leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_bard\out-20240219-034432.png' target='_blank'>
+                        <img src='male_human_bard\out-20240219-034432.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-38")'>Details</button>
+                    <div class='details' id='details-38'>
+                        <p>Seed: 3194</p>
+                        <p>Prompt: sturdy charming male human bard  with expressive amber eyes, a eloquent  mouth,  a angular nose, and coarse strawberry blonde hair wearing a tailored blue plain waistcoat, black war-torn leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_bard\out-20240219-034454.png' target='_blank'>
+                        <img src='male_human_bard\out-20240219-034454.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-39")'>Details</button>
+                    <div class='details' id='details-39'>
+                        <p>Seed: 29158</p>
+                        <p>Prompt: sturdy charming male human bard  with expressive amber eyes, a eloquent  mouth,  a angular nose, and coarse strawberry blonde hair wearing a tailored blue plain waistcoat, black war-torn leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_bard\out-20240219-034515.png' target='_blank'>
+                        <img src='male_human_bard\out-20240219-034515.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-40")'>Details</button>
+                    <div class='details' id='details-40'>
+                        <p>Seed: 50568</p>
+                        <p>Prompt: sturdy charming male human bard  with expressive amber eyes, a eloquent  mouth,  a angular nose, and coarse strawberry blonde hair wearing a tailored blue plain waistcoat, black war-torn leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_bard\out-20240219-034537.png' target='_blank'>
+                        <img src='male_human_bard\out-20240219-034537.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-41")'>Details</button>
+                    <div class='details' id='details-41'>
+                        <p>Seed: 49358</p>
+                        <p>Prompt: sturdy charming male human bard  with expressive amber eyes, a eloquent  mouth,  a angular nose, and coarse strawberry blonde hair wearing a tailored blue plain waistcoat, black war-torn leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_bard\out-20240220-145757.png' target='_blank'>
+                        <img src='male_human_bard\out-20240220-145757.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-42")'>Details</button>
+                    <div class='details' id='details-42'>
+                        <p>Seed: 7477</p>
+                        <p>Prompt: towering ugly male human bard  with piercing turquoise eyes, a captivating  mouth,  a chisiled nose, and thick sandy hair wearing a loose-fitting black embroidered waistcoat, grey close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_bard\out-20240220-145934.png' target='_blank'>
+                        <img src='male_human_bard\out-20240220-145934.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-43")'>Details</button>
+                    <div class='details' id='details-43'>
+                        <p>Seed: 39423</p>
+                        <p>Prompt: towering ugly male human bard  with piercing turquoise eyes, a captivating  mouth,  a chisiled nose, and thick sandy hair wearing a loose-fitting black embroidered waistcoat, grey close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi female'>
+                    <div class='additional-info'>Female, Tabaxi</div>
+                    <a href='female_tabaxi_bard\out-20240218-141529.png' target='_blank'>
+                        <img src='female_tabaxi_bard\out-20240218-141529.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-44")'>Details</button>
+                    <div class='details' id='details-44'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: gangly plain looking female tabaxi fluffy humanoid catlike person covered in fur bard  with dreamy hazel eyes, a eloquent  mouth,  a angular nose, and curly chestnut hair wearing a comfortable black finely-tailored waistcoat, white finely made leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi female'>
+                    <div class='additional-info'>Female, Tabaxi</div>
+                    <a href='female_tabaxi_bard\out-20240219-041437.png' target='_blank'>
+                        <img src='female_tabaxi_bard\out-20240219-041437.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-45")'>Details</button>
+                    <div class='details' id='details-45'>
+                        <p>Seed: 62330</p>
+                        <p>Prompt: petite charming female tabaxi fluffy humanoid catlike person covered in fur bard  with intense brown eyes, a delicate  mouth,  a bulbous nose, and glossy red hair wearing a comfortable grey embroidered waistcoat, black finely made leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi female'>
+                    <div class='additional-info'>Female, Tabaxi</div>
+                    <a href='female_tabaxi_bard\out-20240219-041459.png' target='_blank'>
+                        <img src='female_tabaxi_bard\out-20240219-041459.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-46")'>Details</button>
+                    <div class='details' id='details-46'>
+                        <p>Seed: 17424</p>
+                        <p>Prompt: petite charming female tabaxi fluffy humanoid catlike person covered in fur bard  with intense brown eyes, a delicate  mouth,  a bulbous nose, and glossy red hair wearing a comfortable grey embroidered waistcoat, black finely made leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_bard\out-20240218-132418.png' target='_blank'>
+                        <img src='male_tabaxi_bard\out-20240218-132418.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-47")'>Details</button>
+                    <div class='details' id='details-47'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt:  plain looking male tabaxi fluffy humanoid catlike person covered in fur bard  with alluring turquoise eyes, an alluring  mouth,  a button nose, and thick ashen hair wearing a comfortable black embroidered waistcoat, matching black rumpled leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_bard\out-20240218-132447.png' target='_blank'>
+                        <img src='male_tabaxi_bard\out-20240218-132447.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-48")'>Details</button>
+                    <div class='details' id='details-48'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt:  plain looking male tabaxi fluffy humanoid catlike person covered in fur bard  with alluring turquoise eyes, an alluring  mouth,  a button nose, and thick ashen hair wearing a comfortable black embroidered waistcoat, matching black rumpled leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_bard\out-20240218-135054.png' target='_blank'>
+                        <img src='male_tabaxi_bard\out-20240218-135054.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-49")'>Details</button>
+                    <div class='details' id='details-49'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ugly male tabaxi fluffy humanoid catlike person covered in fur bard  with mysterious lavender eyes, a eloquent  mouth,  a snub nose, and coarse chestnut hair wearing a tailored black plain waistcoat, matching black close-fitting leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_bard\out-20240218-135121.png' target='_blank'>
+                        <img src='male_tabaxi_bard\out-20240218-135121.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-50")'>Details</button>
+                    <div class='details' id='details-50'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ugly male tabaxi fluffy humanoid catlike person covered in fur bard  with mysterious lavender eyes, a eloquent  mouth,  a snub nose, and coarse chestnut hair wearing a tailored black plain waistcoat, matching black close-fitting leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_bard\out-20240218-135148.png' target='_blank'>
+                        <img src='male_tabaxi_bard\out-20240218-135148.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-51")'>Details</button>
+                    <div class='details' id='details-51'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ugly male tabaxi fluffy humanoid catlike person covered in fur bard  with mysterious lavender eyes, a eloquent  mouth,  a snub nose, and coarse chestnut hair wearing a tailored black plain waistcoat, matching black close-fitting leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_bard\out-20240218-141917.png' target='_blank'>
+                        <img src='male_tabaxi_bard\out-20240218-141917.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-52")'>Details</button>
+                    <div class='details' id='details-52'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: slender plain looking male tabaxi fluffy humanoid catlike person covered in fur bard  with electric grey eyes, a delicate  mouth,  a petite nose, and silky auburn hair wearing a tight-fitting blue finely-tailored waistcoat, matching blue shimmering leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_bard\out-20240218-142511.png' target='_blank'>
+                        <img src='male_tabaxi_bard\out-20240218-142511.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-53")'>Details</button>
+                    <div class='details' id='details-53'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: gangly extrodanarily attractive male tabaxi fluffy humanoid catlike person covered in fur bard  with dreamy hazel eyes, a luscious  mouth,  a chisiled nose, and glossy strawberry blonde hair wearing a comfortable green simple waistcoat, white war-torn leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_bard\out-20240218-144037.png' target='_blank'>
+                        <img src='male_tabaxi_bard\out-20240218-144037.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-54")'>Details</button>
+                    <div class='details' id='details-54'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt:  ugly male tabaxi fluffy humanoid catlike person covered in fur bard  with dreamy emerald eyes, a tempting  mouth,  a delicate nose, and coarse golden hair wearing a comfortable white simple waistcoat, matching white sturdy leggings and white woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_bard\out-20240218-155343.png' target='_blank'>
+                        <img src='male_tabaxi_bard\out-20240218-155343.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-55")'>Details</button>
+                    <div class='details' id='details-55'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: slender ugly male tabaxi fluffy humanoid catlike person covered in fur bard  with intense turquoise eyes, a delicate  mouth,  a snub nose, and silky chestnut hair wearing a loose-fitting coral plain waistcoat, white sturdy leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_bard\out-20240218-155609.png' target='_blank'>
+                        <img src='male_tabaxi_bard\out-20240218-155609.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-56")'>Details</button>
+                    <div class='details' id='details-56'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering ordinary looking male tabaxi fluffy humanoid catlike person covered in fur bard  with expressive violet eyes, a captivating  mouth,  a dainty nose, and silky chestnut hair wearing a loose-fitting grey ornate waistcoat, black lightweight leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_bard\out-20240218-155646.png' target='_blank'>
+                        <img src='male_tabaxi_bard\out-20240218-155646.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-57")'>Details</button>
+                    <div class='details' id='details-57'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering ordinary looking male tabaxi fluffy humanoid catlike person covered in fur bard  with expressive violet eyes, a captivating  mouth,  a dainty nose, and silky chestnut hair wearing a loose-fitting grey ornate waistcoat, black lightweight leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_bard\out-20240218-155725.png' target='_blank'>
+                        <img src='male_tabaxi_bard\out-20240218-155725.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-58")'>Details</button>
+                    <div class='details' id='details-58'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering ordinary looking male tabaxi fluffy humanoid catlike person covered in fur bard  with expressive violet eyes, a captivating  mouth,  a dainty nose, and silky chestnut hair wearing a loose-fitting grey ornate waistcoat, black lightweight leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_bard\out-20240218-224541.png' target='_blank'>
+                        <img src='male_tabaxi_bard\out-20240218-224541.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-59")'>Details</button>
+                    <div class='details' id='details-59'>
+                        <p>Seed: 44734</p>
+                        <p>Prompt: petite ugly male tabaxi fluffy humanoid catlike person covered in fur Barde  with dreamy emerald eyes, an enchanting  mouth,  a crooked nose, and curly silver hair wearing a comfortable blue finely-tailored waistcoat, matching blue close-fitting leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_bard\out-20240218-121510.png' target='_blank'>
+                        <img src='male_dwarf_bard\out-20240218-121510.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-60")'>Details</button>
+                    <div class='details' id='details-60'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ordinary looking male Lord of The Rings Dwarf bard  with enigmatic emerald eyes, a tempting  mouth,  a delicate nose, and frizzy strawberry blonde hair wearing a comfortable black plain waistcoat, matching black sturdy leggings and brown fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_bard\out-20240218-121534.png' target='_blank'>
+                        <img src='male_dwarf_bard\out-20240218-121534.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-61")'>Details</button>
+                    <div class='details' id='details-61'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ordinary looking male Lord of The Rings Dwarf bard  with enigmatic emerald eyes, a tempting  mouth,  a delicate nose, and frizzy strawberry blonde hair wearing a comfortable black plain waistcoat, matching black sturdy leggings and brown fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_bard\out-20240218-121558.png' target='_blank'>
+                        <img src='male_dwarf_bard\out-20240218-121558.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-62")'>Details</button>
+                    <div class='details' id='details-62'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ordinary looking male Lord of The Rings Dwarf bard  with enigmatic emerald eyes, a tempting  mouth,  a delicate nose, and frizzy strawberry blonde hair wearing a comfortable black plain waistcoat, matching black sturdy leggings and brown fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_bard\out-20240218-121647.png' target='_blank'>
+                        <img src='male_dwarf_bard\out-20240218-121647.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-63")'>Details</button>
+                    <div class='details' id='details-63'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: N/A</p>
+                        <p>Model: N/A</p>
+                        <p>Width: N/Apx</p>
+                        <p>Height: N/Apx</p>
+                        <p>Steps: N/A</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_bard\out-20240218-121711.png' target='_blank'>
+                        <img src='male_dwarf_bard\out-20240218-121711.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-64")'>Details</button>
+                    <div class='details' id='details-64'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ordinary looking male Lord of The Rings Dwarf bard  with enigmatic emerald eyes, a tempting  mouth,  a delicate nose, and frizzy strawberry blonde hair wearing a comfortable black plain waistcoat, matching black sturdy leggings and brown fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_bard\out-20240218-121735.png' target='_blank'>
+                        <img src='male_dwarf_bard\out-20240218-121735.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-65")'>Details</button>
+                    <div class='details' id='details-65'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ordinary looking male Lord of The Rings Dwarf bard  with enigmatic emerald eyes, a tempting  mouth,  a delicate nose, and frizzy strawberry blonde hair wearing a comfortable black plain waistcoat, matching black sturdy leggings and brown fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_bard\out-20240218-121759.png' target='_blank'>
+                        <img src='male_dwarf_bard\out-20240218-121759.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-66")'>Details</button>
+                    <div class='details' id='details-66'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ordinary looking male Lord of The Rings Dwarf bard  with enigmatic emerald eyes, a tempting  mouth,  a delicate nose, and frizzy strawberry blonde hair wearing a comfortable black plain waistcoat, matching black sturdy leggings and brown fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_bard\out-20240218-121824.png' target='_blank'>
+                        <img src='male_dwarf_bard\out-20240218-121824.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-67")'>Details</button>
+                    <div class='details' id='details-67'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ordinary looking male Lord of The Rings Dwarf bard  with enigmatic emerald eyes, a tempting  mouth,  a delicate nose, and frizzy strawberry blonde hair wearing a comfortable black plain waistcoat, matching black sturdy leggings and brown fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_bard\out-20240219-095812.png' target='_blank'>
+                        <img src='male_dwarf_bard\out-20240219-095812.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-68")'>Details</button>
+                    <div class='details' id='details-68'>
+                        <p>Seed: 30835</p>
+                        <p>Prompt: broad-shouldered charming male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. bard  with haunting amber eyes, an enchanting  mouth,  a prominent nose, and glossy ashen hair wearing a tight-fitting grey very elegant waistcoat, black ragged woolen leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_bard\out-20240219-095839.png' target='_blank'>
+                        <img src='male_dwarf_bard\out-20240219-095839.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-69")'>Details</button>
+                    <div class='details' id='details-69'>
+                        <p>Seed: 47313</p>
+                        <p>Prompt: broad-shouldered charming male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. bard  with haunting amber eyes, an enchanting  mouth,  a prominent nose, and glossy ashen hair wearing a tight-fitting grey very elegant waistcoat, black ragged woolen leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_bard\out-20240219-095903.png' target='_blank'>
+                        <img src='male_dwarf_bard\out-20240219-095903.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-70")'>Details</button>
+                    <div class='details' id='details-70'>
+                        <p>Seed: 25680</p>
+                        <p>Prompt: broad-shouldered charming male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. bard  with haunting amber eyes, an enchanting  mouth,  a prominent nose, and glossy ashen hair wearing a tight-fitting grey very elegant waistcoat, black ragged woolen leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_bard\out-20240219-095926.png' target='_blank'>
+                        <img src='male_dwarf_bard\out-20240219-095926.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-71")'>Details</button>
+                    <div class='details' id='details-71'>
+                        <p>Seed: 61915</p>
+                        <p>Prompt: broad-shouldered charming male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. bard  with haunting amber eyes, an enchanting  mouth,  a prominent nose, and glossy ashen hair wearing a tight-fitting grey very elegant waistcoat, black ragged woolen leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_bard\out-20240219-201450.png' target='_blank'>
+                        <img src='male_dwarf_bard\out-20240219-201450.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-72")'>Details</button>
+                    <div class='details' id='details-72'>
+                        <p>Seed: 16699</p>
+                        <p>Prompt: sturdy ugly male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. bard  with sparkling grey eyes, a plump  mouth,  a broad nose, and thick black hair wearing a snug white velvet-lined waistcoat, matching white ragged woolen leggings and white velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_bard\out-20240219-201511.png' target='_blank'>
+                        <img src='male_dwarf_bard\out-20240219-201511.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-73")'>Details</button>
+                    <div class='details' id='details-73'>
+                        <p>Seed: 54249</p>
+                        <p>Prompt: sturdy ugly male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. bard  with sparkling grey eyes, a plump  mouth,  a broad nose, and thick black hair wearing a snug white velvet-lined waistcoat, matching white ragged woolen leggings and white velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_bard\out-20240219-201533.png' target='_blank'>
+                        <img src='male_dwarf_bard\out-20240219-201533.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-74")'>Details</button>
+                    <div class='details' id='details-74'>
+                        <p>Seed: 40189</p>
+                        <p>Prompt: sturdy ugly male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. bard  with sparkling grey eyes, a plump  mouth,  a broad nose, and thick black hair wearing a snug white velvet-lined waistcoat, matching white ragged woolen leggings and white velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_bard\out-20240219-201553.png' target='_blank'>
+                        <img src='male_dwarf_bard\out-20240219-201553.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-75")'>Details</button>
+                    <div class='details' id='details-75'>
+                        <p>Seed: 58497</p>
+                        <p>Prompt: sturdy ugly male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. bard  with sparkling grey eyes, a plump  mouth,  a broad nose, and thick black hair wearing a snug white velvet-lined waistcoat, matching white ragged woolen leggings and white velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

@@ -1,0 +1,407 @@
+
+    <html>
+    <head>
+    <title>Woodcarver Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>Woodcarver</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Woodcarver\out-20240220-151427.png' target='_blank'>
+                        <img src='female_halfling_Woodcarver\out-20240220-151427.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 5709</p>
+                        <p>Prompt: gangly extrodanarily attractive female D&D Halfling Woodcarver  with haunting violet eyes, an irresistable  mouth,  a delicate nose, and straight  hair wearing a tapered black simple waistcoat, grey sturdy leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Woodcarver\out-20240220-151617.png' target='_blank'>
+                        <img src='female_halfling_Woodcarver\out-20240220-151617.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 38723</p>
+                        <p>Prompt: gangly extrodanarily attractive female D&D Halfling Woodcarver  with haunting violet eyes, an irresistable  mouth,  a delicate nose, and straight  hair wearing a tapered black simple waistcoat, grey sturdy leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_Woodcarver\out-20240219-030847.png' target='_blank'>
+                        <img src='male_halfling_Woodcarver\out-20240219-030847.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 33695</p>
+                        <p>Prompt: broad-shouldered charming male D&D Halfling Woodcarver  with intense brown eyes, a plump  mouth,  a regal nose, and frizzy strawberry blonde hair wearing a loose-fitting black wollen waistcoat, white war-torn leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_Woodcarver\out-20240219-030908.png' target='_blank'>
+                        <img src='male_halfling_Woodcarver\out-20240219-030908.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 58542</p>
+                        <p>Prompt: broad-shouldered charming male D&D Halfling Woodcarver  with intense brown eyes, a plump  mouth,  a regal nose, and frizzy strawberry blonde hair wearing a loose-fitting black wollen waistcoat, white war-torn leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_Woodcarver\out-20240219-030930.png' target='_blank'>
+                        <img src='male_halfling_Woodcarver\out-20240219-030930.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 28073</p>
+                        <p>Prompt: broad-shouldered charming male D&D Halfling Woodcarver  with intense brown eyes, a plump  mouth,  a regal nose, and frizzy strawberry blonde hair wearing a loose-fitting black wollen waistcoat, white war-torn leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_Woodcarver\out-20240219-030952.png' target='_blank'>
+                        <img src='male_halfling_Woodcarver\out-20240219-030952.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 20767</p>
+                        <p>Prompt: broad-shouldered charming male D&D Halfling Woodcarver  with intense brown eyes, a plump  mouth,  a regal nose, and frizzy strawberry blonde hair wearing a loose-fitting black wollen waistcoat, white war-torn leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Woodcarver\out-20240220-230635.png' target='_blank'>
+                        <img src='female_human_Woodcarver\out-20240220-230635.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 47214</p>
+                        <p>Prompt: petite plain looking female human Woodcarver  with alluring violet eyes, a captivating  mouth,  a petite nose, and frizzy sandy hair wearing a form-fitting blue embroidered waistcoat, matching blue ragged woolen leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_Woodcarver\out-20240221-092805.png' target='_blank'>
+                        <img src='male_human_Woodcarver\out-20240221-092805.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 7166</p>
+                        <p>Prompt: sturdy extrodanarily attractive male human Woodcarver  with mesmerizing amber eyes, a eloquent  mouth,  a delicate nose, and wavy ashen hair wearing a tapered coral finely-tailored waistcoat, black close-fitting leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_Woodcarver\out-20240221-131645.png' target='_blank'>
+                        <img src='male_human_Woodcarver\out-20240221-131645.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 19810</p>
+                        <p>Prompt: broad-shouldered ordinary looking male human Woodcarver  with intense amber eyes, an enchanting  mouth,  a angular nose, and shiny chestnut hair wearing a snug coral simple waistcoat, white reinforced leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Woodcarver\out-20240219-002601.png' target='_blank'>
+                        <img src='male_dwarf_Woodcarver\out-20240219-002601.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 38756</p>
+                        <p>Prompt: gangly charming male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Woodcarver  with bewitching hazel eyes, a delicate  mouth,  a thin nose, and shiny ashen hair wearing a tailored coral finely-tailored waistcoat, black reinforced leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Woodcarver\out-20240219-002634.png' target='_blank'>
+                        <img src='male_dwarf_Woodcarver\out-20240219-002634.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 30746</p>
+                        <p>Prompt: gangly charming male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Woodcarver  with bewitching hazel eyes, a delicate  mouth,  a thin nose, and shiny ashen hair wearing a tailored coral finely-tailored waistcoat, black reinforced leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Woodcarver\out-20240219-002704.png' target='_blank'>
+                        <img src='male_dwarf_Woodcarver\out-20240219-002704.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 63689</p>
+                        <p>Prompt: gangly charming male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Woodcarver  with bewitching hazel eyes, a delicate  mouth,  a thin nose, and shiny ashen hair wearing a tailored coral finely-tailored waistcoat, black reinforced leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Woodcarver\out-20240219-005257.png' target='_blank'>
+                        <img src='male_dwarf_Woodcarver\out-20240219-005257.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 8128</p>
+                        <p>Prompt:  attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Woodcarver  with radiant hazel eyes, an irresistable  mouth,  a thin nose, and straight red hair wearing a tailored red embroidered waistcoat, black shimmering leggings and matching red buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Woodcarver\out-20240219-005319.png' target='_blank'>
+                        <img src='male_dwarf_Woodcarver\out-20240219-005319.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 40706</p>
+                        <p>Prompt:  attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Woodcarver  with radiant hazel eyes, an irresistable  mouth,  a thin nose, and straight red hair wearing a tailored red embroidered waistcoat, black shimmering leggings and matching red buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Woodcarver\out-20240219-005340.png' target='_blank'>
+                        <img src='male_dwarf_Woodcarver\out-20240219-005340.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 23642</p>
+                        <p>Prompt:  attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Woodcarver  with radiant hazel eyes, an irresistable  mouth,  a thin nose, and straight red hair wearing a tailored red embroidered waistcoat, black shimmering leggings and matching red buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Woodcarver\out-20240219-014032.png' target='_blank'>
+                        <img src='male_elf_Woodcarver\out-20240219-014032.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: 5865</p>
+                        <p>Prompt:  average looking male Lord of The Rings Elf Woodcarver  with alluring grey eyes, an enchanting  mouth,  a chisiled nose, and silky golden hair wearing a loose-fitting white finely-tailored waistcoat, matching white close-fitting leggings and white wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Woodcarver\out-20240219-014054.png' target='_blank'>
+                        <img src='male_elf_Woodcarver\out-20240219-014054.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: 44725</p>
+                        <p>Prompt:  average looking male Lord of The Rings Elf Woodcarver  with alluring grey eyes, an enchanting  mouth,  a chisiled nose, and silky golden hair wearing a loose-fitting white finely-tailored waistcoat, matching white close-fitting leggings and white wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Woodcarver\out-20240219-014116.png' target='_blank'>
+                        <img src='male_elf_Woodcarver\out-20240219-014116.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-17")'>Details</button>
+                    <div class='details' id='details-17'>
+                        <p>Seed: 11733</p>
+                        <p>Prompt:  average looking male Lord of The Rings Elf Woodcarver  with alluring grey eyes, an enchanting  mouth,  a chisiled nose, and silky golden hair wearing a loose-fitting white finely-tailored waistcoat, matching white close-fitting leggings and white wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Woodcarver\out-20240219-014138.png' target='_blank'>
+                        <img src='male_elf_Woodcarver\out-20240219-014138.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-18")'>Details</button>
+                    <div class='details' id='details-18'>
+                        <p>Seed: 15649</p>
+                        <p>Prompt:  average looking male Lord of The Rings Elf Woodcarver  with alluring grey eyes, an enchanting  mouth,  a chisiled nose, and silky golden hair wearing a loose-fitting white finely-tailored waistcoat, matching white close-fitting leggings and white wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Woodcarver\out-20240220-133725.png' target='_blank'>
+                        <img src='male_elf_Woodcarver\out-20240220-133725.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-19")'>Details</button>
+                    <div class='details' id='details-19'>
+                        <p>Seed: 27765</p>
+                        <p>Prompt: gangly charming male Lord of The Rings Elf Woodcarver  with expressive violet eyes, a delicate  mouth,  a straight nose, and straight black hair wearing a form-fitting red finely-tailored waistcoat, black rumpled leggings and matching red sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_Woodcarver\out-20240219-053216.png' target='_blank'>
+                        <img src='male_tabaxi_Woodcarver\out-20240219-053216.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-20")'>Details</button>
+                    <div class='details' id='details-20'>
+                        <p>Seed: 27052</p>
+                        <p>Prompt: broad-shouldered charming male tabaxi fluffy humanoid catlike person covered in fur Woodcarver  with transfixing green eyes, a seductive  mouth,  a straight nose, and coarse sandy hair wearing a tailored green embroidered waistcoat, white lightweight leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

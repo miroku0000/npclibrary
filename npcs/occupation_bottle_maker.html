@@ -1,0 +1,279 @@
+
+    <html>
+    <head>
+    <title>Bottle Maker Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>Bottle Maker</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Bottle Maker\out-20240219-033241.png' target='_blank'>
+                        <img src='female_elf_Bottle Maker\out-20240219-033241.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 64325</p>
+                        <p>Prompt: slender extrodanarily attractive female Lord of The Rings Elf Bottle Maker  with bewitching green eyes, a sensouos  mouth,  a broad nose, and wavy sandy hair wearing a loose-fitting black embroidered waistcoat, matching black reinforced leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Bottle Maker\out-20240219-033303.png' target='_blank'>
+                        <img src='female_elf_Bottle Maker\out-20240219-033303.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 25365</p>
+                        <p>Prompt: slender extrodanarily attractive female Lord of The Rings Elf Bottle Maker  with bewitching green eyes, a sensouos  mouth,  a broad nose, and wavy sandy hair wearing a loose-fitting black embroidered waistcoat, matching black reinforced leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Bottle Maker\out-20240219-033325.png' target='_blank'>
+                        <img src='female_elf_Bottle Maker\out-20240219-033325.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 29351</p>
+                        <p>Prompt: slender extrodanarily attractive female Lord of The Rings Elf Bottle Maker  with bewitching green eyes, a sensouos  mouth,  a broad nose, and wavy sandy hair wearing a loose-fitting black embroidered waistcoat, matching black reinforced leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_Bottle Maker\out-20240219-033347.png' target='_blank'>
+                        <img src='female_elf_Bottle Maker\out-20240219-033347.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 61993</p>
+                        <p>Prompt: slender extrodanarily attractive female Lord of The Rings Elf Bottle Maker  with bewitching green eyes, a sensouos  mouth,  a broad nose, and wavy sandy hair wearing a loose-fitting black embroidered waistcoat, matching black reinforced leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Bottle Maker\out-20240219-051538.png' target='_blank'>
+                        <img src='female_human_Bottle Maker\out-20240219-051538.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 45291</p>
+                        <p>Prompt: slender ugly female human Bottle Maker  with electric brown eyes, a pouty  mouth,  a chisiled nose, and frizzy red hair wearing a snug coral very elegant waistcoat, black shimmering leggings and brown buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Bottle Maker\out-20240219-051559.png' target='_blank'>
+                        <img src='female_human_Bottle Maker\out-20240219-051559.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 52540</p>
+                        <p>Prompt: slender ugly female human Bottle Maker  with electric brown eyes, a pouty  mouth,  a chisiled nose, and frizzy red hair wearing a snug coral very elegant waistcoat, black shimmering leggings and brown buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Bottle Maker\out-20240219-051622.png' target='_blank'>
+                        <img src='female_human_Bottle Maker\out-20240219-051622.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 7894</p>
+                        <p>Prompt: slender ugly female human Bottle Maker  with electric brown eyes, a pouty  mouth,  a chisiled nose, and frizzy red hair wearing a snug coral very elegant waistcoat, black shimmering leggings and brown buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Bottle Maker\out-20240219-051646.png' target='_blank'>
+                        <img src='female_human_Bottle Maker\out-20240219-051646.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 13696</p>
+                        <p>Prompt: slender ugly female human Bottle Maker  with electric brown eyes, a pouty  mouth,  a chisiled nose, and frizzy red hair wearing a snug coral very elegant waistcoat, black shimmering leggings and brown buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Bottle Maker\out-20240221-083831.png' target='_blank'>
+                        <img src='female_human_Bottle Maker\out-20240221-083831.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 51486</p>
+                        <p>Prompt: sturdy average looking female human Bottle Maker  with electric green eyes, a seductive  mouth,  a petite nose, and frizzy chestnut hair wearing a snug black ornate waistcoat, matching black finely made leggings and brown scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Bottle Maker\out-20240219-162108.png' target='_blank'>
+                        <img src='male_dwarf_Bottle Maker\out-20240219-162108.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 43392</p>
+                        <p>Prompt: gangly extrodanarily attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Bottle Maker  with haunting blue eyes, a luscious  mouth,  a petite nose, and shiny sandy hair wearing a tight-fitting turquoise plain waistcoat, black close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Bottle Maker\out-20240219-162250.png' target='_blank'>
+                        <img src='male_dwarf_Bottle Maker\out-20240219-162250.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 60413</p>
+                        <p>Prompt: gangly extrodanarily attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Bottle Maker  with haunting blue eyes, a luscious  mouth,  a petite nose, and shiny sandy hair wearing a tight-fitting turquoise plain waistcoat, black close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Bottle Maker\out-20240219-162431.png' target='_blank'>
+                        <img src='male_dwarf_Bottle Maker\out-20240219-162431.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 50643</p>
+                        <p>Prompt: gangly extrodanarily attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Bottle Maker  with haunting blue eyes, a luscious  mouth,  a petite nose, and shiny sandy hair wearing a tight-fitting turquoise plain waistcoat, black close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Bottle Maker\out-20240219-162611.png' target='_blank'>
+                        <img src='male_dwarf_Bottle Maker\out-20240219-162611.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 55791</p>
+                        <p>Prompt: gangly extrodanarily attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Bottle Maker  with haunting blue eyes, a luscious  mouth,  a petite nose, and shiny sandy hair wearing a tight-fitting turquoise plain waistcoat, black close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

@@ -1,0 +1,359 @@
+
+    <html>
+    <head>
+    <title>Lawman Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>Lawman</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'gnome')">Gnome</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Lawman\out-20240219-014244.png' target='_blank'>
+                        <img src='female_gnome_Lawman\out-20240219-014244.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 15374</p>
+                        <p>Prompt: petite attractive female gnome Lawman  with bewitching violet eyes, an irresistable  mouth,  a bulbous nose, and shiny chestnut hair wearing a tight-fitting coral very elegant waistcoat, black sturdy leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Lawman\out-20240220-130345.png' target='_blank'>
+                        <img src='female_gnome_Lawman\out-20240220-130345.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 26676</p>
+                        <p>Prompt: gangly plain looking female gnome Lawman  with electric grey eyes, an enchanting  mouth,  a broad nose, and frizzy ashen hair wearing a snug coral embroidered waistcoat, white ragged woolen leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_Lawman\out-20240220-130531.png' target='_blank'>
+                        <img src='female_gnome_Lawman\out-20240220-130531.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 10404</p>
+                        <p>Prompt: gangly plain looking female gnome Lawman  with electric grey eyes, an enchanting  mouth,  a broad nose, and frizzy ashen hair wearing a snug coral embroidered waistcoat, white ragged woolen leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Lawman\out-20240219-224326.png' target='_blank'>
+                        <img src='female_halfling_Lawman\out-20240219-224326.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 21768</p>
+                        <p>Prompt: towering ugly female D&D Halfling Lawman  with haunting green eyes, a eloquent  mouth,  a angular nose, and thick strawberry blonde hair wearing a tailored blue very elegant waistcoat, red close-fitting leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Lawman\out-20240219-224411.png' target='_blank'>
+                        <img src='female_halfling_Lawman\out-20240219-224411.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 54487</p>
+                        <p>Prompt: towering ugly female D&D Halfling Lawman  with haunting green eyes, a eloquent  mouth,  a angular nose, and thick strawberry blonde hair wearing a tailored blue very elegant waistcoat, red close-fitting leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Lawman\out-20240219-224454.png' target='_blank'>
+                        <img src='female_halfling_Lawman\out-20240219-224454.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 61718</p>
+                        <p>Prompt: towering ugly female D&D Halfling Lawman  with haunting green eyes, a eloquent  mouth,  a angular nose, and thick strawberry blonde hair wearing a tailored blue very elegant waistcoat, red close-fitting leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Lawman\out-20240219-224540.png' target='_blank'>
+                        <img src='female_halfling_Lawman\out-20240219-224540.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 46709</p>
+                        <p>Prompt: towering ugly female D&D Halfling Lawman  with haunting green eyes, a eloquent  mouth,  a angular nose, and thick strawberry blonde hair wearing a tailored blue very elegant waistcoat, red close-fitting leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Lawman\out-20240219-224924.png' target='_blank'>
+                        <img src='female_halfling_Lawman\out-20240219-224924.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 28598</p>
+                        <p>Prompt: towering ordinary looking female D&D Halfling Lawman  with sparkling blue eyes, a plump  mouth,  a crooked nose, and coarse golden hair wearing a tapered grey finely-tailored waistcoat, black rumpled leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Lawman\out-20240219-225008.png' target='_blank'>
+                        <img src='female_halfling_Lawman\out-20240219-225008.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 33832</p>
+                        <p>Prompt: towering ordinary looking female D&D Halfling Lawman  with sparkling blue eyes, a plump  mouth,  a crooked nose, and coarse golden hair wearing a tapered grey finely-tailored waistcoat, black rumpled leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Lawman\out-20240219-225049.png' target='_blank'>
+                        <img src='female_halfling_Lawman\out-20240219-225049.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 21539</p>
+                        <p>Prompt: towering ordinary looking female D&D Halfling Lawman  with sparkling blue eyes, a plump  mouth,  a crooked nose, and coarse golden hair wearing a tapered grey finely-tailored waistcoat, black rumpled leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Lawman\out-20240219-225133.png' target='_blank'>
+                        <img src='female_halfling_Lawman\out-20240219-225133.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 27413</p>
+                        <p>Prompt: towering ordinary looking female D&D Halfling Lawman  with sparkling blue eyes, a plump  mouth,  a crooked nose, and coarse golden hair wearing a tapered grey finely-tailored waistcoat, black rumpled leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Lawman\out-20240221-141236.png' target='_blank'>
+                        <img src='female_human_Lawman\out-20240221-141236.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 30532</p>
+                        <p>Prompt:  attractive female human Lawman  with soulful emerald eyes, an irresistable  mouth,  a dainty nose, and straight silver hair wearing a form-fitting red wollen waistcoat, black lightweight leggings and matching red buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_Lawman\out-20240219-193257.png' target='_blank'>
+                        <img src='male_human_Lawman\out-20240219-193257.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 64991</p>
+                        <p>Prompt: broad-shouldered attractive male human Lawman  with dreamy brown eyes, an alluring  mouth,  a angular nose, and frizzy mahogany hair wearing a tapered coral velvet-lined waistcoat, black shimmering leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_Lawman\out-20240221-150751.png' target='_blank'>
+                        <img src='male_dwarf_Lawman\out-20240221-150751.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 34023</p>
+                        <p>Prompt: broad-shouldered ugly male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Lawman  with soulful turquoise eyes, a sensouos  mouth,  a broad nose, and thick blonde hair wearing a form-fitting green velvet-lined waistcoat, white war-torn leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_Lawman\out-20240219-032043.png' target='_blank'>
+                        <img src='male_tabaxi_Lawman\out-20240219-032043.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 47954</p>
+                        <p>Prompt: sturdy plain looking male tabaxi fluffy humanoid catlike person covered in fur Lawman  with radiant violet eyes, an enchanting  mouth,  a dainty nose, and glossy auburn hair wearing a tapered blue wollen waistcoat, matching blue war-torn leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_Lawman\out-20240219-032104.png' target='_blank'>
+                        <img src='male_tabaxi_Lawman\out-20240219-032104.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: 12399</p>
+                        <p>Prompt: sturdy plain looking male tabaxi fluffy humanoid catlike person covered in fur Lawman  with radiant violet eyes, an enchanting  mouth,  a dainty nose, and glossy auburn hair wearing a tapered blue wollen waistcoat, matching blue war-torn leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_Lawman\out-20240219-032126.png' target='_blank'>
+                        <img src='male_tabaxi_Lawman\out-20240219-032126.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: 25583</p>
+                        <p>Prompt: sturdy plain looking male tabaxi fluffy humanoid catlike person covered in fur Lawman  with radiant violet eyes, an enchanting  mouth,  a dainty nose, and glossy auburn hair wearing a tapered blue wollen waistcoat, matching blue war-torn leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_Lawman\out-20240219-032148.png' target='_blank'>
+                        <img src='male_tabaxi_Lawman\out-20240219-032148.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-17")'>Details</button>
+                    <div class='details' id='details-17'>
+                        <p>Seed: 2906</p>
+                        <p>Prompt: sturdy plain looking male tabaxi fluffy humanoid catlike person covered in fur Lawman  with radiant violet eyes, an enchanting  mouth,  a dainty nose, and glossy auburn hair wearing a tapered blue wollen waistcoat, matching blue war-torn leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

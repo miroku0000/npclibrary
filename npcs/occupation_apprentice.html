@@ -1,0 +1,359 @@
+
+    <html>
+    <head>
+    <title>Apprentice Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>Apprentice</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'gnome')">Gnome</button><button onclick="filterImages('race', 'orc')">Orc</button><button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Apprentice\out-20240219-192004.png' target='_blank'>
+                        <img src='female_halfling_Apprentice\out-20240219-192004.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 14131</p>
+                        <p>Prompt: gangly plain looking female D&D Halfling Apprentice  with radiant blue eyes, a plump  mouth,  a bulbous nose, and silky auburn hair wearing a tapered green wollen waistcoat, white war-torn leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Apprentice\out-20240219-192024.png' target='_blank'>
+                        <img src='female_halfling_Apprentice\out-20240219-192024.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 41252</p>
+                        <p>Prompt: gangly plain looking female D&D Halfling Apprentice  with radiant blue eyes, a plump  mouth,  a bulbous nose, and silky auburn hair wearing a tapered green wollen waistcoat, white war-torn leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_Apprentice\out-20240219-192046.png' target='_blank'>
+                        <img src='female_halfling_Apprentice\out-20240219-192046.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 18355</p>
+                        <p>Prompt: gangly plain looking female D&D Halfling Apprentice  with radiant blue eyes, a plump  mouth,  a bulbous nose, and silky auburn hair wearing a tapered green wollen waistcoat, white war-torn leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Apprentice\out-20240219-152042.png' target='_blank'>
+                        <img src='female_human_Apprentice\out-20240219-152042.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 51822</p>
+                        <p>Prompt: gangly extrodanarily attractive female human Apprentice  with radiant brown eyes, a plump  mouth,  a petite nose, and straight mahogany hair wearing a tailored coral embroidered waistcoat, black war-torn leggings and brown velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Apprentice\out-20240219-152127.png' target='_blank'>
+                        <img src='female_human_Apprentice\out-20240219-152127.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 31907</p>
+                        <p>Prompt: gangly extrodanarily attractive female human Apprentice  with radiant brown eyes, a plump  mouth,  a petite nose, and straight mahogany hair wearing a tailored coral embroidered waistcoat, black war-torn leggings and brown velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Apprentice\out-20240219-152214.png' target='_blank'>
+                        <img src='female_human_Apprentice\out-20240219-152214.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 31478</p>
+                        <p>Prompt: gangly extrodanarily attractive female human Apprentice  with radiant brown eyes, a plump  mouth,  a petite nose, and straight mahogany hair wearing a tailored coral embroidered waistcoat, black war-torn leggings and brown velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Apprentice\out-20240219-152300.png' target='_blank'>
+                        <img src='female_human_Apprentice\out-20240219-152300.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 18080</p>
+                        <p>Prompt: gangly extrodanarily attractive female human Apprentice  with radiant brown eyes, a plump  mouth,  a petite nose, and straight mahogany hair wearing a tailored coral embroidered waistcoat, black war-torn leggings and brown velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Apprentice\out-20240220-171955.png' target='_blank'>
+                        <img src='male_elf_Apprentice\out-20240220-171955.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 9456</p>
+                        <p>Prompt: broad-shouldered plain looking male Lord of The Rings Elf Apprentice  with soulful emerald eyes, a sensouos  mouth,  a crooked nose, and wavy strawberry blonde hair wearing a comfortable red wollen waistcoat, black rumpled leggings and matching red felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_Apprentice\out-20240220-172111.png' target='_blank'>
+                        <img src='male_elf_Apprentice\out-20240220-172111.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 8213</p>
+                        <p>Prompt: broad-shouldered plain looking male Lord of The Rings Elf Apprentice  with soulful emerald eyes, a sensouos  mouth,  a crooked nose, and wavy strawberry blonde hair wearing a comfortable red wollen waistcoat, black rumpled leggings and matching red felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_Apprentice\out-20240219-043839.png' target='_blank'>
+                        <img src='male_gnome_Apprentice\out-20240219-043839.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 10379</p>
+                        <p>Prompt: sturdy ordinary looking male gnome Apprentice  with soulful hazel eyes, an irresistable  mouth,  a petite nose, and straight ashen hair wearing a loose-fitting coral wollen waistcoat, black loose-fitting leggings and brown scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_Apprentice\out-20240219-043902.png' target='_blank'>
+                        <img src='male_gnome_Apprentice\out-20240219-043902.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 51419</p>
+                        <p>Prompt: sturdy ordinary looking male gnome Apprentice  with soulful hazel eyes, an irresistable  mouth,  a petite nose, and straight ashen hair wearing a loose-fitting coral wollen waistcoat, black loose-fitting leggings and brown scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_Apprentice\out-20240219-043924.png' target='_blank'>
+                        <img src='male_gnome_Apprentice\out-20240219-043924.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 4351</p>
+                        <p>Prompt: sturdy ordinary looking male gnome Apprentice  with soulful hazel eyes, an irresistable  mouth,  a petite nose, and straight ashen hair wearing a loose-fitting coral wollen waistcoat, black loose-fitting leggings and brown scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_Apprentice\out-20240219-043946.png' target='_blank'>
+                        <img src='male_gnome_Apprentice\out-20240219-043946.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 53974</p>
+                        <p>Prompt: sturdy ordinary looking male gnome Apprentice  with soulful hazel eyes, an irresistable  mouth,  a petite nose, and straight ashen hair wearing a loose-fitting coral wollen waistcoat, black loose-fitting leggings and brown scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image orc male'>
+                    <div class='additional-info'>Male, Orc</div>
+                    <a href='male_orc_Apprentice\out-20240220-221538.png' target='_blank'>
+                        <img src='male_orc_Apprentice\out-20240220-221538.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 35064</p>
+                        <p>Prompt: towering ugly male Lord of The Rings orc Apprentice  with haunting lavender eyes, a captivating  mouth,  a dainty nose, and coarse blonde hair wearing a snug red ornate waistcoat, black loose-fitting leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 16</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_Apprentice\out-20240219-061344.png' target='_blank'>
+                        <img src='male_tabaxi_Apprentice\out-20240219-061344.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 26562</p>
+                        <p>Prompt: petite attractive male tabaxi fluffy humanoid catlike person covered in fur Apprentice  with electric turquoise eyes, a plump  mouth,  a delicate nose, and glossy chestnut hair wearing a tight-fitting blue velvet-lined waistcoat, matching blue finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_Apprentice\out-20240219-061405.png' target='_blank'>
+                        <img src='male_tabaxi_Apprentice\out-20240219-061405.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: 29475</p>
+                        <p>Prompt: petite attractive male tabaxi fluffy humanoid catlike person covered in fur Apprentice  with electric turquoise eyes, a plump  mouth,  a delicate nose, and glossy chestnut hair wearing a tight-fitting blue velvet-lined waistcoat, matching blue finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_Apprentice\out-20240219-061427.png' target='_blank'>
+                        <img src='male_tabaxi_Apprentice\out-20240219-061427.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: 21216</p>
+                        <p>Prompt: petite attractive male tabaxi fluffy humanoid catlike person covered in fur Apprentice  with electric turquoise eyes, a plump  mouth,  a delicate nose, and glossy chestnut hair wearing a tight-fitting blue velvet-lined waistcoat, matching blue finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_Apprentice\out-20240219-061449.png' target='_blank'>
+                        <img src='male_tabaxi_Apprentice\out-20240219-061449.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-17")'>Details</button>
+                    <div class='details' id='details-17'>
+                        <p>Seed: 46223</p>
+                        <p>Prompt: petite attractive male tabaxi fluffy humanoid catlike person covered in fur Apprentice  with electric turquoise eyes, a plump  mouth,  a delicate nose, and glossy chestnut hair wearing a tight-fitting blue velvet-lined waistcoat, matching blue finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>
