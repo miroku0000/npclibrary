@@ -68,7 +68,7 @@
     <button onclick="resetFilters()">Show All</button>
     <button onclick="filterImages('gender', 'male')">Male</button>
     <button onclick="filterImages('gender', 'female')">Female</button>
-    <button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+    <button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
                 <div class='image dwarf female'>
                     <div class='additional-info'>Female, Dwarf</div>
                     <a href='female_dwarf_Washerwoman\out-20240219-051515.png' target='_blank'>
@@ -177,6 +177,22 @@
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
                         <p>Width: 512px</p>
                         <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Washerwoman\out-20240225-072949.png' target='_blank'>
+                        <img src='female_human_Washerwoman\out-20240225-072949.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 2071</p>
+                        <p>Prompt:  ugly female human Washerwoman  with haunting amber eyes, a seductive  mouth,  a bulbous nose, and curly red hair wearing a snug green velvet-linedtunic, white ragged woolen leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
                         <p>Steps: 32</p>
                     </div>
                 </div>

@@ -68,7 +68,7 @@
     <button onclick="resetFilters()">Show All</button>
     <button onclick="filterImages('gender', 'male')">Male</button>
     <button onclick="filterImages('gender', 'female')">Female</button>
-    <button onclick="filterImages('race', 'gnome')">Gnome</button><button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+    <button onclick="filterImages('race', 'gnome')">Gnome</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
                 <div class='image gnome female'>
                     <div class='additional-info'>Female, Gnome</div>
                     <a href='female_gnome_Toymaker\out-20240219-102039.png' target='_blank'>
@@ -133,13 +133,29 @@
                     </div>
                 </div>
                 
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_Toymaker\out-20240225-040624.png' target='_blank'>
+                        <img src='female_human_Toymaker\out-20240225-040624.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 5241</p>
+                        <p>Prompt: sturdy ugly female human Toymaker  with radiant blue eyes, a plump  mouth,  a petite nose, and silky black hair wearing a form-fitting coral plainwaistcoat, white close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
                 <div class='image dwarf male'>
                     <div class='additional-info'>Male, Dwarf</div>
                     <a href='male_dwarf_Toymaker\out-20240221-165845.png' target='_blank'>
                         <img src='male_dwarf_Toymaker\out-20240221-165845.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
-                    <div class='details' id='details-4'>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
                         <p>Seed: 53917</p>
                         <p>Prompt: sturdy charming male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Toymaker  with haunting brown eyes, a luscious  mouth,  a snub nose, and silky golden hair wearing a form-fitting red plain waistcoat, black finely made leggings and black scuffed leather shoes</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -154,8 +170,8 @@
                     <a href='male_elf_Toymaker\out-20240219-032253.png' target='_blank'>
                         <img src='male_elf_Toymaker\out-20240219-032253.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
-                    <div class='details' id='details-5'>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
                         <p>Seed: 48580</p>
                         <p>Prompt: towering average looking male Lord of The Rings Elf Toymaker  with bewitching amber eyes, an alluring  mouth,  a bulbous nose, and frizzy chestnut hair wearing a comfortable coral very elegant waistcoat, black rumpled leggings and black scuffed leather shoes</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -170,8 +186,8 @@
                     <a href='male_elf_Toymaker\out-20240219-032315.png' target='_blank'>
                         <img src='male_elf_Toymaker\out-20240219-032315.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
-                    <div class='details' id='details-6'>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
                         <p>Seed: 29030</p>
                         <p>Prompt: towering average looking male Lord of The Rings Elf Toymaker  with bewitching amber eyes, an alluring  mouth,  a bulbous nose, and frizzy chestnut hair wearing a comfortable coral very elegant waistcoat, black rumpled leggings and black scuffed leather shoes</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -186,8 +202,8 @@
                     <a href='male_halfling_Toymaker\out-20240220-154633.png' target='_blank'>
                         <img src='male_halfling_Toymaker\out-20240220-154633.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
-                    <div class='details' id='details-7'>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
                         <p>Seed: 30541</p>
                         <p>Prompt: sturdy extrodanarily attractive male D&D Halfling Toymaker  with haunting green eyes, a delicate  mouth,  a regal nose, and frizzy auburn hair wearing a tight-fitting blue ornate waistcoat, matching blue lightweight leggings and black rugged leather boots</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -202,8 +218,8 @@
                     <a href='male_tabaxi_Toymaker\out-20240219-190038.png' target='_blank'>
                         <img src='male_tabaxi_Toymaker\out-20240219-190038.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
-                    <div class='details' id='details-8'>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
                         <p>Seed: 26466</p>
                         <p>Prompt:  average looking male tabaxi fluffy humanoid catlike person covered in fur Toymaker  with soulful grey eyes, an enchanting  mouth,  a prominent nose, and shiny sandy hair wearing a form-fitting coral velvet-lined waistcoat, black lightweight leggings and black wooden clogs</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -218,8 +234,8 @@
                     <a href='male_tabaxi_Toymaker\out-20240219-190056.png' target='_blank'>
                         <img src='male_tabaxi_Toymaker\out-20240219-190056.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
-                    <div class='details' id='details-9'>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
                         <p>Seed: 29204</p>
                         <p>Prompt:  average looking male tabaxi fluffy humanoid catlike person covered in fur Toymaker  with soulful grey eyes, an enchanting  mouth,  a prominent nose, and shiny sandy hair wearing a form-fitting coral velvet-lined waistcoat, black lightweight leggings and black wooden clogs</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -234,8 +250,8 @@
                     <a href='male_tabaxi_Toymaker\out-20240219-190116.png' target='_blank'>
                         <img src='male_tabaxi_Toymaker\out-20240219-190116.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
-                    <div class='details' id='details-10'>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
                         <p>Seed: 29357</p>
                         <p>Prompt:  average looking male tabaxi fluffy humanoid catlike person covered in fur Toymaker  with soulful grey eyes, an enchanting  mouth,  a prominent nose, and shiny sandy hair wearing a form-fitting coral velvet-lined waistcoat, black lightweight leggings and black wooden clogs</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -250,8 +266,8 @@
                     <a href='male_tabaxi_Toymaker\out-20240219-190136.png' target='_blank'>
                         <img src='male_tabaxi_Toymaker\out-20240219-190136.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
-                    <div class='details' id='details-11'>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
                         <p>Seed: 29313</p>
                         <p>Prompt:  average looking male tabaxi fluffy humanoid catlike person covered in fur Toymaker  with soulful grey eyes, an enchanting  mouth,  a prominent nose, and shiny sandy hair wearing a form-fitting coral velvet-lined waistcoat, black lightweight leggings and black wooden clogs</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -266,8 +282,8 @@
                     <a href='male_tabaxi_Toymaker\out-20240221-095754.png' target='_blank'>
                         <img src='male_tabaxi_Toymaker\out-20240221-095754.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
-                    <div class='details' id='details-12'>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
                         <p>Seed: 20393</p>
                         <p>Prompt:  ordinary looking male tabaxi fluffy humanoid catlike person covered in fur Toymaker  with radiant grey eyes, a plump  mouth,  a delicate nose, and coarse sandy hair wearing a snug black ornate waistcoat, matching black reinforced leggings and black rugged leather boots</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>

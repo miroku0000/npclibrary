@@ -68,7 +68,7 @@
     <button onclick="resetFilters()">Show All</button>
     <button onclick="filterImages('gender', 'male')">Male</button>
     <button onclick="filterImages('gender', 'female')">Female</button>
-    <button onclick="filterImages('race', 'gnome')">Gnome</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'orc')">Orc</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+    <button onclick="filterImages('race', 'gnome')">Gnome</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'orc')">Orc</button><button onclick="filterImages('race', 'tiefling')">Tiefling</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
                 <div class='image gnome female'>
                     <div class='additional-info'>Female, Gnome</div>
                     <a href='female_gnome_barbarian\out-20240220-144419.png' target='_blank'>
@@ -421,13 +421,45 @@
                     </div>
                 </div>
                 
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_barbarian\out-20240225-054913.png' target='_blank'>
+                        <img src='male_human_barbarian\out-20240225-054913.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-22")'>Details</button>
+                    <div class='details' id='details-22'>
+                        <p>Seed: 34377</p>
+                        <p>Prompt: slender ordinary looking male human barbarian  with haunting turquoise eyes, a sensouos  mouth,  a thin nose, and glossy  hair wearing a tailored coral velvet-linedmantle, white war-torn leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_barbarian\out-20240225-095717.png' target='_blank'>
+                        <img src='male_human_barbarian\out-20240225-095717.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-23")'>Details</button>
+                    <div class='details' id='details-23'>
+                        <p>Seed: 31418</p>
+                        <p>Prompt: slender plain looking male human barbarian  with enigmatic violet eyes, a plump  mouth,  a chisiled nose, and thick golden hair wearing a snug coral wollentunic, black close-fitting leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
                 <div class='image tabaxi female'>
                     <div class='additional-info'>Female, Tabaxi</div>
                     <a href='female_tabaxi_barbarian\out-20240218-151617.png' target='_blank'>
                         <img src='female_tabaxi_barbarian\out-20240218-151617.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-22")'>Details</button>
-                    <div class='details' id='details-22'>
+                    <button class='details-button' onclick='toggleDetails("details-24")'>Details</button>
+                    <div class='details' id='details-24'>
                         <p>Seed: N/A</p>
                         <p>Prompt: petite average looking female tabaxi fluffy humanoid catlike person covered in fur barbarian  with expressive emerald eyes, an enchanting  mouth,  a straight nose, and curly auburn hair wearing a snug black velvet-lined waistcoat, matching black loose-fitting leggings and brown rugged leather boots</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -442,8 +474,8 @@
                     <a href='female_tabaxi_barbarian\out-20240218-153744.png' target='_blank'>
                         <img src='female_tabaxi_barbarian\out-20240218-153744.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-23")'>Details</button>
-                    <div class='details' id='details-23'>
+                    <button class='details-button' onclick='toggleDetails("details-25")'>Details</button>
+                    <div class='details' id='details-25'>
                         <p>Seed: N/A</p>
                         <p>Prompt: broad-shouldered plain looking female tabaxi fluffy humanoid catlike person covered in fur barbarian  with electric brown eyes, a delicate  mouth,  a hawklike nose, and straight auburn hair wearing a loose-fitting black simple waistcoat, grey rumpled leggings and black woolen shoes</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -458,8 +490,8 @@
                     <a href='female_tabaxi_barbarian\out-20240218-153812.png' target='_blank'>
                         <img src='female_tabaxi_barbarian\out-20240218-153812.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-24")'>Details</button>
-                    <div class='details' id='details-24'>
+                    <button class='details-button' onclick='toggleDetails("details-26")'>Details</button>
+                    <div class='details' id='details-26'>
                         <p>Seed: N/A</p>
                         <p>Prompt: broad-shouldered plain looking female tabaxi fluffy humanoid catlike person covered in fur barbarian  with electric brown eyes, a delicate  mouth,  a hawklike nose, and straight auburn hair wearing a loose-fitting black simple waistcoat, grey rumpled leggings and black woolen shoes</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -474,8 +506,8 @@
                     <a href='male_tabaxi_barbarian\out-20240218-150120.png' target='_blank'>
                         <img src='male_tabaxi_barbarian\out-20240218-150120.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-25")'>Details</button>
-                    <div class='details' id='details-25'>
+                    <button class='details-button' onclick='toggleDetails("details-27")'>Details</button>
+                    <div class='details' id='details-27'>
                         <p>Seed: N/A</p>
                         <p>Prompt: sturdy ordinary looking male tabaxi fluffy humanoid catlike person covered in fur barbarian  with mysterious green eyes, a luscious  mouth,  a snub nose, and wavy golden hair wearing a tailored red simple waistcoat, black finely made leggings and black woolen shoes</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -490,8 +522,8 @@
                     <a href='male_tabaxi_barbarian\out-20240218-150217.png' target='_blank'>
                         <img src='male_tabaxi_barbarian\out-20240218-150217.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-26")'>Details</button>
-                    <div class='details' id='details-26'>
+                    <button class='details-button' onclick='toggleDetails("details-28")'>Details</button>
+                    <div class='details' id='details-28'>
                         <p>Seed: N/A</p>
                         <p>Prompt: sturdy ordinary looking male tabaxi fluffy humanoid catlike person covered in fur barbarian  with mysterious green eyes, a luscious  mouth,  a snub nose, and wavy golden hair wearing a tailored red simple waistcoat, black finely made leggings and black woolen shoes</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -506,8 +538,8 @@
                     <a href='male_tabaxi_barbarian\out-20240218-150245.png' target='_blank'>
                         <img src='male_tabaxi_barbarian\out-20240218-150245.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-27")'>Details</button>
-                    <div class='details' id='details-27'>
+                    <button class='details-button' onclick='toggleDetails("details-29")'>Details</button>
+                    <div class='details' id='details-29'>
                         <p>Seed: N/A</p>
                         <p>Prompt: sturdy ordinary looking male tabaxi fluffy humanoid catlike person covered in fur barbarian  with mysterious green eyes, a luscious  mouth,  a snub nose, and wavy golden hair wearing a tailored red simple waistcoat, black finely made leggings and black woolen shoes</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -522,8 +554,8 @@
                     <a href='male_tabaxi_barbarian\out-20240218-151836.png' target='_blank'>
                         <img src='male_tabaxi_barbarian\out-20240218-151836.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-28")'>Details</button>
-                    <div class='details' id='details-28'>
+                    <button class='details-button' onclick='toggleDetails("details-30")'>Details</button>
+                    <div class='details' id='details-30'>
                         <p>Seed: N/A</p>
                         <p>Prompt: towering extrodanarily attractive male tabaxi fluffy humanoid catlike person covered in fur barbarian  with mysterious violet eyes, a plump  mouth,  a crooked nose, and straight silver hair wearing a tapered black wollen waistcoat, matching black reinforced leggings and brown wooden clogs</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -538,8 +570,8 @@
                     <a href='male_tabaxi_barbarian\out-20240218-151932.png' target='_blank'>
                         <img src='male_tabaxi_barbarian\out-20240218-151932.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-29")'>Details</button>
-                    <div class='details' id='details-29'>
+                    <button class='details-button' onclick='toggleDetails("details-31")'>Details</button>
+                    <div class='details' id='details-31'>
                         <p>Seed: N/A</p>
                         <p>Prompt: towering extrodanarily attractive male tabaxi fluffy humanoid catlike person covered in fur barbarian  with mysterious violet eyes, a plump  mouth,  a crooked nose, and straight silver hair wearing a tapered black wollen waistcoat, matching black reinforced leggings and brown wooden clogs</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -554,8 +586,8 @@
                     <a href='male_dwarf_barbarian\out-20240219-021156.png' target='_blank'>
                         <img src='male_dwarf_barbarian\out-20240219-021156.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-30")'>Details</button>
-                    <div class='details' id='details-30'>
+                    <button class='details-button' onclick='toggleDetails("details-32")'>Details</button>
+                    <div class='details' id='details-32'>
                         <p>Seed: 32572</p>
                         <p>Prompt: sturdy ugly male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. barbarian  with enigmatic amber eyes, a sensouos  mouth,  a thin nose, and silky mahogany hair wearing a comfortable blue plain waistcoat, red sturdy leggings and black velvet slippers</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -570,8 +602,8 @@
                     <a href='male_dwarf_barbarian\out-20240219-021218.png' target='_blank'>
                         <img src='male_dwarf_barbarian\out-20240219-021218.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-31")'>Details</button>
-                    <div class='details' id='details-31'>
+                    <button class='details-button' onclick='toggleDetails("details-33")'>Details</button>
+                    <div class='details' id='details-33'>
                         <p>Seed: 20428</p>
                         <p>Prompt: sturdy ugly male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. barbarian  with enigmatic amber eyes, a sensouos  mouth,  a thin nose, and silky mahogany hair wearing a comfortable blue plain waistcoat, red sturdy leggings and black velvet slippers</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -586,8 +618,8 @@
                     <a href='male_dwarf_barbarian\out-20240219-021240.png' target='_blank'>
                         <img src='male_dwarf_barbarian\out-20240219-021240.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-32")'>Details</button>
-                    <div class='details' id='details-32'>
+                    <button class='details-button' onclick='toggleDetails("details-34")'>Details</button>
+                    <div class='details' id='details-34'>
                         <p>Seed: 35727</p>
                         <p>Prompt: sturdy ugly male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. barbarian  with enigmatic amber eyes, a sensouos  mouth,  a thin nose, and silky mahogany hair wearing a comfortable blue plain waistcoat, red sturdy leggings and black velvet slippers</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -602,8 +634,8 @@
                     <a href='male_dwarf_barbarian\out-20240219-021302.png' target='_blank'>
                         <img src='male_dwarf_barbarian\out-20240219-021302.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-33")'>Details</button>
-                    <div class='details' id='details-33'>
+                    <button class='details-button' onclick='toggleDetails("details-35")'>Details</button>
+                    <div class='details' id='details-35'>
                         <p>Seed: 21061</p>
                         <p>Prompt: sturdy ugly male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. barbarian  with enigmatic amber eyes, a sensouos  mouth,  a thin nose, and silky mahogany hair wearing a comfortable blue plain waistcoat, red sturdy leggings and black velvet slippers</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -618,8 +650,8 @@
                     <a href='male_dwarf_barbarian\out-20240219-052006.png' target='_blank'>
                         <img src='male_dwarf_barbarian\out-20240219-052006.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-34")'>Details</button>
-                    <div class='details' id='details-34'>
+                    <button class='details-button' onclick='toggleDetails("details-36")'>Details</button>
+                    <div class='details' id='details-36'>
                         <p>Seed: 3918</p>
                         <p>Prompt: sturdy ugly male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. barbarian  with intense violet eyes, an enchanting  mouth,  a straight nose, and shiny red hair wearing a comfortable black velvet-lined waistcoat, grey lightweight leggings and black felted boots</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -634,8 +666,8 @@
                     <a href='male_dwarf_barbarian\out-20240219-052027.png' target='_blank'>
                         <img src='male_dwarf_barbarian\out-20240219-052027.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-35")'>Details</button>
-                    <div class='details' id='details-35'>
+                    <button class='details-button' onclick='toggleDetails("details-37")'>Details</button>
+                    <div class='details' id='details-37'>
                         <p>Seed: 33618</p>
                         <p>Prompt: sturdy ugly male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. barbarian  with intense violet eyes, an enchanting  mouth,  a straight nose, and shiny red hair wearing a comfortable black velvet-lined waistcoat, grey lightweight leggings and black felted boots</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -650,8 +682,8 @@
                     <a href='male_dwarf_barbarian\out-20240219-052049.png' target='_blank'>
                         <img src='male_dwarf_barbarian\out-20240219-052049.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-36")'>Details</button>
-                    <div class='details' id='details-36'>
+                    <button class='details-button' onclick='toggleDetails("details-38")'>Details</button>
+                    <div class='details' id='details-38'>
                         <p>Seed: 64965</p>
                         <p>Prompt: sturdy ugly male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. barbarian  with intense violet eyes, an enchanting  mouth,  a straight nose, and shiny red hair wearing a comfortable black velvet-lined waistcoat, grey lightweight leggings and black felted boots</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -666,8 +698,8 @@
                     <a href='male_dwarf_barbarian\out-20240219-052112.png' target='_blank'>
                         <img src='male_dwarf_barbarian\out-20240219-052112.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-37")'>Details</button>
-                    <div class='details' id='details-37'>
+                    <button class='details-button' onclick='toggleDetails("details-39")'>Details</button>
+                    <div class='details' id='details-39'>
                         <p>Seed: 41330</p>
                         <p>Prompt: sturdy ugly male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. barbarian  with intense violet eyes, an enchanting  mouth,  a straight nose, and shiny red hair wearing a comfortable black velvet-lined waistcoat, grey lightweight leggings and black felted boots</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -682,8 +714,8 @@
                     <a href='male_dwarf_barbarian\out-20240221-183950.png' target='_blank'>
                         <img src='male_dwarf_barbarian\out-20240221-183950.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-38")'>Details</button>
-                    <div class='details' id='details-38'>
+                    <button class='details-button' onclick='toggleDetails("details-40")'>Details</button>
+                    <div class='details' id='details-40'>
                         <p>Seed: 19851</p>
                         <p>Prompt: broad-shouldered attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. barbarian  with enigmatic emerald eyes, a delicate  mouth,  a snub nose, and wavy auburn hair wearing a tapered blue wollen waistcoat, black close-fitting leggings and black sheepskin boots</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -698,8 +730,8 @@
                     <a href='male_orc_barbarian\out-20240220-221000.png' target='_blank'>
                         <img src='male_orc_barbarian\out-20240220-221000.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-39")'>Details</button>
-                    <div class='details' id='details-39'>
+                    <button class='details-button' onclick='toggleDetails("details-41")'>Details</button>
+                    <div class='details' id='details-41'>
                         <p>Seed: 11502</p>
                         <p>Prompt: slender average looking male Lord of The Rings orc barbarian  with transfixing green eyes, an irresistable  mouth,  a prominent nose, and coarse silver hair wearing a snug black wollen waistcoat, grey rumpled leggings and black rugged leather boots</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
@@ -714,14 +746,30 @@
                     <a href='male_orc_barbarian\out-20240220-221018.png' target='_blank'>
                         <img src='male_orc_barbarian\out-20240220-221018.png' alt='Image'>
                     </a>
-                    <button class='details-button' onclick='toggleDetails("details-40")'>Details</button>
-                    <div class='details' id='details-40'>
+                    <button class='details-button' onclick='toggleDetails("details-42")'>Details</button>
+                    <div class='details' id='details-42'>
                         <p>Seed: 31552</p>
                         <p>Prompt: slender average looking male Lord of The Rings orc barbarian  with transfixing green eyes, an irresistable  mouth,  a prominent nose, and coarse silver hair wearing a snug black wollen waistcoat, grey rumpled leggings and black rugged leather boots</p>
                         <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
                         <p>Width: 512px</p>
                         <p>Height: 512px</p>
                         <p>Steps: 16</p>
+                    </div>
+                </div>
+                
+                <div class='image tiefling male'>
+                    <div class='additional-info'>Male, Tiefling</div>
+                    <a href='male_tiefling_barbarian\out-20240225-082554.png' target='_blank'>
+                        <img src='male_tiefling_barbarian\out-20240225-082554.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-43")'>Details</button>
+                    <div class='details' id='details-43'>
+                        <p>Seed: 16913</p>
+                        <p>Prompt:  average looking male human barbarian  with intense violet eyes, a captivating  mouth,  a prominent nose, and coarse  hair wearing a tailored coral embroideredcloak, black lightweight leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
                     </div>
                 </div>
                 </div></body></html>
