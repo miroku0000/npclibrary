@@ -1,0 +1,551 @@
+
+    <html>
+    <head>
+    <title>jester Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>jester</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'gnome')">Gnome</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_jester\out-20240221-115433.png' target='_blank'>
+                        <img src='female_elf_jester\out-20240221-115433.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 21107</p>
+                        <p>Prompt: slender average looking female Lord of The Rings Elf Jester  with intense emerald eyes, a eloquent  mouth,  a petite nose, and coarse red hair wearing a snug grey wollen waistcoat, black ragged woolen leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_jester\out-20240219-050709.png' target='_blank'>
+                        <img src='male_elf_jester\out-20240219-050709.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 3152</p>
+                        <p>Prompt: broad-shouldered charming male Lord of The Rings Elf Jester  with alluring amber eyes, an enchanting  mouth,  a thin nose, and curly golden hair wearing a loose-fitting coral ornate waistcoat, black sturdy leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_jester\out-20240219-050731.png' target='_blank'>
+                        <img src='male_elf_jester\out-20240219-050731.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 41024</p>
+                        <p>Prompt: broad-shouldered charming male Lord of The Rings Elf Jester  with alluring amber eyes, an enchanting  mouth,  a thin nose, and curly golden hair wearing a loose-fitting coral ornate waistcoat, black sturdy leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_jester\out-20240220-072957.png' target='_blank'>
+                        <img src='male_elf_jester\out-20240220-072957.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 31838</p>
+                        <p>Prompt: gangly attractive male Lord of The Rings Elf Jester  with soulful green eyes, a plump  mouth,  a prominent nose, and coarse  hair wearing a snug grey wollen waistcoat, black finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_jester\out-20240220-073116.png' target='_blank'>
+                        <img src='male_elf_jester\out-20240220-073116.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 25441</p>
+                        <p>Prompt: gangly attractive male Lord of The Rings Elf Jester  with soulful green eyes, a plump  mouth,  a prominent nose, and coarse  hair wearing a snug grey wollen waistcoat, black finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_jester\out-20240221-180402.png' target='_blank'>
+                        <img src='female_gnome_jester\out-20240221-180402.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 19106</p>
+                        <p>Prompt:  attractive female gnome Jester  with transfixing green eyes, a eloquent  mouth,  a petite nose, and coarse strawberry blonde hair wearing a form-fitting green ornate waistcoat, white finely made leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_jester\out-20240219-082919.png' target='_blank'>
+                        <img src='male_gnome_jester\out-20240219-082919.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 48401</p>
+                        <p>Prompt: slender ugly male gnome Knight  with transfixing lavender eyes, a pouty  mouth,  a snub nose, and curly red hair wearing a comfortable green velvet-lined waistcoat, white reinforced leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_jester\out-20240219-214422.png' target='_blank'>
+                        <img src='female_halfling_jester\out-20240219-214422.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 15506</p>
+                        <p>Prompt:  ugly female D&D Halfling Jester  with mesmerizing turquoise eyes, a delicate  mouth,  a dainty nose, and thick red hair wearing a snug green plain waistcoat, white ragged woolen leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_jester\out-20240219-214501.png' target='_blank'>
+                        <img src='female_halfling_jester\out-20240219-214501.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 57578</p>
+                        <p>Prompt:  ugly female D&D Halfling Jester  with mesmerizing turquoise eyes, a delicate  mouth,  a dainty nose, and thick red hair wearing a snug green plain waistcoat, white ragged woolen leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_jester\out-20240219-214536.png' target='_blank'>
+                        <img src='female_halfling_jester\out-20240219-214536.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 28106</p>
+                        <p>Prompt:  ugly female D&D Halfling Jester  with mesmerizing turquoise eyes, a delicate  mouth,  a dainty nose, and thick red hair wearing a snug green plain waistcoat, white ragged woolen leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_jester\out-20240219-214614.png' target='_blank'>
+                        <img src='female_halfling_jester\out-20240219-214614.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: N/A</p>
+                        <p>Model: N/A</p>
+                        <p>Width: N/Apx</p>
+                        <p>Height: N/Apx</p>
+                        <p>Steps: N/A</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_jester\out-20240219-221546.png' target='_blank'>
+                        <img src='female_halfling_jester\out-20240219-221546.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 49953</p>
+                        <p>Prompt: slender average looking female D&D Halfling Jester  with dreamy blue eyes, a tempting  mouth,  a dainty nose, and curly blonde hair wearing a tight-fitting blue velvet-lined waistcoat, matching blue sturdy leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_jester\out-20240219-221623.png' target='_blank'>
+                        <img src='female_halfling_jester\out-20240219-221623.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 51457</p>
+                        <p>Prompt: slender average looking female D&D Halfling Jester  with dreamy blue eyes, a tempting  mouth,  a dainty nose, and curly blonde hair wearing a tight-fitting blue velvet-lined waistcoat, matching blue sturdy leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_jester\out-20240219-221658.png' target='_blank'>
+                        <img src='female_halfling_jester\out-20240219-221658.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 19843</p>
+                        <p>Prompt: slender average looking female D&D Halfling Jester  with dreamy blue eyes, a tempting  mouth,  a dainty nose, and curly blonde hair wearing a tight-fitting blue velvet-lined waistcoat, matching blue sturdy leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_jester\out-20240219-221737.png' target='_blank'>
+                        <img src='female_halfling_jester\out-20240219-221737.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 33371</p>
+                        <p>Prompt: slender average looking female D&D Halfling Jester  with dreamy blue eyes, a tempting  mouth,  a dainty nose, and curly blonde hair wearing a tight-fitting blue velvet-lined waistcoat, matching blue sturdy leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_jester\out-20240219-152349.png' target='_blank'>
+                        <img src='male_halfling_jester\out-20240219-152349.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: 12633</p>
+                        <p>Prompt: slender attractive male D&D Halfling Jester  with intense brown eyes, a eloquent  mouth,  a prominent nose, and wavy sandy hair wearing a comfortable turquoise velvet-lined waistcoat, black close-fitting leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_jester\out-20240219-152441.png' target='_blank'>
+                        <img src='male_halfling_jester\out-20240219-152441.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: 54166</p>
+                        <p>Prompt: slender attractive male D&D Halfling Jester  with intense brown eyes, a eloquent  mouth,  a prominent nose, and wavy sandy hair wearing a comfortable turquoise velvet-lined waistcoat, black close-fitting leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_jester\out-20240219-152533.png' target='_blank'>
+                        <img src='male_halfling_jester\out-20240219-152533.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-17")'>Details</button>
+                    <div class='details' id='details-17'>
+                        <p>Seed: 23721</p>
+                        <p>Prompt: slender attractive male D&D Halfling Jester  with intense brown eyes, a eloquent  mouth,  a prominent nose, and wavy sandy hair wearing a comfortable turquoise velvet-lined waistcoat, black close-fitting leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_jester\out-20240219-152622.png' target='_blank'>
+                        <img src='male_halfling_jester\out-20240219-152622.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-18")'>Details</button>
+                    <div class='details' id='details-18'>
+                        <p>Seed: 42638</p>
+                        <p>Prompt: slender attractive male D&D Halfling Jester  with intense brown eyes, a eloquent  mouth,  a prominent nose, and wavy sandy hair wearing a comfortable turquoise velvet-lined waistcoat, black close-fitting leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_jester\out-20240218-235505.png' target='_blank'>
+                        <img src='male_dwarf_jester\out-20240218-235505.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-19")'>Details</button>
+                    <div class='details' id='details-19'>
+                        <p>Seed: 31642</p>
+                        <p>Prompt: slender plain looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Jester  with piercing grey eyes, a seductive  mouth,  a straight nose, and frizzy golden hair wearing a comfortable coral finely-tailored waistcoat, white loose-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_jester\out-20240218-235529.png' target='_blank'>
+                        <img src='male_dwarf_jester\out-20240218-235529.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-20")'>Details</button>
+                    <div class='details' id='details-20'>
+                        <p>Seed: 28229</p>
+                        <p>Prompt: slender plain looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Jester  with piercing grey eyes, a seductive  mouth,  a straight nose, and frizzy golden hair wearing a comfortable coral finely-tailored waistcoat, white loose-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_jester\out-20240218-235554.png' target='_blank'>
+                        <img src='male_dwarf_jester\out-20240218-235554.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-21")'>Details</button>
+                    <div class='details' id='details-21'>
+                        <p>Seed: 30127</p>
+                        <p>Prompt: slender plain looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Jester  with piercing grey eyes, a seductive  mouth,  a straight nose, and frizzy golden hair wearing a comfortable coral finely-tailored waistcoat, white loose-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_jester\out-20240218-235623.png' target='_blank'>
+                        <img src='male_dwarf_jester\out-20240218-235623.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-22")'>Details</button>
+                    <div class='details' id='details-22'>
+                        <p>Seed: 62072</p>
+                        <p>Prompt: slender plain looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Jester  with piercing grey eyes, a seductive  mouth,  a straight nose, and frizzy golden hair wearing a comfortable coral finely-tailored waistcoat, white loose-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_jester\out-20240219-114044.png' target='_blank'>
+                        <img src='male_human_jester\out-20240219-114044.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-23")'>Details</button>
+                    <div class='details' id='details-23'>
+                        <p>Seed: 63162</p>
+                        <p>Prompt: sturdy average looking male human Jester  with alluring green eyes, a delicate  mouth,  a angular nose, and silky blonde hair wearing a tight-fitting black finely-tailored waistcoat, grey lightweight leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_jester\out-20240219-114107.png' target='_blank'>
+                        <img src='male_human_jester\out-20240219-114107.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-24")'>Details</button>
+                    <div class='details' id='details-24'>
+                        <p>Seed: 43554</p>
+                        <p>Prompt: sturdy average looking male human Jester  with alluring green eyes, a delicate  mouth,  a angular nose, and silky blonde hair wearing a tight-fitting black finely-tailored waistcoat, grey lightweight leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_jester\out-20240219-114132.png' target='_blank'>
+                        <img src='male_human_jester\out-20240219-114132.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-25")'>Details</button>
+                    <div class='details' id='details-25'>
+                        <p>Seed: 51921</p>
+                        <p>Prompt: sturdy average looking male human Jester  with alluring green eyes, a delicate  mouth,  a angular nose, and silky blonde hair wearing a tight-fitting black finely-tailored waistcoat, grey lightweight leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_jester\out-20240219-114157.png' target='_blank'>
+                        <img src='male_human_jester\out-20240219-114157.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-26")'>Details</button>
+                    <div class='details' id='details-26'>
+                        <p>Seed: 30226</p>
+                        <p>Prompt: sturdy average looking male human Jester  with alluring green eyes, a delicate  mouth,  a angular nose, and silky blonde hair wearing a tight-fitting black finely-tailored waistcoat, grey lightweight leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_jester\out-20240220-224119.png' target='_blank'>
+                        <img src='male_human_jester\out-20240220-224119.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-27")'>Details</button>
+                    <div class='details' id='details-27'>
+                        <p>Seed: 36897</p>
+                        <p>Prompt: petite attractive male human Jester  with haunting hazel eyes, a pouty  mouth,  a thin nose, and shiny mahogany hair wearing a loose-fitting red wollen waistcoat, black shimmering leggings and matching red velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_jester\out-20240220-224245.png' target='_blank'>
+                        <img src='male_human_jester\out-20240220-224245.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-28")'>Details</button>
+                    <div class='details' id='details-28'>
+                        <p>Seed: 7595</p>
+                        <p>Prompt: petite attractive male human Jester  with haunting hazel eyes, a pouty  mouth,  a thin nose, and shiny mahogany hair wearing a loose-fitting red wollen waistcoat, black shimmering leggings and matching red velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_jester\out-20240221-081050.png' target='_blank'>
+                        <img src='male_human_jester\out-20240221-081050.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-29")'>Details</button>
+                    <div class='details' id='details-29'>
+                        <p>Seed: 58957</p>
+                        <p>Prompt: sturdy average looking male human Jester  with radiant emerald eyes, an irresistable  mouth,  a chisiled nose, and glossy auburn hair wearing a loose-fitting grey very elegant waistcoat, black war-torn leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

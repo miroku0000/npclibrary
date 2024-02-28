@@ -1,0 +1,487 @@
+
+    <html>
+    <head>
+    <title>laborer Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>laborer</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'gnome')">Gnome</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_laborer\out-20240220-082816.png' target='_blank'>
+                        <img src='female_elf_laborer\out-20240220-082816.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 9431</p>
+                        <p>Prompt:  charming female Lord of The Rings Elf Laborer  with intense emerald eyes, a delicate  mouth,  a regal nose, and curly mahogany hair wearing a form-fitting coral finely-tailored waistcoat, black war-torn leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_laborer\out-20240220-082945.png' target='_blank'>
+                        <img src='female_elf_laborer\out-20240220-082945.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 20759</p>
+                        <p>Prompt:  charming female Lord of The Rings Elf Laborer  with intense emerald eyes, a delicate  mouth,  a regal nose, and curly mahogany hair wearing a form-fitting coral finely-tailored waistcoat, black war-torn leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_laborer\out-20240218-233812.png' target='_blank'>
+                        <img src='female_gnome_laborer\out-20240218-233812.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 4539</p>
+                        <p>Prompt: sturdy attractive female gnome Laborer  with enigmatic amber eyes, an enchanting  mouth,  a button nose, and silky mahogany hair wearing a tapered coral simple waistcoat, black war-torn leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_laborer\out-20240218-233837.png' target='_blank'>
+                        <img src='female_gnome_laborer\out-20240218-233837.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 54102</p>
+                        <p>Prompt: sturdy attractive female gnome Laborer  with enigmatic amber eyes, an enchanting  mouth,  a button nose, and silky mahogany hair wearing a tapered coral simple waistcoat, black war-torn leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_laborer\out-20240218-233902.png' target='_blank'>
+                        <img src='female_gnome_laborer\out-20240218-233902.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 12362</p>
+                        <p>Prompt: sturdy attractive female gnome Laborer  with enigmatic amber eyes, an enchanting  mouth,  a button nose, and silky mahogany hair wearing a tapered coral simple waistcoat, black war-torn leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_laborer\out-20240218-233927.png' target='_blank'>
+                        <img src='female_gnome_laborer\out-20240218-233927.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 15848</p>
+                        <p>Prompt: sturdy attractive female gnome Laborer  with enigmatic amber eyes, an enchanting  mouth,  a button nose, and silky mahogany hair wearing a tapered coral simple waistcoat, black war-torn leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_laborer\out-20240220-094131.png' target='_blank'>
+                        <img src='female_gnome_laborer\out-20240220-094131.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 45579</p>
+                        <p>Prompt: towering attractive female gnome Laborer  with radiant hazel eyes, a pouty  mouth,  a prominent nose, and thick red hair wearing a loose-fitting coral finely-tailored waistcoat, black sturdy leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_laborer\out-20240220-094318.png' target='_blank'>
+                        <img src='female_gnome_laborer\out-20240220-094318.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 49030</p>
+                        <p>Prompt: towering attractive female gnome Laborer  with radiant hazel eyes, a pouty  mouth,  a prominent nose, and thick red hair wearing a loose-fitting coral finely-tailored waistcoat, black sturdy leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_laborer\out-20240218-231804.png' target='_blank'>
+                        <img src='male_gnome_laborer\out-20240218-231804.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 24063</p>
+                        <p>Prompt:  ugly male gnome Laborer  with soulful violet eyes, a luscious  mouth,  a snub nose, and wavy blonde hair wearing a form-fitting green simple waistcoat, white rumpled leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_laborer\out-20240218-231853.png' target='_blank'>
+                        <img src='male_gnome_laborer\out-20240218-231853.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 5528</p>
+                        <p>Prompt:  ugly male gnome Laborer  with soulful violet eyes, a luscious  mouth,  a snub nose, and wavy blonde hair wearing a form-fitting green simple waistcoat, white rumpled leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_laborer\out-20240218-231917.png' target='_blank'>
+                        <img src='male_gnome_laborer\out-20240218-231917.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 50839</p>
+                        <p>Prompt:  ugly male gnome Laborer  with soulful violet eyes, a luscious  mouth,  a snub nose, and wavy blonde hair wearing a form-fitting green simple waistcoat, white rumpled leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_laborer\out-20240219-061900.png' target='_blank'>
+                        <img src='female_halfling_laborer\out-20240219-061900.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 42091</p>
+                        <p>Prompt: gangly ugly female D&D Halfling Laborer  with radiant grey eyes, a pouty  mouth,  a crooked nose, and coarse silver hair wearing a tailored white embroidered waistcoat, matching white shimmering leggings and white rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_laborer\out-20240219-061922.png' target='_blank'>
+                        <img src='female_halfling_laborer\out-20240219-061922.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 2901</p>
+                        <p>Prompt: gangly ugly female D&D Halfling Laborer  with radiant grey eyes, a pouty  mouth,  a crooked nose, and coarse silver hair wearing a tailored white embroidered waistcoat, matching white shimmering leggings and white rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_laborer\out-20240219-062847.png' target='_blank'>
+                        <img src='female_halfling_laborer\out-20240219-062847.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 16623</p>
+                        <p>Prompt: slender ugly female D&D Halfling Laborer  with mesmerizing lavender eyes, a luscious  mouth,  a broad nose, and frizzy auburn hair wearing a comfortable blue embroidered waistcoat, black war-torn leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_laborer\out-20240219-062931.png' target='_blank'>
+                        <img src='female_halfling_laborer\out-20240219-062931.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 10142</p>
+                        <p>Prompt: slender ugly female D&D Halfling Laborer  with mesmerizing lavender eyes, a luscious  mouth,  a broad nose, and frizzy auburn hair wearing a comfortable blue embroidered waistcoat, black war-torn leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_laborer\out-20240219-062954.png' target='_blank'>
+                        <img src='female_halfling_laborer\out-20240219-062954.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: 56711</p>
+                        <p>Prompt: slender ugly female D&D Halfling Laborer  with mesmerizing lavender eyes, a luscious  mouth,  a broad nose, and frizzy auburn hair wearing a comfortable blue embroidered waistcoat, black war-torn leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_laborer\out-20240220-170713.png' target='_blank'>
+                        <img src='female_halfling_laborer\out-20240220-170713.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: 51476</p>
+                        <p>Prompt: towering average looking female D&D Halfling Laborer  with piercing green eyes, a plump  mouth,  a thin nose, and glossy black hair wearing a tight-fitting coral very elegant waistcoat, black sturdy leggings and brown sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_laborer\out-20240220-170854.png' target='_blank'>
+                        <img src='female_halfling_laborer\out-20240220-170854.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-17")'>Details</button>
+                    <div class='details' id='details-17'>
+                        <p>Seed: 64398</p>
+                        <p>Prompt: towering average looking female D&D Halfling Laborer  with piercing green eyes, a plump  mouth,  a thin nose, and glossy black hair wearing a tight-fitting coral very elegant waistcoat, black sturdy leggings and brown sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_laborer\out-20240225-012133.png' target='_blank'>
+                        <img src='female_halfling_laborer\out-20240225-012133.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-18")'>Details</button>
+                    <div class='details' id='details-18'>
+                        <p>Seed: 34927</p>
+                        <p>Prompt: towering ordinary looking female human Lumberjack  with sparkling lavender eyes, a pouty  mouth,  a straight nose, and curly black hair wearing a tapered green ornatewaistcoat, white sturdy leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_laborer\out-20240219-150336.png' target='_blank'>
+                        <img src='male_halfling_laborer\out-20240219-150336.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-19")'>Details</button>
+                    <div class='details' id='details-19'>
+                        <p>Seed: 59511</p>
+                        <p>Prompt: sturdy ordinary looking male D&D Halfling Laborer  with piercing hazel eyes, a luscious  mouth,  a delicate nose, and straight sandy hair wearing a form-fitting grey ornate waistcoat, black finely made leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_laborer\out-20240219-150418.png' target='_blank'>
+                        <img src='male_halfling_laborer\out-20240219-150418.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-20")'>Details</button>
+                    <div class='details' id='details-20'>
+                        <p>Seed: 13364</p>
+                        <p>Prompt: sturdy ordinary looking male D&D Halfling Laborer  with piercing hazel eyes, a luscious  mouth,  a delicate nose, and straight sandy hair wearing a form-fitting grey ornate waistcoat, black finely made leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_laborer\out-20240219-150500.png' target='_blank'>
+                        <img src='male_halfling_laborer\out-20240219-150500.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-21")'>Details</button>
+                    <div class='details' id='details-21'>
+                        <p>Seed: 37091</p>
+                        <p>Prompt: sturdy ordinary looking male D&D Halfling Laborer  with piercing hazel eyes, a luscious  mouth,  a delicate nose, and straight sandy hair wearing a form-fitting grey ornate waistcoat, black finely made leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_laborer\out-20240219-150543.png' target='_blank'>
+                        <img src='male_halfling_laborer\out-20240219-150543.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-22")'>Details</button>
+                    <div class='details' id='details-22'>
+                        <p>Seed: 47260</p>
+                        <p>Prompt: sturdy ordinary looking male D&D Halfling Laborer  with piercing hazel eyes, a luscious  mouth,  a delicate nose, and straight sandy hair wearing a form-fitting grey ornate waistcoat, black finely made leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_laborer\out-20240225-160212.png' target='_blank'>
+                        <img src='female_human_laborer\out-20240225-160212.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-23")'>Details</button>
+                    <div class='details' id='details-23'>
+                        <p>Seed: 21135</p>
+                        <p>Prompt: sturdy plain looking female human Laborer  with soulful emerald eyes, a luscious  mouth,  a straight nose, and glossy red hair wearing a tapered red embroideredtunic, black ragged woolen leggings and matching red buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_laborer\out-20240225-160526.png' target='_blank'>
+                        <img src='female_human_laborer\out-20240225-160526.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-24")'>Details</button>
+                    <div class='details' id='details-24'>
+                        <p>Seed: 41055</p>
+                        <p>Prompt: gangly attractive female human Laborer  with expressive brown eyes, a seductive  mouth,  a regal nose, and coarse auburn hair wearing a tight-fitting black ornatemantle, matching black rumpled leggings and brown felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_laborer\out-20240219-011504.png' target='_blank'>
+                        <img src='male_tabaxi_laborer\out-20240219-011504.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-25")'>Details</button>
+                    <div class='details' id='details-25'>
+                        <p>Seed: 54930</p>
+                        <p>Prompt: gangly extrodanarily attractive male tabaxi fluffy humanoid catlike person covered in fur Laborer  with dreamy amber eyes, an alluring  mouth,  a angular nose, and wavy platinum hair wearing a form-fitting coral finely-tailored waistcoat, black shimmering leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

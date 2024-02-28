@@ -1,0 +1,471 @@
+
+    <html>
+    <head>
+    <title>fletcher Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>fletcher</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_fletcher\out-20240219-025245.png' target='_blank'>
+                        <img src='female_dwarf_fletcher\out-20240219-025245.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 7603</p>
+                        <p>Prompt: sturdy attractive female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Fletcher  with transfixing lavender eyes, a sensouos  mouth,  a snub nose, and wavy strawberry blonde hair wearing a form-fitting blue simple waistcoat, black loose-fitting leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_fletcher\out-20240219-025308.png' target='_blank'>
+                        <img src='female_dwarf_fletcher\out-20240219-025308.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 36704</p>
+                        <p>Prompt: sturdy attractive female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Fletcher  with transfixing lavender eyes, a sensouos  mouth,  a snub nose, and wavy strawberry blonde hair wearing a form-fitting blue simple waistcoat, black loose-fitting leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_fletcher\out-20240219-025330.png' target='_blank'>
+                        <img src='female_dwarf_fletcher\out-20240219-025330.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 39191</p>
+                        <p>Prompt: sturdy attractive female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Fletcher  with transfixing lavender eyes, a sensouos  mouth,  a snub nose, and wavy strawberry blonde hair wearing a form-fitting blue simple waistcoat, black loose-fitting leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_fletcher\out-20240219-021757.png' target='_blank'>
+                        <img src='male_dwarf_fletcher\out-20240219-021757.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 22876</p>
+                        <p>Prompt: towering ordinary looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Fletcher  with transfixing brown eyes, a pouty  mouth,  a petite nose, and straight platinum hair wearing a form-fitting blue finely-tailored waistcoat, red close-fitting leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_fletcher\out-20240219-021819.png' target='_blank'>
+                        <img src='male_dwarf_fletcher\out-20240219-021819.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 6285</p>
+                        <p>Prompt: towering ordinary looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Fletcher  with transfixing brown eyes, a pouty  mouth,  a petite nose, and straight platinum hair wearing a form-fitting blue finely-tailored waistcoat, red close-fitting leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_fletcher\out-20240219-045625.png' target='_blank'>
+                        <img src='male_dwarf_fletcher\out-20240219-045625.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 18724</p>
+                        <p>Prompt: petite average looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Fletcher  with soulful amber eyes, an alluring  mouth,  a delicate nose, and shiny auburn hair wearing a loose-fitting coral simple waistcoat, black rumpled leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_fletcher\out-20240219-045648.png' target='_blank'>
+                        <img src='male_dwarf_fletcher\out-20240219-045648.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 19339</p>
+                        <p>Prompt: petite average looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Fletcher  with soulful amber eyes, an alluring  mouth,  a delicate nose, and shiny auburn hair wearing a loose-fitting coral simple waistcoat, black rumpled leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_fletcher\out-20240219-045710.png' target='_blank'>
+                        <img src='male_dwarf_fletcher\out-20240219-045710.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 21898</p>
+                        <p>Prompt: petite average looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Fletcher  with soulful amber eyes, an alluring  mouth,  a delicate nose, and shiny auburn hair wearing a loose-fitting coral simple waistcoat, black rumpled leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_fletcher\out-20240219-045733.png' target='_blank'>
+                        <img src='male_dwarf_fletcher\out-20240219-045733.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 24660</p>
+                        <p>Prompt: petite average looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Fletcher  with soulful amber eyes, an alluring  mouth,  a delicate nose, and shiny auburn hair wearing a loose-fitting coral simple waistcoat, black rumpled leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_fletcher\out-20240219-090648.png' target='_blank'>
+                        <img src='male_dwarf_fletcher\out-20240219-090648.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 11875</p>
+                        <p>Prompt: broad-shouldered extrodanarily attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Fletcher  with electric brown eyes, a plump  mouth,  a snub nose, and frizzy blonde hair wearing a form-fitting white wollen waistcoat, matching white close-fitting leggings and white wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_fletcher\out-20240219-090711.png' target='_blank'>
+                        <img src='male_dwarf_fletcher\out-20240219-090711.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 22799</p>
+                        <p>Prompt: broad-shouldered extrodanarily attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Fletcher  with electric brown eyes, a plump  mouth,  a snub nose, and frizzy blonde hair wearing a form-fitting white wollen waistcoat, matching white close-fitting leggings and white wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_fletcher\out-20240219-090734.png' target='_blank'>
+                        <img src='male_dwarf_fletcher\out-20240219-090734.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 14203</p>
+                        <p>Prompt: broad-shouldered extrodanarily attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Fletcher  with electric brown eyes, a plump  mouth,  a snub nose, and frizzy blonde hair wearing a form-fitting white wollen waistcoat, matching white close-fitting leggings and white wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_fletcher\out-20240219-090758.png' target='_blank'>
+                        <img src='male_dwarf_fletcher\out-20240219-090758.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 44575</p>
+                        <p>Prompt: broad-shouldered extrodanarily attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Fletcher  with electric brown eyes, a plump  mouth,  a snub nose, and frizzy blonde hair wearing a form-fitting white wollen waistcoat, matching white close-fitting leggings and white wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fletcher\out-20240219-025520.png' target='_blank'>
+                        <img src='female_elf_fletcher\out-20240219-025520.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 10933</p>
+                        <p>Prompt: petite plain looking female Lord of The Rings Elf Fletcher  with expressive brown eyes, a delicate  mouth,  a petite nose, and curly auburn hair wearing a tailored coral very elegant waistcoat, black ragged woolen leggings and brown velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fletcher\out-20240219-025542.png' target='_blank'>
+                        <img src='female_elf_fletcher\out-20240219-025542.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 38796</p>
+                        <p>Prompt: petite plain looking female Lord of The Rings Elf Fletcher  with expressive brown eyes, a delicate  mouth,  a petite nose, and curly auburn hair wearing a tailored coral very elegant waistcoat, black ragged woolen leggings and brown velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fletcher\out-20240219-025606.png' target='_blank'>
+                        <img src='female_elf_fletcher\out-20240219-025606.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: 45567</p>
+                        <p>Prompt: petite plain looking female Lord of The Rings Elf Fletcher  with expressive brown eyes, a delicate  mouth,  a petite nose, and curly auburn hair wearing a tailored coral very elegant waistcoat, black ragged woolen leggings and brown velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_fletcher\out-20240219-025632.png' target='_blank'>
+                        <img src='female_elf_fletcher\out-20240219-025632.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: 28732</p>
+                        <p>Prompt: petite plain looking female Lord of The Rings Elf Fletcher  with expressive brown eyes, a delicate  mouth,  a petite nose, and curly auburn hair wearing a tailored coral very elegant waistcoat, black ragged woolen leggings and brown velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_fletcher\out-20240219-045325.png' target='_blank'>
+                        <img src='male_elf_fletcher\out-20240219-045325.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-17")'>Details</button>
+                    <div class='details' id='details-17'>
+                        <p>Seed: 56075</p>
+                        <p>Prompt: towering ordinary looking male Lord of The Rings Elf Fletcher  with soulful emerald eyes, a eloquent  mouth,  a delicate nose, and silky black hair wearing a loose-fitting grey embroidered waistcoat, black close-fitting leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_fletcher\out-20240219-045347.png' target='_blank'>
+                        <img src='male_elf_fletcher\out-20240219-045347.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-18")'>Details</button>
+                    <div class='details' id='details-18'>
+                        <p>Seed: 16328</p>
+                        <p>Prompt: towering ordinary looking male Lord of The Rings Elf Fletcher  with soulful emerald eyes, a eloquent  mouth,  a delicate nose, and silky black hair wearing a loose-fitting grey embroidered waistcoat, black close-fitting leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_fletcher\out-20240219-045409.png' target='_blank'>
+                        <img src='male_elf_fletcher\out-20240219-045409.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-19")'>Details</button>
+                    <div class='details' id='details-19'>
+                        <p>Seed: 56922</p>
+                        <p>Prompt: towering ordinary looking male Lord of The Rings Elf Fletcher  with soulful emerald eyes, a eloquent  mouth,  a delicate nose, and silky black hair wearing a loose-fitting grey embroidered waistcoat, black close-fitting leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_fletcher\out-20240219-213933.png' target='_blank'>
+                        <img src='male_elf_fletcher\out-20240219-213933.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-20")'>Details</button>
+                    <div class='details' id='details-20'>
+                        <p>Seed: 57239</p>
+                        <p>Prompt: petite charming male Lord of The Rings Elf Fletcher  with expressive turquoise eyes, a seductive  mouth,  a snub nose, and glossy black hair wearing a tailored blue wollen waistcoat, matching blue ragged woolen leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_fletcher\out-20240219-214124.png' target='_blank'>
+                        <img src='male_elf_fletcher\out-20240219-214124.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-21")'>Details</button>
+                    <div class='details' id='details-21'>
+                        <p>Seed: 57628</p>
+                        <p>Prompt: petite charming male Lord of The Rings Elf Fletcher  with expressive turquoise eyes, a seductive  mouth,  a snub nose, and glossy black hair wearing a tailored blue wollen waistcoat, matching blue ragged woolen leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_fletcher\out-20240221-145742.png' target='_blank'>
+                        <img src='female_halfling_fletcher\out-20240221-145742.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-22")'>Details</button>
+                    <div class='details' id='details-22'>
+                        <p>Seed: 57564</p>
+                        <p>Prompt: sturdy attractive female D&D Halfling Fletcher  with bewitching emerald eyes, a delicate  mouth,  a angular nose, and curly auburn hair wearing a form-fitting blue simple waistcoat, red war-torn leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_fletcher\out-20240221-162331.png' target='_blank'>
+                        <img src='male_halfling_fletcher\out-20240221-162331.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-23")'>Details</button>
+                    <div class='details' id='details-23'>
+                        <p>Seed: 53120</p>
+                        <p>Prompt: sturdy ugly male D&D Halfling Fletcher  with transfixing lavender eyes, a eloquent  mouth,  a chisiled nose, and glossy  hair wearing a snug turquoise finely-tailored waistcoat, black ragged woolen leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_fletcher\out-20240221-151344.png' target='_blank'>
+                        <img src='female_human_fletcher\out-20240221-151344.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-24")'>Details</button>
+                    <div class='details' id='details-24'>
+                        <p>Seed: 48866</p>
+                        <p>Prompt: gangly extrodanarily attractive female human Fletcher  with haunting grey eyes, a captivating  mouth,  a petite nose, and straight blonde hair wearing a tight-fitting coral wollen waistcoat, black shimmering leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

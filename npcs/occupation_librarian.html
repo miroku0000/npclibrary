@@ -1,0 +1,247 @@
+
+    <html>
+    <head>
+    <title>librarian Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>librarian</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'gnome')">Gnome</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_librarian\out-20240219-014627.png' target='_blank'>
+                        <img src='female_gnome_librarian\out-20240219-014627.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 27760</p>
+                        <p>Prompt: gangly attractive female gnome Librarian  with mysterious violet eyes, a tempting  mouth,  a straight nose, and curly  hair wearing a tailored turquoise ornate waistcoat, black finely made leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_librarian\out-20240219-014739.png' target='_blank'>
+                        <img src='female_gnome_librarian\out-20240219-014739.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 46917</p>
+                        <p>Prompt: gangly attractive female gnome Librarian  with mysterious violet eyes, a tempting  mouth,  a straight nose, and curly  hair wearing a tailored turquoise ornate waistcoat, black finely made leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_librarian\out-20240220-135232.png' target='_blank'>
+                        <img src='female_gnome_librarian\out-20240220-135232.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 24080</p>
+                        <p>Prompt:  attractive female gnome Librarian  with electric grey eyes, a sensouos  mouth,  a snub nose, and coarse auburn hair wearing a comfortable coral velvet-lined waistcoat, white shimmering leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_librarian\out-20240219-224625.png' target='_blank'>
+                        <img src='female_halfling_librarian\out-20240219-224625.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 38203</p>
+                        <p>Prompt: towering extrodanarily attractive female D&D Halfling Librarian  with haunting emerald eyes, a seductive  mouth,  a straight nose, and glossy ashen hair wearing a snug white ornate waistcoat, matching white war-torn leggings and white velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_librarian\out-20240219-224714.png' target='_blank'>
+                        <img src='female_halfling_librarian\out-20240219-224714.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 50115</p>
+                        <p>Prompt: towering extrodanarily attractive female D&D Halfling Librarian  with haunting emerald eyes, a seductive  mouth,  a straight nose, and glossy ashen hair wearing a snug white ornate waistcoat, matching white war-torn leggings and white velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_librarian\out-20240219-224757.png' target='_blank'>
+                        <img src='female_halfling_librarian\out-20240219-224757.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 17250</p>
+                        <p>Prompt: towering extrodanarily attractive female D&D Halfling Librarian  with haunting emerald eyes, a seductive  mouth,  a straight nose, and glossy ashen hair wearing a snug white ornate waistcoat, matching white war-torn leggings and white velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_librarian\out-20240219-224844.png' target='_blank'>
+                        <img src='female_halfling_librarian\out-20240219-224844.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 63070</p>
+                        <p>Prompt: towering extrodanarily attractive female D&D Halfling Librarian  with haunting emerald eyes, a seductive  mouth,  a straight nose, and glossy ashen hair wearing a snug white ornate waistcoat, matching white war-torn leggings and white velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_librarian\out-20240220-114039.png' target='_blank'>
+                        <img src='female_halfling_librarian\out-20240220-114039.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 41940</p>
+                        <p>Prompt: broad-shouldered plain looking female D&D Halfling Librarian  with intense blue eyes, an alluring  mouth,  a snub nose, and silky blonde hair wearing a tailored black velvet-lined waistcoat, matching black war-torn leggings and brown rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_librarian\out-20240220-114232.png' target='_blank'>
+                        <img src='female_halfling_librarian\out-20240220-114232.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 30662</p>
+                        <p>Prompt: broad-shouldered plain looking female D&D Halfling Librarian  with intense blue eyes, an alluring  mouth,  a snub nose, and silky blonde hair wearing a tailored black velvet-lined waistcoat, matching black war-torn leggings and brown rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_librarian\out-20240220-122221.png' target='_blank'>
+                        <img src='male_tabaxi_librarian\out-20240220-122221.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 15664</p>
+                        <p>Prompt: sturdy charming male tabaxi fluffy humanoid catlike person covered in fur Librarian  with alluring lavender eyes, a sensouos  mouth,  a chisiled nose, and silky auburn hair wearing a tapered black embroidered waistcoat, white war-torn leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_librarian\out-20240220-122422.png' target='_blank'>
+                        <img src='male_tabaxi_librarian\out-20240220-122422.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 30773</p>
+                        <p>Prompt: sturdy charming male tabaxi fluffy humanoid catlike person covered in fur Librarian  with alluring lavender eyes, a sensouos  mouth,  a chisiled nose, and silky auburn hair wearing a tapered black embroidered waistcoat, white war-torn leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

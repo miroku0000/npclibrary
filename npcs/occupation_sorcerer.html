@@ -1,0 +1,791 @@
+
+    <html>
+    <head>
+    <title>sorcerer Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>sorcerer</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'gnome')">Gnome</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_sorcerer\out-20240221-142240.png' target='_blank'>
+                        <img src='female_gnome_sorcerer\out-20240221-142240.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 64353</p>
+                        <p>Prompt: petite ordinary looking female gnome sorcerer  with dreamy green eyes, an irresistable  mouth,  a petite nose, and wavy golden hair wearing a comfortable coral velvet-lined waistcoat, white sturdy leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_sorcerer\out-20240221-184546.png' target='_blank'>
+                        <img src='female_gnome_sorcerer\out-20240221-184546.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 61916</p>
+                        <p>Prompt: gangly ugly female gnome sorcerer  with mesmerizing blue eyes, a plump  mouth,  a petite nose, and curly sandy hair wearing a tight-fitting grey embroidered waistcoat, black sturdy leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_sorcerer\out-20240218-170547.png' target='_blank'>
+                        <img src='female_halfling_sorcerer\out-20240218-170547.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering charming female D&D Halfling sorcerer  with sparkling emerald eyes, an irresistable  mouth,  a bulbous nose, and silky strawberry blonde hair wearing a snug blue ornate waistcoat, red close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_sorcerer\out-20240218-170613.png' target='_blank'>
+                        <img src='female_halfling_sorcerer\out-20240218-170613.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering charming female D&D Halfling sorcerer  with sparkling emerald eyes, an irresistable  mouth,  a bulbous nose, and silky strawberry blonde hair wearing a snug blue ornate waistcoat, red close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_sorcerer\out-20240218-170708.png' target='_blank'>
+                        <img src='female_halfling_sorcerer\out-20240218-170708.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering charming female D&D Halfling sorcerer  with sparkling emerald eyes, an irresistable  mouth,  a bulbous nose, and silky strawberry blonde hair wearing a snug blue ornate waistcoat, red close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_sorcerer\out-20240218-170735.png' target='_blank'>
+                        <img src='female_halfling_sorcerer\out-20240218-170735.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering charming female D&D Halfling sorcerer  with sparkling emerald eyes, an irresistable  mouth,  a bulbous nose, and silky strawberry blonde hair wearing a snug blue ornate waistcoat, red close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_sorcerer\out-20240218-170804.png' target='_blank'>
+                        <img src='female_halfling_sorcerer\out-20240218-170804.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering charming female D&D Halfling sorcerer  with sparkling emerald eyes, an irresistable  mouth,  a bulbous nose, and silky strawberry blonde hair wearing a snug blue ornate waistcoat, red close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_sorcerer\out-20240218-170835.png' target='_blank'>
+                        <img src='female_halfling_sorcerer\out-20240218-170835.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering charming female D&D Halfling sorcerer  with sparkling emerald eyes, an irresistable  mouth,  a bulbous nose, and silky strawberry blonde hair wearing a snug blue ornate waistcoat, red close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_sorcerer\out-20240218-170903.png' target='_blank'>
+                        <img src='female_halfling_sorcerer\out-20240218-170903.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering charming female D&D Halfling sorcerer  with sparkling emerald eyes, an irresistable  mouth,  a bulbous nose, and silky strawberry blonde hair wearing a snug blue ornate waistcoat, red close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_sorcerer\out-20240218-170931.png' target='_blank'>
+                        <img src='female_halfling_sorcerer\out-20240218-170931.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering charming female D&D Halfling sorcerer  with sparkling emerald eyes, an irresistable  mouth,  a bulbous nose, and silky strawberry blonde hair wearing a snug blue ornate waistcoat, red close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_sorcerer\out-20240218-170957.png' target='_blank'>
+                        <img src='female_halfling_sorcerer\out-20240218-170957.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering charming female D&D Halfling sorcerer  with sparkling emerald eyes, an irresistable  mouth,  a bulbous nose, and silky strawberry blonde hair wearing a snug blue ornate waistcoat, red close-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_sorcerer\out-20240219-090822.png' target='_blank'>
+                        <img src='female_halfling_sorcerer\out-20240219-090822.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 35425</p>
+                        <p>Prompt: sturdy average looking female D&D Halfling sorcerer  with dreamy hazel eyes, a captivating  mouth,  a angular nose, and silky sandy hair wearing a comfortable coral very elegant waistcoat, white war-torn leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_sorcerer\out-20240219-090846.png' target='_blank'>
+                        <img src='female_halfling_sorcerer\out-20240219-090846.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 30591</p>
+                        <p>Prompt: sturdy average looking female D&D Halfling sorcerer  with dreamy hazel eyes, a captivating  mouth,  a angular nose, and silky sandy hair wearing a comfortable coral very elegant waistcoat, white war-torn leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_sorcerer\out-20240219-090909.png' target='_blank'>
+                        <img src='female_halfling_sorcerer\out-20240219-090909.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 14702</p>
+                        <p>Prompt: sturdy average looking female D&D Halfling sorcerer  with dreamy hazel eyes, a captivating  mouth,  a angular nose, and silky sandy hair wearing a comfortable coral very elegant waistcoat, white war-torn leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_sorcerer\out-20240219-090932.png' target='_blank'>
+                        <img src='female_halfling_sorcerer\out-20240219-090932.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 59351</p>
+                        <p>Prompt: sturdy average looking female D&D Halfling sorcerer  with dreamy hazel eyes, a captivating  mouth,  a angular nose, and silky sandy hair wearing a comfortable coral very elegant waistcoat, white war-torn leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_sorcerer\out-20240218-172521.png' target='_blank'>
+                        <img src='male_halfling_sorcerer\out-20240218-172521.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: petite ugly male D&D Halfling sorcerer  with transfixing lavender eyes, an alluring  mouth,  a prominent nose, and straight mahogany hair wearing a form-fitting blue velvet-lined waistcoat, matching blue finely made leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_sorcerer\out-20240218-172550.png' target='_blank'>
+                        <img src='male_halfling_sorcerer\out-20240218-172550.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: petite ugly male D&D Halfling sorcerer  with transfixing lavender eyes, an alluring  mouth,  a prominent nose, and straight mahogany hair wearing a form-fitting blue velvet-lined waistcoat, matching blue finely made leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_sorcerer\out-20240218-172616.png' target='_blank'>
+                        <img src='male_halfling_sorcerer\out-20240218-172616.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-17")'>Details</button>
+                    <div class='details' id='details-17'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: petite ugly male D&D Halfling sorcerer  with transfixing lavender eyes, an alluring  mouth,  a prominent nose, and straight mahogany hair wearing a form-fitting blue velvet-lined waistcoat, matching blue finely made leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_sorcerer\out-20240218-172643.png' target='_blank'>
+                        <img src='male_halfling_sorcerer\out-20240218-172643.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-18")'>Details</button>
+                    <div class='details' id='details-18'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: petite ugly male D&D Halfling sorcerer  with transfixing lavender eyes, an alluring  mouth,  a prominent nose, and straight mahogany hair wearing a form-fitting blue velvet-lined waistcoat, matching blue finely made leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_sorcerer\out-20240218-172710.png' target='_blank'>
+                        <img src='male_halfling_sorcerer\out-20240218-172710.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-19")'>Details</button>
+                    <div class='details' id='details-19'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: petite ugly male D&D Halfling sorcerer  with transfixing lavender eyes, an alluring  mouth,  a prominent nose, and straight mahogany hair wearing a form-fitting blue velvet-lined waistcoat, matching blue finely made leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_sorcerer\out-20240218-172737.png' target='_blank'>
+                        <img src='male_halfling_sorcerer\out-20240218-172737.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-20")'>Details</button>
+                    <div class='details' id='details-20'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: petite ugly male D&D Halfling sorcerer  with transfixing lavender eyes, an alluring  mouth,  a prominent nose, and straight mahogany hair wearing a form-fitting blue velvet-lined waistcoat, matching blue finely made leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_sorcerer\out-20240218-172803.png' target='_blank'>
+                        <img src='male_halfling_sorcerer\out-20240218-172803.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-21")'>Details</button>
+                    <div class='details' id='details-21'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: petite ugly male D&D Halfling sorcerer  with transfixing lavender eyes, an alluring  mouth,  a prominent nose, and straight mahogany hair wearing a form-fitting blue velvet-lined waistcoat, matching blue finely made leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_sorcerer\out-20240218-172832.png' target='_blank'>
+                        <img src='male_halfling_sorcerer\out-20240218-172832.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-22")'>Details</button>
+                    <div class='details' id='details-22'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: petite ugly male D&D Halfling sorcerer  with transfixing lavender eyes, an alluring  mouth,  a prominent nose, and straight mahogany hair wearing a form-fitting blue velvet-lined waistcoat, matching blue finely made leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_sorcerer\out-20240218-172901.png' target='_blank'>
+                        <img src='male_halfling_sorcerer\out-20240218-172901.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-23")'>Details</button>
+                    <div class='details' id='details-23'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: petite ugly male D&D Halfling sorcerer  with transfixing lavender eyes, an alluring  mouth,  a prominent nose, and straight mahogany hair wearing a form-fitting blue velvet-lined waistcoat, matching blue finely made leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_sorcerer\out-20240225-065757.png' target='_blank'>
+                        <img src='female_human_sorcerer\out-20240225-065757.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-24")'>Details</button>
+                    <div class='details' id='details-24'>
+                        <p>Seed: 42489</p>
+                        <p>Prompt: gangly extrodanarily attractive female human Fletcher  with transfixing blue eyes, an enchanting  mouth,  a snub nose, and straight auburn hair wearing a snug coral velvet-linedwaistcoat, black ragged woolen leggings and brown fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_sorcerer\out-20240225-081229.png' target='_blank'>
+                        <img src='female_human_sorcerer\out-20240225-081229.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-25")'>Details</button>
+                    <div class='details' id='details-25'>
+                        <p>Seed: 39893</p>
+                        <p>Prompt: towering plain looking female human Potioneer  with expressive emerald eyes, an enchanting  mouth,  a angular nose, and curly black hair wearing a comfortable black very elegantwaistcoat, white rumpled leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_sorcerer\out-20240218-164249.png' target='_blank'>
+                        <img src='male_human_sorcerer\out-20240218-164249.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-26")'>Details</button>
+                    <div class='details' id='details-26'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered attractive male human sorcerer  with bewitching violet eyes, a delicate  mouth,  a broad nose, and wavy red hair wearing a loose-fitting black plain waistcoat, matching black close-fitting leggings and brown velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_sorcerer\out-20240218-164326.png' target='_blank'>
+                        <img src='male_human_sorcerer\out-20240218-164326.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-27")'>Details</button>
+                    <div class='details' id='details-27'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered attractive male human sorcerer  with bewitching violet eyes, a delicate  mouth,  a broad nose, and wavy red hair wearing a loose-fitting black plain waistcoat, matching black close-fitting leggings and brown velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_sorcerer\out-20240218-164357.png' target='_blank'>
+                        <img src='male_human_sorcerer\out-20240218-164357.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-28")'>Details</button>
+                    <div class='details' id='details-28'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered attractive male human sorcerer  with bewitching violet eyes, a delicate  mouth,  a broad nose, and wavy red hair wearing a loose-fitting black plain waistcoat, matching black close-fitting leggings and brown velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_sorcerer\out-20240219-001913.png' target='_blank'>
+                        <img src='male_human_sorcerer\out-20240219-001913.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-29")'>Details</button>
+                    <div class='details' id='details-29'>
+                        <p>Seed: 829</p>
+                        <p>Prompt: petite charming male human sorcerer  with expressive violet eyes, a tempting  mouth,  a broad nose, and shiny red hair wearing a snug coral ornate waistcoat, black loose-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_sorcerer\out-20240219-001940.png' target='_blank'>
+                        <img src='male_human_sorcerer\out-20240219-001940.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-30")'>Details</button>
+                    <div class='details' id='details-30'>
+                        <p>Seed: 60619</p>
+                        <p>Prompt: petite charming male human sorcerer  with expressive violet eyes, a tempting  mouth,  a broad nose, and shiny red hair wearing a snug coral ornate waistcoat, black loose-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_sorcerer\out-20240219-002006.png' target='_blank'>
+                        <img src='male_human_sorcerer\out-20240219-002006.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-31")'>Details</button>
+                    <div class='details' id='details-31'>
+                        <p>Seed: 41960</p>
+                        <p>Prompt: petite charming male human sorcerer  with expressive violet eyes, a tempting  mouth,  a broad nose, and shiny red hair wearing a snug coral ornate waistcoat, black loose-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_sorcerer\out-20240219-002031.png' target='_blank'>
+                        <img src='male_human_sorcerer\out-20240219-002031.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-32")'>Details</button>
+                    <div class='details' id='details-32'>
+                        <p>Seed: 46207</p>
+                        <p>Prompt: petite charming male human sorcerer  with expressive violet eyes, a tempting  mouth,  a broad nose, and shiny red hair wearing a snug coral ornate waistcoat, black loose-fitting leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi female'>
+                    <div class='additional-info'>Female, Tabaxi</div>
+                    <a href='female_tabaxi_sorcerer\out-20240218-134907.png' target='_blank'>
+                        <img src='female_tabaxi_sorcerer\out-20240218-134907.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-33")'>Details</button>
+                    <div class='details' id='details-33'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: slender attractive female tabaxi fluffy humanoid catlike person covered in fur sorcerer  with piercing grey eyes, an enchanting  mouth,  a thin nose, and coarse  hair wearing a comfortable blue velvet-lined waistcoat, black war-torn leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi female'>
+                    <div class='additional-info'>Female, Tabaxi</div>
+                    <a href='female_tabaxi_sorcerer\out-20240218-154224.png' target='_blank'>
+                        <img src='female_tabaxi_sorcerer\out-20240218-154224.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-34")'>Details</button>
+                    <div class='details' id='details-34'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy average looking female tabaxi fluffy humanoid catlike person covered in fur sorcerer  with radiant lavender eyes, a luscious  mouth,  a chisiled nose, and glossy chestnut hair wearing a loose-fitting black finely-tailored waistcoat, white loose-fitting leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_sorcerer\out-20240218-135709.png' target='_blank'>
+                        <img src='male_tabaxi_sorcerer\out-20240218-135709.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-35")'>Details</button>
+                    <div class='details' id='details-35'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered plain looking male tabaxi fluffy humanoid catlike person covered in fur sorcerer  with expressive brown eyes, a tempting  mouth,  a petite nose, and thick red hair wearing a form-fitting turquoise velvet-lined waistcoat, black rumpled leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_sorcerer\out-20240218-135736.png' target='_blank'>
+                        <img src='male_tabaxi_sorcerer\out-20240218-135736.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-36")'>Details</button>
+                    <div class='details' id='details-36'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered plain looking male tabaxi fluffy humanoid catlike person covered in fur sorcerer  with expressive brown eyes, a tempting  mouth,  a petite nose, and thick red hair wearing a form-fitting turquoise velvet-lined waistcoat, black rumpled leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_sorcerer\out-20240218-145742.png' target='_blank'>
+                        <img src='male_tabaxi_sorcerer\out-20240218-145742.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-37")'>Details</button>
+                    <div class='details' id='details-37'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: petite ordinary looking male tabaxi fluffy humanoid catlike person covered in fur sorcerer  with sparkling grey eyes, a delicate  mouth,  a regal nose, and coarse mahogany hair wearing a form-fitting coral velvet-lined waistcoat, black shimmering leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_sorcerer\out-20240218-145809.png' target='_blank'>
+                        <img src='male_tabaxi_sorcerer\out-20240218-145809.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-38")'>Details</button>
+                    <div class='details' id='details-38'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: petite ordinary looking male tabaxi fluffy humanoid catlike person covered in fur sorcerer  with sparkling grey eyes, a delicate  mouth,  a regal nose, and coarse mahogany hair wearing a form-fitting coral velvet-lined waistcoat, black shimmering leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_sorcerer\out-20240218-145838.png' target='_blank'>
+                        <img src='male_tabaxi_sorcerer\out-20240218-145838.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-39")'>Details</button>
+                    <div class='details' id='details-39'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: petite ordinary looking male tabaxi fluffy humanoid catlike person covered in fur sorcerer  with sparkling grey eyes, a delicate  mouth,  a regal nose, and coarse mahogany hair wearing a form-fitting coral velvet-lined waistcoat, black shimmering leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_sorcerer\out-20240218-145905.png' target='_blank'>
+                        <img src='male_tabaxi_sorcerer\out-20240218-145905.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-40")'>Details</button>
+                    <div class='details' id='details-40'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: petite ordinary looking male tabaxi fluffy humanoid catlike person covered in fur sorcerer  with sparkling grey eyes, a delicate  mouth,  a regal nose, and coarse mahogany hair wearing a form-fitting coral velvet-lined waistcoat, black shimmering leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_sorcerer\out-20240219-194215.png' target='_blank'>
+                        <img src='male_elf_sorcerer\out-20240219-194215.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-41")'>Details</button>
+                    <div class='details' id='details-41'>
+                        <p>Seed: 10478</p>
+                        <p>Prompt:  attractive male Lord of The Rings Elf sorcerer  with soulful grey eyes, a plump  mouth,  a snub nose, and frizzy mahogany hair wearing a loose-fitting red embroidered waistcoat, black lightweight leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_sorcerer\out-20240219-194238.png' target='_blank'>
+                        <img src='male_elf_sorcerer\out-20240219-194238.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-42")'>Details</button>
+                    <div class='details' id='details-42'>
+                        <p>Seed: 28353</p>
+                        <p>Prompt:  attractive male Lord of The Rings Elf sorcerer  with soulful grey eyes, a plump  mouth,  a snub nose, and frizzy mahogany hair wearing a loose-fitting red embroidered waistcoat, black lightweight leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_sorcerer\out-20240219-194301.png' target='_blank'>
+                        <img src='male_elf_sorcerer\out-20240219-194301.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-43")'>Details</button>
+                    <div class='details' id='details-43'>
+                        <p>Seed: 21160</p>
+                        <p>Prompt:  attractive male Lord of The Rings Elf sorcerer  with soulful grey eyes, a plump  mouth,  a snub nose, and frizzy mahogany hair wearing a loose-fitting red embroidered waistcoat, black lightweight leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_sorcerer\out-20240219-194324.png' target='_blank'>
+                        <img src='male_elf_sorcerer\out-20240219-194324.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-44")'>Details</button>
+                    <div class='details' id='details-44'>
+                        <p>Seed: 18373</p>
+                        <p>Prompt:  attractive male Lord of The Rings Elf sorcerer  with soulful grey eyes, a plump  mouth,  a snub nose, and frizzy mahogany hair wearing a loose-fitting red embroidered waistcoat, black lightweight leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

@@ -1,0 +1,407 @@
+
+    <html>
+    <head>
+    <title>squire Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>squire</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_squire\out-20240219-055111.png' target='_blank'>
+                        <img src='female_elf_squire\out-20240219-055111.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 4287</p>
+                        <p>Prompt: towering ugly female Lord of The Rings Elf Squire  with bewitching green eyes, a eloquent  mouth,  a dainty nose, and curly black hair wearing a tapered coral simple waistcoat, black rumpled leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_squire\out-20240219-055133.png' target='_blank'>
+                        <img src='female_elf_squire\out-20240219-055133.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 59997</p>
+                        <p>Prompt: towering ugly female Lord of The Rings Elf Squire  with bewitching green eyes, a eloquent  mouth,  a dainty nose, and curly black hair wearing a tapered coral simple waistcoat, black rumpled leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_squire\out-20240219-055155.png' target='_blank'>
+                        <img src='female_elf_squire\out-20240219-055155.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 30634</p>
+                        <p>Prompt: towering ugly female Lord of The Rings Elf Squire  with bewitching green eyes, a eloquent  mouth,  a dainty nose, and curly black hair wearing a tapered coral simple waistcoat, black rumpled leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_squire\out-20240219-103932.png' target='_blank'>
+                        <img src='male_elf_squire\out-20240219-103932.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 38339</p>
+                        <p>Prompt: broad-shouldered ugly male Lord of The Rings Elf Squire  with sparkling blue eyes, a sensouos  mouth,  a angular nose, and glossy black hair wearing a tapered black velvet-lined waistcoat, white shimmering leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_squire\out-20240219-103959.png' target='_blank'>
+                        <img src='male_elf_squire\out-20240219-103959.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 1593</p>
+                        <p>Prompt: broad-shouldered ugly male Lord of The Rings Elf Squire  with sparkling blue eyes, a sensouos  mouth,  a angular nose, and glossy black hair wearing a tapered black velvet-lined waistcoat, white shimmering leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_squire\out-20240219-104025.png' target='_blank'>
+                        <img src='male_elf_squire\out-20240219-104025.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 49975</p>
+                        <p>Prompt: broad-shouldered ugly male Lord of The Rings Elf Squire  with sparkling blue eyes, a sensouos  mouth,  a angular nose, and glossy black hair wearing a tapered black velvet-lined waistcoat, white shimmering leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_squire\out-20240219-104049.png' target='_blank'>
+                        <img src='male_elf_squire\out-20240219-104049.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 26154</p>
+                        <p>Prompt: broad-shouldered ugly male Lord of The Rings Elf Squire  with sparkling blue eyes, a sensouos  mouth,  a angular nose, and glossy black hair wearing a tapered black velvet-lined waistcoat, white shimmering leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_squire\out-20240221-152204.png' target='_blank'>
+                        <img src='male_elf_squire\out-20240221-152204.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 53375</p>
+                        <p>Prompt:  ugly male Lord of The Rings Elf Squire  with radiant lavender eyes, a eloquent  mouth,  a prominent nose, and shiny auburn hair wearing a tapered red embroidered waistcoat, black close-fitting leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_squire\out-20240221-101506.png' target='_blank'>
+                        <img src='female_halfling_squire\out-20240221-101506.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 46096</p>
+                        <p>Prompt: towering extrodanarily attractive female D&D Halfling Squire  with radiant blue eyes, a plump  mouth,  a hawklike nose, and frizzy silver hair wearing a tight-fitting white ornate waistcoat, matching white loose-fitting leggings and white wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_squire\out-20240219-034858.png' target='_blank'>
+                        <img src='male_halfling_squire\out-20240219-034858.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 6449</p>
+                        <p>Prompt: slender extrodanarily attractive male D&D Halfling Squire  with bewitching turquoise eyes, a seductive  mouth,  a crooked nose, and frizzy sandy hair wearing a snug blue embroidered waistcoat, red reinforced leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_squire\out-20240219-034920.png' target='_blank'>
+                        <img src='male_halfling_squire\out-20240219-034920.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 8185</p>
+                        <p>Prompt: slender extrodanarily attractive male D&D Halfling Squire  with bewitching turquoise eyes, a seductive  mouth,  a crooked nose, and frizzy sandy hair wearing a snug blue embroidered waistcoat, red reinforced leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_squire\out-20240219-034942.png' target='_blank'>
+                        <img src='male_halfling_squire\out-20240219-034942.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 23845</p>
+                        <p>Prompt: slender extrodanarily attractive male D&D Halfling Squire  with bewitching turquoise eyes, a seductive  mouth,  a crooked nose, and frizzy sandy hair wearing a snug blue embroidered waistcoat, red reinforced leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_squire\out-20240219-035003.png' target='_blank'>
+                        <img src='male_halfling_squire\out-20240219-035003.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 60106</p>
+                        <p>Prompt: slender extrodanarily attractive male D&D Halfling Squire  with bewitching turquoise eyes, a seductive  mouth,  a crooked nose, and frizzy sandy hair wearing a snug blue embroidered waistcoat, red reinforced leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_squire\out-20240219-064510.png' target='_blank'>
+                        <img src='male_dwarf_squire\out-20240219-064510.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 55082</p>
+                        <p>Prompt: broad-shouldered extrodanarily attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Squire  with electric grey eyes, a tempting  mouth,  a petite nose, and thick  hair wearing a snug black simple waistcoat, matching black sturdy leggings and brown felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_squire\out-20240219-064532.png' target='_blank'>
+                        <img src='male_dwarf_squire\out-20240219-064532.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 52174</p>
+                        <p>Prompt: broad-shouldered extrodanarily attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Squire  with electric grey eyes, a tempting  mouth,  a petite nose, and thick  hair wearing a snug black simple waistcoat, matching black sturdy leggings and brown felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_squire\out-20240219-064555.png' target='_blank'>
+                        <img src='male_dwarf_squire\out-20240219-064555.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: 57819</p>
+                        <p>Prompt: broad-shouldered extrodanarily attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Squire  with electric grey eyes, a tempting  mouth,  a petite nose, and thick  hair wearing a snug black simple waistcoat, matching black sturdy leggings and brown felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_squire\out-20240219-064617.png' target='_blank'>
+                        <img src='male_dwarf_squire\out-20240219-064617.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: 9117</p>
+                        <p>Prompt: broad-shouldered extrodanarily attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Squire  with electric grey eyes, a tempting  mouth,  a petite nose, and thick  hair wearing a snug black simple waistcoat, matching black sturdy leggings and brown felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_squire\out-20240219-083839.png' target='_blank'>
+                        <img src='male_dwarf_squire\out-20240219-083839.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-17")'>Details</button>
+                    <div class='details' id='details-17'>
+                        <p>Seed: 5570</p>
+                        <p>Prompt: sturdy ordinary looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Squire  with electric turquoise eyes, a luscious  mouth,  a prominent nose, and frizzy silver hair wearing a tapered coral plain waistcoat, black reinforced leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_squire\out-20240219-083902.png' target='_blank'>
+                        <img src='male_dwarf_squire\out-20240219-083902.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-18")'>Details</button>
+                    <div class='details' id='details-18'>
+                        <p>Seed: 58282</p>
+                        <p>Prompt: sturdy ordinary looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Squire  with electric turquoise eyes, a luscious  mouth,  a prominent nose, and frizzy silver hair wearing a tapered coral plain waistcoat, black reinforced leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_squire\out-20240219-083925.png' target='_blank'>
+                        <img src='male_dwarf_squire\out-20240219-083925.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-19")'>Details</button>
+                    <div class='details' id='details-19'>
+                        <p>Seed: 15614</p>
+                        <p>Prompt: sturdy ordinary looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Squire  with electric turquoise eyes, a luscious  mouth,  a prominent nose, and frizzy silver hair wearing a tapered coral plain waistcoat, black reinforced leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_squire\out-20240219-083948.png' target='_blank'>
+                        <img src='male_dwarf_squire\out-20240219-083948.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-20")'>Details</button>
+                    <div class='details' id='details-20'>
+                        <p>Seed: 46256</p>
+                        <p>Prompt: sturdy ordinary looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Squire  with electric turquoise eyes, a luscious  mouth,  a prominent nose, and frizzy silver hair wearing a tapered coral plain waistcoat, black reinforced leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

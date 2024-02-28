@@ -1,0 +1,1335 @@
+
+    <html>
+    <head>
+    <title>wizard Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>wizard</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'gnome')">Gnome</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_wizard\out-20240218-125237.png' target='_blank'>
+                        <img src='female_elf_wizard\out-20240218-125237.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: gangly extrodanarily attractive female Lord of The Rings Elf wizard  with bewitching emerald eyes, a eloquent  mouth,  a prominent nose, and glossy blonde hair wearing a tailored red velvet-lined waistcoat, black finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_wizard\out-20240218-125301.png' target='_blank'>
+                        <img src='female_elf_wizard\out-20240218-125301.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: gangly extrodanarily attractive female Lord of The Rings Elf wizard  with bewitching emerald eyes, a eloquent  mouth,  a prominent nose, and glossy blonde hair wearing a tailored red velvet-lined waistcoat, black finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_wizard\out-20240218-125327.png' target='_blank'>
+                        <img src='female_elf_wizard\out-20240218-125327.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: gangly extrodanarily attractive female Lord of The Rings Elf wizard  with bewitching emerald eyes, a eloquent  mouth,  a prominent nose, and glossy blonde hair wearing a tailored red velvet-lined waistcoat, black finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_wizard\out-20240218-125355.png' target='_blank'>
+                        <img src='female_elf_wizard\out-20240218-125355.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: gangly extrodanarily attractive female Lord of The Rings Elf wizard  with bewitching emerald eyes, a eloquent  mouth,  a prominent nose, and glossy blonde hair wearing a tailored red velvet-lined waistcoat, black finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_wizard\out-20240218-125422.png' target='_blank'>
+                        <img src='female_elf_wizard\out-20240218-125422.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: gangly extrodanarily attractive female Lord of The Rings Elf wizard  with bewitching emerald eyes, a eloquent  mouth,  a prominent nose, and glossy blonde hair wearing a tailored red velvet-lined waistcoat, black finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_wizard\out-20240218-125448.png' target='_blank'>
+                        <img src='female_elf_wizard\out-20240218-125448.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: gangly extrodanarily attractive female Lord of The Rings Elf wizard  with bewitching emerald eyes, a eloquent  mouth,  a prominent nose, and glossy blonde hair wearing a tailored red velvet-lined waistcoat, black finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_wizard\out-20240218-125515.png' target='_blank'>
+                        <img src='female_elf_wizard\out-20240218-125515.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: gangly extrodanarily attractive female Lord of The Rings Elf wizard  with bewitching emerald eyes, a eloquent  mouth,  a prominent nose, and glossy blonde hair wearing a tailored red velvet-lined waistcoat, black finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_wizard\out-20240218-125541.png' target='_blank'>
+                        <img src='female_elf_wizard\out-20240218-125541.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: gangly extrodanarily attractive female Lord of The Rings Elf wizard  with bewitching emerald eyes, a eloquent  mouth,  a prominent nose, and glossy blonde hair wearing a tailored red velvet-lined waistcoat, black finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_wizard\out-20240218-125607.png' target='_blank'>
+                        <img src='female_elf_wizard\out-20240218-125607.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: gangly extrodanarily attractive female Lord of The Rings Elf wizard  with bewitching emerald eyes, a eloquent  mouth,  a prominent nose, and glossy blonde hair wearing a tailored red velvet-lined waistcoat, black finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_wizard\out-20240218-125634.png' target='_blank'>
+                        <img src='female_elf_wizard\out-20240218-125634.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: gangly extrodanarily attractive female Lord of The Rings Elf wizard  with bewitching emerald eyes, a eloquent  mouth,  a prominent nose, and glossy blonde hair wearing a tailored red velvet-lined waistcoat, black finely made leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_wizard\out-20240219-045029.png' target='_blank'>
+                        <img src='female_elf_wizard\out-20240219-045029.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 51501</p>
+                        <p>Prompt: petite extrodanarily attractive female Lord of The Rings Elf wizard  with haunting grey eyes, a sensouos  mouth,  a angular nose, and curly chestnut hair wearing a tight-fitting blue simple waistcoat, red reinforced leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_wizard\out-20240219-045050.png' target='_blank'>
+                        <img src='female_elf_wizard\out-20240219-045050.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 47689</p>
+                        <p>Prompt: petite extrodanarily attractive female Lord of The Rings Elf wizard  with haunting grey eyes, a sensouos  mouth,  a angular nose, and curly chestnut hair wearing a tight-fitting blue simple waistcoat, red reinforced leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_wizard\out-20240219-045112.png' target='_blank'>
+                        <img src='female_elf_wizard\out-20240219-045112.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 26546</p>
+                        <p>Prompt: petite extrodanarily attractive female Lord of The Rings Elf wizard  with haunting grey eyes, a sensouos  mouth,  a angular nose, and curly chestnut hair wearing a tight-fitting blue simple waistcoat, red reinforced leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_wizard\out-20240219-045134.png' target='_blank'>
+                        <img src='female_elf_wizard\out-20240219-045134.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 25438</p>
+                        <p>Prompt: petite extrodanarily attractive female Lord of The Rings Elf wizard  with haunting grey eyes, a sensouos  mouth,  a angular nose, and curly chestnut hair wearing a tight-fitting blue simple waistcoat, red reinforced leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_wizard\out-20240219-000335.png' target='_blank'>
+                        <img src='male_elf_wizard\out-20240219-000335.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 62857</p>
+                        <p>Prompt: petite attractive male Lord of The Rings Elf wizard  with piercing emerald eyes, a sensouos  mouth,  a bulbous nose, and straight silver hair wearing a loose-fitting turquoise embroidered waistcoat, black finely made leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_wizard\out-20240219-000359.png' target='_blank'>
+                        <img src='male_elf_wizard\out-20240219-000359.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: 21248</p>
+                        <p>Prompt: petite attractive male Lord of The Rings Elf wizard  with piercing emerald eyes, a sensouos  mouth,  a bulbous nose, and straight silver hair wearing a loose-fitting turquoise embroidered waistcoat, black finely made leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_wizard\out-20240219-000424.png' target='_blank'>
+                        <img src='male_elf_wizard\out-20240219-000424.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: 23683</p>
+                        <p>Prompt: petite attractive male Lord of The Rings Elf wizard  with piercing emerald eyes, a sensouos  mouth,  a bulbous nose, and straight silver hair wearing a loose-fitting turquoise embroidered waistcoat, black finely made leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_wizard\out-20240219-000448.png' target='_blank'>
+                        <img src='male_elf_wizard\out-20240219-000448.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-17")'>Details</button>
+                    <div class='details' id='details-17'>
+                        <p>Seed: 9628</p>
+                        <p>Prompt: petite attractive male Lord of The Rings Elf wizard  with piercing emerald eyes, a sensouos  mouth,  a bulbous nose, and straight silver hair wearing a loose-fitting turquoise embroidered waistcoat, black finely made leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_wizard\out-20240219-085858.png' target='_blank'>
+                        <img src='male_elf_wizard\out-20240219-085858.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-18")'>Details</button>
+                    <div class='details' id='details-18'>
+                        <p>Seed: 51572</p>
+                        <p>Prompt: slender ugly male Lord of The Rings Elf Wizard  with mysterious turquoise eyes, a tempting  mouth,  a crooked nose, and curly silver hair wearing a snug coral simple waistcoat, black shimmering leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_wizard\out-20240219-085922.png' target='_blank'>
+                        <img src='male_elf_wizard\out-20240219-085922.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-19")'>Details</button>
+                    <div class='details' id='details-19'>
+                        <p>Seed: 38263</p>
+                        <p>Prompt: slender ugly male Lord of The Rings Elf Wizard  with mysterious turquoise eyes, a tempting  mouth,  a crooked nose, and curly silver hair wearing a snug coral simple waistcoat, black shimmering leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_wizard\out-20240219-085947.png' target='_blank'>
+                        <img src='male_elf_wizard\out-20240219-085947.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-20")'>Details</button>
+                    <div class='details' id='details-20'>
+                        <p>Seed: 33305</p>
+                        <p>Prompt: slender ugly male Lord of The Rings Elf Wizard  with mysterious turquoise eyes, a tempting  mouth,  a crooked nose, and curly silver hair wearing a snug coral simple waistcoat, black shimmering leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_wizard\out-20240219-090010.png' target='_blank'>
+                        <img src='male_elf_wizard\out-20240219-090010.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-21")'>Details</button>
+                    <div class='details' id='details-21'>
+                        <p>Seed: 34113</p>
+                        <p>Prompt: slender ugly male Lord of The Rings Elf Wizard  with mysterious turquoise eyes, a tempting  mouth,  a crooked nose, and curly silver hair wearing a snug coral simple waistcoat, black shimmering leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_wizard\out-20240219-194347.png' target='_blank'>
+                        <img src='male_elf_wizard\out-20240219-194347.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-22")'>Details</button>
+                    <div class='details' id='details-22'>
+                        <p>Seed: 776</p>
+                        <p>Prompt:  plain looking male Lord of The Rings Elf wizard  with haunting hazel eyes, an enchanting  mouth,  a broad nose, and wavy platinum hair wearing a tapered black velvet-lined waistcoat, matching black rumpled leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_wizard\out-20240219-194411.png' target='_blank'>
+                        <img src='male_elf_wizard\out-20240219-194411.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-23")'>Details</button>
+                    <div class='details' id='details-23'>
+                        <p>Seed: 3608</p>
+                        <p>Prompt:  plain looking male Lord of The Rings Elf wizard  with haunting hazel eyes, an enchanting  mouth,  a broad nose, and wavy platinum hair wearing a tapered black velvet-lined waistcoat, matching black rumpled leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_wizard\out-20240219-194435.png' target='_blank'>
+                        <img src='male_elf_wizard\out-20240219-194435.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-24")'>Details</button>
+                    <div class='details' id='details-24'>
+                        <p>Seed: 1549</p>
+                        <p>Prompt:  plain looking male Lord of The Rings Elf wizard  with haunting hazel eyes, an enchanting  mouth,  a broad nose, and wavy platinum hair wearing a tapered black velvet-lined waistcoat, matching black rumpled leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_wizard\out-20240219-194459.png' target='_blank'>
+                        <img src='male_elf_wizard\out-20240219-194459.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-25")'>Details</button>
+                    <div class='details' id='details-25'>
+                        <p>Seed: 46103</p>
+                        <p>Prompt:  plain looking male Lord of The Rings Elf wizard  with haunting hazel eyes, an enchanting  mouth,  a broad nose, and wavy platinum hair wearing a tapered black velvet-lined waistcoat, matching black rumpled leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_wizard\out-20240219-111758.png' target='_blank'>
+                        <img src='female_gnome_wizard\out-20240219-111758.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-26")'>Details</button>
+                    <div class='details' id='details-26'>
+                        <p>Seed: 58280</p>
+                        <p>Prompt:  extrodanarily attractive female gnome wizard  with mesmerizing turquoise eyes, an enchanting  mouth,  a straight nose, and glossy golden hair wearing a tailored grey simple waistcoat, black sturdy leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_wizard\out-20240219-111820.png' target='_blank'>
+                        <img src='female_gnome_wizard\out-20240219-111820.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-27")'>Details</button>
+                    <div class='details' id='details-27'>
+                        <p>Seed: 18354</p>
+                        <p>Prompt:  extrodanarily attractive female gnome wizard  with mesmerizing turquoise eyes, an enchanting  mouth,  a straight nose, and glossy golden hair wearing a tailored grey simple waistcoat, black sturdy leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_wizard\out-20240219-111843.png' target='_blank'>
+                        <img src='female_gnome_wizard\out-20240219-111843.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-28")'>Details</button>
+                    <div class='details' id='details-28'>
+                        <p>Seed: 39914</p>
+                        <p>Prompt:  extrodanarily attractive female gnome wizard  with mesmerizing turquoise eyes, an enchanting  mouth,  a straight nose, and glossy golden hair wearing a tailored grey simple waistcoat, black sturdy leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_wizard\out-20240219-111905.png' target='_blank'>
+                        <img src='female_gnome_wizard\out-20240219-111905.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-29")'>Details</button>
+                    <div class='details' id='details-29'>
+                        <p>Seed: 40786</p>
+                        <p>Prompt:  extrodanarily attractive female gnome wizard  with mesmerizing turquoise eyes, an enchanting  mouth,  a straight nose, and glossy golden hair wearing a tailored grey simple waistcoat, black sturdy leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_wizard\out-20240221-181847.png' target='_blank'>
+                        <img src='female_gnome_wizard\out-20240221-181847.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-30")'>Details</button>
+                    <div class='details' id='details-30'>
+                        <p>Seed: 48011</p>
+                        <p>Prompt: towering plain looking female gnome Wizard  with transfixing blue eyes, a eloquent  mouth,  a thin nose, and straight blonde hair wearing a comfortable blue very elegant waistcoat, black finely made leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_wizard\out-20240219-093506.png' target='_blank'>
+                        <img src='male_gnome_wizard\out-20240219-093506.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-31")'>Details</button>
+                    <div class='details' id='details-31'>
+                        <p>Seed: 39180</p>
+                        <p>Prompt: broad-shouldered ugly male gnome Wizard  with mysterious grey eyes, a delicate  mouth,  a angular nose, and glossy silver hair wearing a tailored black simple waistcoat, matching black loose-fitting leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_wizard\out-20240219-093529.png' target='_blank'>
+                        <img src='male_gnome_wizard\out-20240219-093529.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-32")'>Details</button>
+                    <div class='details' id='details-32'>
+                        <p>Seed: 58557</p>
+                        <p>Prompt: broad-shouldered ugly male gnome Wizard  with mysterious grey eyes, a delicate  mouth,  a angular nose, and glossy silver hair wearing a tailored black simple waistcoat, matching black loose-fitting leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_wizard\out-20240219-105931.png' target='_blank'>
+                        <img src='male_gnome_wizard\out-20240219-105931.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-33")'>Details</button>
+                    <div class='details' id='details-33'>
+                        <p>Seed: 37328</p>
+                        <p>Prompt: sturdy plain looking male gnome Wizard  with dreamy hazel eyes, a tempting  mouth,  a delicate nose, and straight golden hair wearing a snug blue wollen waistcoat, black reinforced leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_wizard\out-20240219-105955.png' target='_blank'>
+                        <img src='male_gnome_wizard\out-20240219-105955.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-34")'>Details</button>
+                    <div class='details' id='details-34'>
+                        <p>Seed: 16095</p>
+                        <p>Prompt: sturdy plain looking male gnome Wizard  with dreamy hazel eyes, a tempting  mouth,  a delicate nose, and straight golden hair wearing a snug blue wollen waistcoat, black reinforced leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_wizard\out-20240219-110018.png' target='_blank'>
+                        <img src='male_gnome_wizard\out-20240219-110018.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-35")'>Details</button>
+                    <div class='details' id='details-35'>
+                        <p>Seed: 57086</p>
+                        <p>Prompt: sturdy plain looking male gnome Wizard  with dreamy hazel eyes, a tempting  mouth,  a delicate nose, and straight golden hair wearing a snug blue wollen waistcoat, black reinforced leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_wizard\out-20240219-110043.png' target='_blank'>
+                        <img src='male_gnome_wizard\out-20240219-110043.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-36")'>Details</button>
+                    <div class='details' id='details-36'>
+                        <p>Seed: 10673</p>
+                        <p>Prompt: sturdy plain looking male gnome Wizard  with dreamy hazel eyes, a tempting  mouth,  a delicate nose, and straight golden hair wearing a snug blue wollen waistcoat, black reinforced leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_wizard\out-20240219-113130.png' target='_blank'>
+                        <img src='male_gnome_wizard\out-20240219-113130.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-37")'>Details</button>
+                    <div class='details' id='details-37'>
+                        <p>Seed: 34470</p>
+                        <p>Prompt:  attractive male gnome wizard  with soulful amber eyes, a eloquent  mouth,  a snub nose, and shiny blonde hair wearing a loose-fitting black velvet-lined waistcoat, white sturdy leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_wizard\out-20240219-113153.png' target='_blank'>
+                        <img src='male_gnome_wizard\out-20240219-113153.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-38")'>Details</button>
+                    <div class='details' id='details-38'>
+                        <p>Seed: 50370</p>
+                        <p>Prompt:  attractive male gnome wizard  with soulful amber eyes, a eloquent  mouth,  a snub nose, and shiny blonde hair wearing a loose-fitting black velvet-lined waistcoat, white sturdy leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_wizard\out-20240219-113239.png' target='_blank'>
+                        <img src='male_gnome_wizard\out-20240219-113239.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-39")'>Details</button>
+                    <div class='details' id='details-39'>
+                        <p>Seed: 49800</p>
+                        <p>Prompt:  attractive male gnome wizard  with soulful amber eyes, a eloquent  mouth,  a snub nose, and shiny blonde hair wearing a loose-fitting black velvet-lined waistcoat, white sturdy leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_wizard\out-20240220-114818.png' target='_blank'>
+                        <img src='male_gnome_wizard\out-20240220-114818.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-40")'>Details</button>
+                    <div class='details' id='details-40'>
+                        <p>Seed: 3520</p>
+                        <p>Prompt:  plain looking male gnome wizard  with mesmerizing green eyes, a seductive  mouth,  a straight nose, and straight silver hair wearing a snug red embroidered waistcoat, black war-torn leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_wizard\out-20240221-075423.png' target='_blank'>
+                        <img src='male_gnome_wizard\out-20240221-075423.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-41")'>Details</button>
+                    <div class='details' id='details-41'>
+                        <p>Seed: 59111</p>
+                        <p>Prompt:  attractive male gnome wizard  with soulful grey eyes, a seductive  mouth,  a petite nose, and straight ashen hair wearing a tight-fitting black wollen waistcoat, grey shimmering leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_wizard\out-20240221-161321.png' target='_blank'>
+                        <img src='male_gnome_wizard\out-20240221-161321.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-42")'>Details</button>
+                    <div class='details' id='details-42'>
+                        <p>Seed: 37217</p>
+                        <p>Prompt: broad-shouldered average looking male gnome Wizard  with transfixing amber eyes, a captivating  mouth,  a regal nose, and glossy chestnut hair wearing a tight-fitting red ornate waistcoat, black finely made leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_wizard\out-20240218-172102.png' target='_blank'>
+                        <img src='female_halfling_wizard\out-20240218-172102.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-43")'>Details</button>
+                    <div class='details' id='details-43'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy attractive female D&D Halfling wizard  with soulful grey eyes, an alluring  mouth,  a broad nose, and wavy platinum hair wearing a tapered blue embroidered waistcoat, red ragged woolen leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_wizard\out-20240218-172130.png' target='_blank'>
+                        <img src='female_halfling_wizard\out-20240218-172130.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-44")'>Details</button>
+                    <div class='details' id='details-44'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy attractive female D&D Halfling wizard  with soulful grey eyes, an alluring  mouth,  a broad nose, and wavy platinum hair wearing a tapered blue embroidered waistcoat, red ragged woolen leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_wizard\out-20240218-172158.png' target='_blank'>
+                        <img src='female_halfling_wizard\out-20240218-172158.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-45")'>Details</button>
+                    <div class='details' id='details-45'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy attractive female D&D Halfling wizard  with soulful grey eyes, an alluring  mouth,  a broad nose, and wavy platinum hair wearing a tapered blue embroidered waistcoat, red ragged woolen leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_wizard\out-20240218-172225.png' target='_blank'>
+                        <img src='female_halfling_wizard\out-20240218-172225.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-46")'>Details</button>
+                    <div class='details' id='details-46'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy attractive female D&D Halfling wizard  with soulful grey eyes, an alluring  mouth,  a broad nose, and wavy platinum hair wearing a tapered blue embroidered waistcoat, red ragged woolen leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_wizard\out-20240218-172252.png' target='_blank'>
+                        <img src='female_halfling_wizard\out-20240218-172252.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-47")'>Details</button>
+                    <div class='details' id='details-47'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy attractive female D&D Halfling wizard  with soulful grey eyes, an alluring  mouth,  a broad nose, and wavy platinum hair wearing a tapered blue embroidered waistcoat, red ragged woolen leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_wizard\out-20240218-172321.png' target='_blank'>
+                        <img src='female_halfling_wizard\out-20240218-172321.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-48")'>Details</button>
+                    <div class='details' id='details-48'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy attractive female D&D Halfling wizard  with soulful grey eyes, an alluring  mouth,  a broad nose, and wavy platinum hair wearing a tapered blue embroidered waistcoat, red ragged woolen leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_wizard\out-20240218-172350.png' target='_blank'>
+                        <img src='female_halfling_wizard\out-20240218-172350.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-49")'>Details</button>
+                    <div class='details' id='details-49'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy attractive female D&D Halfling wizard  with soulful grey eyes, an alluring  mouth,  a broad nose, and wavy platinum hair wearing a tapered blue embroidered waistcoat, red ragged woolen leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_wizard\out-20240218-172448.png' target='_blank'>
+                        <img src='female_halfling_wizard\out-20240218-172448.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-50")'>Details</button>
+                    <div class='details' id='details-50'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy attractive female D&D Halfling wizard  with soulful grey eyes, an alluring  mouth,  a broad nose, and wavy platinum hair wearing a tapered blue embroidered waistcoat, red ragged woolen leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_wizard\out-20240219-052557.png' target='_blank'>
+                        <img src='female_halfling_wizard\out-20240219-052557.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-51")'>Details</button>
+                    <div class='details' id='details-51'>
+                        <p>Seed: 45775</p>
+                        <p>Prompt: sturdy average looking female D&D Halfling Wizard  with alluring turquoise eyes, a pouty  mouth,  a prominent nose, and curly red hair wearing a snug grey finely-tailored waistcoat, black rumpled leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_wizard\out-20240219-052619.png' target='_blank'>
+                        <img src='female_halfling_wizard\out-20240219-052619.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-52")'>Details</button>
+                    <div class='details' id='details-52'>
+                        <p>Seed: 30999</p>
+                        <p>Prompt: sturdy average looking female D&D Halfling Wizard  with alluring turquoise eyes, a pouty  mouth,  a prominent nose, and curly red hair wearing a snug grey finely-tailored waistcoat, black rumpled leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_wizard\out-20240219-052643.png' target='_blank'>
+                        <img src='female_halfling_wizard\out-20240219-052643.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-53")'>Details</button>
+                    <div class='details' id='details-53'>
+                        <p>Seed: 65369</p>
+                        <p>Prompt: sturdy average looking female D&D Halfling Wizard  with alluring turquoise eyes, a pouty  mouth,  a prominent nose, and curly red hair wearing a snug grey finely-tailored waistcoat, black rumpled leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_wizard\out-20240219-052705.png' target='_blank'>
+                        <img src='female_halfling_wizard\out-20240219-052705.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-54")'>Details</button>
+                    <div class='details' id='details-54'>
+                        <p>Seed: 56222</p>
+                        <p>Prompt: sturdy average looking female D&D Halfling Wizard  with alluring turquoise eyes, a pouty  mouth,  a prominent nose, and curly red hair wearing a snug grey finely-tailored waistcoat, black rumpled leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_wizard\out-20240218-120302.png' target='_blank'>
+                        <img src='female_human_wizard\out-20240218-120302.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-55")'>Details</button>
+                    <div class='details' id='details-55'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering ordinary looking female human wizard  with sparkling emerald eyes, a sensouos  mouth,  a delicate nose, and curly ashen hair wearing a loose-fitting black ornate waistcoat, matching black sturdy leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_wizard\out-20240218-120325.png' target='_blank'>
+                        <img src='female_human_wizard\out-20240218-120325.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-56")'>Details</button>
+                    <div class='details' id='details-56'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering ordinary looking female human wizard  with sparkling emerald eyes, a sensouos  mouth,  a delicate nose, and curly ashen hair wearing a loose-fitting black ornate waistcoat, matching black sturdy leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_wizard\out-20240218-120348.png' target='_blank'>
+                        <img src='female_human_wizard\out-20240218-120348.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-57")'>Details</button>
+                    <div class='details' id='details-57'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering ordinary looking female human wizard  with sparkling emerald eyes, a sensouos  mouth,  a delicate nose, and curly ashen hair wearing a loose-fitting black ornate waistcoat, matching black sturdy leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_wizard\out-20240218-120412.png' target='_blank'>
+                        <img src='female_human_wizard\out-20240218-120412.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-58")'>Details</button>
+                    <div class='details' id='details-58'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering ordinary looking female human wizard  with sparkling emerald eyes, a sensouos  mouth,  a delicate nose, and curly ashen hair wearing a loose-fitting black ornate waistcoat, matching black sturdy leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_wizard\out-20240218-120435.png' target='_blank'>
+                        <img src='female_human_wizard\out-20240218-120435.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-59")'>Details</button>
+                    <div class='details' id='details-59'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering ordinary looking female human wizard  with sparkling emerald eyes, a sensouos  mouth,  a delicate nose, and curly ashen hair wearing a loose-fitting black ornate waistcoat, matching black sturdy leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_wizard\out-20240218-120521.png' target='_blank'>
+                        <img src='female_human_wizard\out-20240218-120521.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-60")'>Details</button>
+                    <div class='details' id='details-60'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering ordinary looking female human wizard  with sparkling emerald eyes, a sensouos  mouth,  a delicate nose, and curly ashen hair wearing a loose-fitting black ornate waistcoat, matching black sturdy leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_wizard\out-20240218-120545.png' target='_blank'>
+                        <img src='female_human_wizard\out-20240218-120545.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-61")'>Details</button>
+                    <div class='details' id='details-61'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering ordinary looking female human wizard  with sparkling emerald eyes, a sensouos  mouth,  a delicate nose, and curly ashen hair wearing a loose-fitting black ornate waistcoat, matching black sturdy leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_wizard\out-20240218-120608.png' target='_blank'>
+                        <img src='female_human_wizard\out-20240218-120608.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-62")'>Details</button>
+                    <div class='details' id='details-62'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: towering ordinary looking female human wizard  with sparkling emerald eyes, a sensouos  mouth,  a delicate nose, and curly ashen hair wearing a loose-fitting black ornate waistcoat, matching black sturdy leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_wizard\out-20240220-101455.png' target='_blank'>
+                        <img src='female_human_wizard\out-20240220-101455.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-63")'>Details</button>
+                    <div class='details' id='details-63'>
+                        <p>Seed: 28685</p>
+                        <p>Prompt:  ugly female human Wizard  with alluring emerald eyes, a eloquent  mouth,  a straight nose, and wavy ashen hair wearing a tailored coral embroidered waistcoat, black ragged woolen leggings and brown felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_wizard\out-20240220-101651.png' target='_blank'>
+                        <img src='female_human_wizard\out-20240220-101651.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-64")'>Details</button>
+                    <div class='details' id='details-64'>
+                        <p>Seed: 46675</p>
+                        <p>Prompt:  ugly female human Wizard  with alluring emerald eyes, a eloquent  mouth,  a straight nose, and wavy ashen hair wearing a tailored coral embroidered waistcoat, black ragged woolen leggings and brown felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_wizard\out-20240220-231344.png' target='_blank'>
+                        <img src='female_human_wizard\out-20240220-231344.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-65")'>Details</button>
+                    <div class='details' id='details-65'>
+                        <p>Seed: 23175</p>
+                        <p>Prompt:  plain looking female human Wizard  with bewitching violet eyes, a tempting  mouth,  a bulbous nose, and silky auburn hair wearing a snug black finely-tailored waistcoat, grey finely made leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi female'>
+                    <div class='additional-info'>Female, Tabaxi</div>
+                    <a href='female_tabaxi_wizard\out-20240218-142819.png' target='_blank'>
+                        <img src='female_tabaxi_wizard\out-20240218-142819.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-66")'>Details</button>
+                    <div class='details' id='details-66'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt:  ordinary looking female tabaxi fluffy humanoid catlike person covered in fur wizard  with soulful brown eyes, a captivating  mouth,  a straight nose, and coarse auburn hair wearing a tight-fitting coral embroidered waistcoat, black rumpled leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_wizard\out-20240218-134719.png' target='_blank'>
+                        <img src='male_tabaxi_wizard\out-20240218-134719.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-67")'>Details</button>
+                    <div class='details' id='details-67'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered ugly male tabaxi fluffy humanoid catlike person covered in fur wizard  with mysterious turquoise eyes, an alluring  mouth,  a chisiled nose, and straight  hair wearing a tailored coral wollen waistcoat, black lightweight leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_wizard\out-20240218-134746.png' target='_blank'>
+                        <img src='male_tabaxi_wizard\out-20240218-134746.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-68")'>Details</button>
+                    <div class='details' id='details-68'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: broad-shouldered ugly male tabaxi fluffy humanoid catlike person covered in fur wizard  with mysterious turquoise eyes, an alluring  mouth,  a chisiled nose, and straight  hair wearing a tailored coral wollen waistcoat, black lightweight leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_wizard\out-20240218-152842.png' target='_blank'>
+                        <img src='male_tabaxi_wizard\out-20240218-152842.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-69")'>Details</button>
+                    <div class='details' id='details-69'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ordinary looking male tabaxi fluffy humanoid catlike person covered in fur wizard  with electric green eyes, a pouty  mouth,  a petite nose, and silky ashen hair wearing a tapered grey ornate waistcoat, black shimmering leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_wizard\out-20240218-152937.png' target='_blank'>
+                        <img src='male_tabaxi_wizard\out-20240218-152937.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-70")'>Details</button>
+                    <div class='details' id='details-70'>
+                        <p>Seed: N/A</p>
+                        <p>Prompt: sturdy ordinary looking male tabaxi fluffy humanoid catlike person covered in fur wizard  with electric green eyes, a pouty  mouth,  a petite nose, and silky ashen hair wearing a tapered grey ornate waistcoat, black shimmering leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_wizard\out-20240219-045755.png' target='_blank'>
+                        <img src='male_dwarf_wizard\out-20240219-045755.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-71")'>Details</button>
+                    <div class='details' id='details-71'>
+                        <p>Seed: 38700</p>
+                        <p>Prompt: gangly average looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Wizard  with mesmerizing emerald eyes, a pouty  mouth,  a thin nose, and thick ashen hair wearing a comfortable red embroidered waistcoat, black rumpled leggings and matching red scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_wizard\out-20240219-045820.png' target='_blank'>
+                        <img src='male_dwarf_wizard\out-20240219-045820.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-72")'>Details</button>
+                    <div class='details' id='details-72'>
+                        <p>Seed: 41854</p>
+                        <p>Prompt: gangly average looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Wizard  with mesmerizing emerald eyes, a pouty  mouth,  a thin nose, and thick ashen hair wearing a comfortable red embroidered waistcoat, black rumpled leggings and matching red scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_wizard\out-20240219-045842.png' target='_blank'>
+                        <img src='male_dwarf_wizard\out-20240219-045842.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-73")'>Details</button>
+                    <div class='details' id='details-73'>
+                        <p>Seed: 32431</p>
+                        <p>Prompt: gangly average looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Wizard  with mesmerizing emerald eyes, a pouty  mouth,  a thin nose, and thick ashen hair wearing a comfortable red embroidered waistcoat, black rumpled leggings and matching red scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_wizard\out-20240219-045903.png' target='_blank'>
+                        <img src='male_dwarf_wizard\out-20240219-045903.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-74")'>Details</button>
+                    <div class='details' id='details-74'>
+                        <p>Seed: 46613</p>
+                        <p>Prompt: gangly average looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Wizard  with mesmerizing emerald eyes, a pouty  mouth,  a thin nose, and thick ashen hair wearing a comfortable red embroidered waistcoat, black rumpled leggings and matching red scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_wizard\out-20240219-200909.png' target='_blank'>
+                        <img src='male_dwarf_wizard\out-20240219-200909.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-75")'>Details</button>
+                    <div class='details' id='details-75'>
+                        <p>Seed: 59339</p>
+                        <p>Prompt:  ordinary looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Wizard  with alluring blue eyes, an alluring  mouth,  a button nose, and thick blonde hair wearing a tailored white simple waistcoat, matching white ragged woolen leggings and white velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_wizard\out-20240219-200929.png' target='_blank'>
+                        <img src='male_dwarf_wizard\out-20240219-200929.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-76")'>Details</button>
+                    <div class='details' id='details-76'>
+                        <p>Seed: 60623</p>
+                        <p>Prompt:  ordinary looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Wizard  with alluring blue eyes, an alluring  mouth,  a button nose, and thick blonde hair wearing a tailored white simple waistcoat, matching white ragged woolen leggings and white velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_wizard\out-20240219-200950.png' target='_blank'>
+                        <img src='male_dwarf_wizard\out-20240219-200950.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-77")'>Details</button>
+                    <div class='details' id='details-77'>
+                        <p>Seed: 15634</p>
+                        <p>Prompt:  ordinary looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Wizard  with alluring blue eyes, an alluring  mouth,  a button nose, and thick blonde hair wearing a tailored white simple waistcoat, matching white ragged woolen leggings and white velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_wizard\out-20240219-201010.png' target='_blank'>
+                        <img src='male_dwarf_wizard\out-20240219-201010.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-78")'>Details</button>
+                    <div class='details' id='details-78'>
+                        <p>Seed: 24626</p>
+                        <p>Prompt:  ordinary looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Wizard  with alluring blue eyes, an alluring  mouth,  a button nose, and thick blonde hair wearing a tailored white simple waistcoat, matching white ragged woolen leggings and white velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

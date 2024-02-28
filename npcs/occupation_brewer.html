@@ -1,0 +1,375 @@
+
+    <html>
+    <head>
+    <title>brewer Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>brewer</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_brewer\out-20240219-022435.png' target='_blank'>
+                        <img src='female_dwarf_brewer\out-20240219-022435.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 34021</p>
+                        <p>Prompt: petite plain looking female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Brewer  with soulful grey eyes, a luscious  mouth,  a snub nose, and thick blonde hair wearing a tapered coral finely-tailored waistcoat, black reinforced leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_brewer\out-20240218-231302.png' target='_blank'>
+                        <img src='male_dwarf_brewer\out-20240218-231302.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 28689</p>
+                        <p>Prompt: slender plain looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Brewer  with dreamy brown eyes, an alluring  mouth,  a crooked nose, and straight mahogany hair wearing a form-fitting black simple waistcoat, grey sturdy leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_brewer\out-20240218-231329.png' target='_blank'>
+                        <img src='male_dwarf_brewer\out-20240218-231329.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 64861</p>
+                        <p>Prompt: slender plain looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Brewer  with dreamy brown eyes, an alluring  mouth,  a crooked nose, and straight mahogany hair wearing a form-fitting black simple waistcoat, grey sturdy leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_brewer\out-20240218-231353.png' target='_blank'>
+                        <img src='male_dwarf_brewer\out-20240218-231353.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 37253</p>
+                        <p>Prompt: slender plain looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Brewer  with dreamy brown eyes, an alluring  mouth,  a crooked nose, and straight mahogany hair wearing a form-fitting black simple waistcoat, grey sturdy leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_brewer\out-20240218-231417.png' target='_blank'>
+                        <img src='male_dwarf_brewer\out-20240218-231417.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 36370</p>
+                        <p>Prompt: slender plain looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Brewer  with dreamy brown eyes, an alluring  mouth,  a crooked nose, and straight mahogany hair wearing a form-fitting black simple waistcoat, grey sturdy leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_brewer\out-20240221-080639.png' target='_blank'>
+                        <img src='male_dwarf_brewer\out-20240221-080639.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 48389</p>
+                        <p>Prompt:  ordinary looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Brewer  with mysterious turquoise eyes, an enchanting  mouth,  a crooked nose, and glossy chestnut hair wearing a comfortable black very elegant waistcoat, matching black finely made leggings and brown wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_brewer\out-20240221-165229.png' target='_blank'>
+                        <img src='female_halfling_brewer\out-20240221-165229.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 22203</p>
+                        <p>Prompt: slender charming female D&D Halfling Brewer  with enigmatic brown eyes, a plump  mouth,  a regal nose, and glossy strawberry blonde hair wearing a form-fitting red simple waistcoat, black lightweight leggings and matching red velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_brewer\out-20240219-042138.png' target='_blank'>
+                        <img src='male_halfling_brewer\out-20240219-042138.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 33999</p>
+                        <p>Prompt: petite average looking male D&D Halfling Brewer  with haunting green eyes, a tempting  mouth,  a chisiled nose, and shiny  hair wearing a tailored blue simple waistcoat, black ragged woolen leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_brewer\out-20240219-042200.png' target='_blank'>
+                        <img src='male_halfling_brewer\out-20240219-042200.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 22096</p>
+                        <p>Prompt: petite average looking male D&D Halfling Brewer  with haunting green eyes, a tempting  mouth,  a chisiled nose, and shiny  hair wearing a tailored blue simple waistcoat, black ragged woolen leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_brewer\out-20240219-042222.png' target='_blank'>
+                        <img src='male_halfling_brewer\out-20240219-042222.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 1265</p>
+                        <p>Prompt: petite average looking male D&D Halfling Brewer  with haunting green eyes, a tempting  mouth,  a chisiled nose, and shiny  hair wearing a tailored blue simple waistcoat, black ragged woolen leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_brewer\out-20240219-042245.png' target='_blank'>
+                        <img src='male_halfling_brewer\out-20240219-042245.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 46544</p>
+                        <p>Prompt: petite average looking male D&D Halfling Brewer  with haunting green eyes, a tempting  mouth,  a chisiled nose, and shiny  hair wearing a tailored blue simple waistcoat, black ragged woolen leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_brewer\out-20240219-052859.png' target='_blank'>
+                        <img src='male_halfling_brewer\out-20240219-052859.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 50762</p>
+                        <p>Prompt: broad-shouldered extrodanarily attractive male D&D Halfling Brewer  with intense green eyes, a sensouos  mouth,  a straight nose, and curly black hair wearing a form-fitting coral simple waistcoat, black finely made leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_brewer\out-20240219-052921.png' target='_blank'>
+                        <img src='male_halfling_brewer\out-20240219-052921.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 25529</p>
+                        <p>Prompt: broad-shouldered extrodanarily attractive male D&D Halfling Brewer  with intense green eyes, a sensouos  mouth,  a straight nose, and curly black hair wearing a form-fitting coral simple waistcoat, black finely made leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_brewer\out-20240219-052942.png' target='_blank'>
+                        <img src='male_halfling_brewer\out-20240219-052942.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 19953</p>
+                        <p>Prompt: broad-shouldered extrodanarily attractive male D&D Halfling Brewer  with intense green eyes, a sensouos  mouth,  a straight nose, and curly black hair wearing a form-fitting coral simple waistcoat, black finely made leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_brewer\out-20240219-053004.png' target='_blank'>
+                        <img src='male_halfling_brewer\out-20240219-053004.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 62561</p>
+                        <p>Prompt: broad-shouldered extrodanarily attractive male D&D Halfling Brewer  with intense green eyes, a sensouos  mouth,  a straight nose, and curly black hair wearing a form-fitting coral simple waistcoat, black finely made leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_brewer\out-20240219-035952.png' target='_blank'>
+                        <img src='female_human_brewer\out-20240219-035952.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: 16495</p>
+                        <p>Prompt: towering average looking female human Brewer  with bewitching turquoise eyes, a pouty  mouth,  a straight nose, and curly ashen hair wearing a tailored black wollen waistcoat, grey war-torn leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_brewer\out-20240219-040014.png' target='_blank'>
+                        <img src='female_human_brewer\out-20240219-040014.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: 65283</p>
+                        <p>Prompt: towering average looking female human Brewer  with bewitching turquoise eyes, a pouty  mouth,  a straight nose, and curly ashen hair wearing a tailored black wollen waistcoat, grey war-torn leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi female'>
+                    <div class='additional-info'>Female, Tabaxi</div>
+                    <a href='female_tabaxi_brewer\out-20240218-233445.png' target='_blank'>
+                        <img src='female_tabaxi_brewer\out-20240218-233445.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-17")'>Details</button>
+                    <div class='details' id='details-17'>
+                        <p>Seed: 40322</p>
+                        <p>Prompt: slender plain looking female tabaxi fluffy humanoid catlike person covered in fur Brewer  with sparkling grey eyes, a luscious  mouth,  a bulbous nose, and wavy  hair wearing a snug coral velvet-lined waistcoat, black finely made leggings and brown wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_brewer\out-20240219-070448.png' target='_blank'>
+                        <img src='male_tabaxi_brewer\out-20240219-070448.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-18")'>Details</button>
+                    <div class='details' id='details-18'>
+                        <p>Seed: 43824</p>
+                        <p>Prompt: petite ordinary looking male tabaxi fluffy humanoid catlike person covered in fur Brewer  with electric grey eyes, a eloquent  mouth,  a crooked nose, and wavy strawberry blonde hair wearing a form-fitting blue embroidered waistcoat, matching blue shimmering leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

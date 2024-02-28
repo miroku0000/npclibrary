@@ -1,0 +1,567 @@
+
+    <html>
+    <head>
+    <title>lookout Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>lookout</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_lookout\out-20240218-224650.png' target='_blank'>
+                        <img src='female_dwarf_lookout\out-20240218-224650.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 54393</p>
+                        <p>Prompt: petite attractive female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Lookout  with intense brown eyes, a seductive  mouth,  a chisiled nose, and straight red hair wearing a tapered red velvet-lined waistcoat, black finely made leggings and matching red buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_lookout\out-20240218-224736.png' target='_blank'>
+                        <img src='female_dwarf_lookout\out-20240218-224736.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 10779</p>
+                        <p>Prompt: petite attractive female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Lookout  with intense brown eyes, a seductive  mouth,  a chisiled nose, and straight red hair wearing a tapered red velvet-lined waistcoat, black finely made leggings and matching red buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_lookout\out-20240219-111453.png' target='_blank'>
+                        <img src='male_dwarf_lookout\out-20240219-111453.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 47811</p>
+                        <p>Prompt: petite attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Lookout  with electric emerald eyes, an alluring  mouth,  a crooked nose, and thick golden hair wearing a tight-fitting black finely-tailored waistcoat, matching black shimmering leggings and brown rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_lookout\out-20240219-111520.png' target='_blank'>
+                        <img src='male_dwarf_lookout\out-20240219-111520.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 25107</p>
+                        <p>Prompt: petite attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Lookout  with electric emerald eyes, an alluring  mouth,  a crooked nose, and thick golden hair wearing a tight-fitting black finely-tailored waistcoat, matching black shimmering leggings and brown rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_lookout\out-20240219-111542.png' target='_blank'>
+                        <img src='male_dwarf_lookout\out-20240219-111542.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 36881</p>
+                        <p>Prompt: petite attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Lookout  with electric emerald eyes, an alluring  mouth,  a crooked nose, and thick golden hair wearing a tight-fitting black finely-tailored waistcoat, matching black shimmering leggings and brown rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_lookout\out-20240219-111605.png' target='_blank'>
+                        <img src='male_dwarf_lookout\out-20240219-111605.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 3659</p>
+                        <p>Prompt: petite attractive male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Lookout  with electric emerald eyes, an alluring  mouth,  a crooked nose, and thick golden hair wearing a tight-fitting black finely-tailored waistcoat, matching black shimmering leggings and brown rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_lookout\out-20240219-090034.png' target='_blank'>
+                        <img src='female_halfling_lookout\out-20240219-090034.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 65292</p>
+                        <p>Prompt: slender plain looking female D&D Halfling Beggar  with transfixing blue eyes, a delicate  mouth,  a angular nose, and shiny strawberry blonde hair wearing a tapered red simple waistcoat, black sturdy leggings and matching red felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_lookout\out-20240219-090057.png' target='_blank'>
+                        <img src='female_halfling_lookout\out-20240219-090057.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 59581</p>
+                        <p>Prompt: slender plain looking female D&D Halfling Beggar  with transfixing blue eyes, a delicate  mouth,  a angular nose, and shiny strawberry blonde hair wearing a tapered red simple waistcoat, black sturdy leggings and matching red felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_lookout\out-20240219-090120.png' target='_blank'>
+                        <img src='female_halfling_lookout\out-20240219-090120.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 383</p>
+                        <p>Prompt: slender plain looking female D&D Halfling Beggar  with transfixing blue eyes, a delicate  mouth,  a angular nose, and shiny strawberry blonde hair wearing a tapered red simple waistcoat, black sturdy leggings and matching red felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_lookout\out-20240219-090143.png' target='_blank'>
+                        <img src='female_halfling_lookout\out-20240219-090143.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 13600</p>
+                        <p>Prompt: slender plain looking female D&D Halfling Beggar  with transfixing blue eyes, a delicate  mouth,  a angular nose, and shiny strawberry blonde hair wearing a tapered red simple waistcoat, black sturdy leggings and matching red felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_lookout\out-20240220-095142.png' target='_blank'>
+                        <img src='female_halfling_lookout\out-20240220-095142.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 12432</p>
+                        <p>Prompt: petite average looking female D&D Halfling Lookout  with radiant green eyes, a pouty  mouth,  a button nose, and coarse strawberry blonde hair wearing a form-fitting green simple waistcoat, white war-torn leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_lookout\out-20240220-095319.png' target='_blank'>
+                        <img src='female_halfling_lookout\out-20240220-095319.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 2779</p>
+                        <p>Prompt: petite average looking female D&D Halfling Lookout  with radiant green eyes, a pouty  mouth,  a button nose, and coarse strawberry blonde hair wearing a form-fitting green simple waistcoat, white war-torn leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_lookout\out-20240219-072747.png' target='_blank'>
+                        <img src='male_halfling_lookout\out-20240219-072747.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 4251</p>
+                        <p>Prompt:  charming male D&D Halfling Lookout  with soulful violet eyes, a luscious  mouth,  a regal nose, and frizzy platinum hair wearing a snug black finely-tailored waistcoat, grey war-torn leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_lookout\out-20240219-101336.png' target='_blank'>
+                        <img src='male_halfling_lookout\out-20240219-101336.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 40044</p>
+                        <p>Prompt: gangly charming male D&D Halfling Alchemist  with mysterious brown eyes, a tempting  mouth,  a broad nose, and silky  hair wearing a comfortable blue ornate waistcoat, matching blue war-torn leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_lookout\out-20240219-214650.png' target='_blank'>
+                        <img src='male_halfling_lookout\out-20240219-214650.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 49171</p>
+                        <p>Prompt: slender attractive male D&D Halfling Lookout  with piercing violet eyes, a delicate  mouth,  a button nose, and shiny black hair wearing a tailored turquoise velvet-lined waistcoat, black lightweight leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_lookout\out-20240219-214804.png' target='_blank'>
+                        <img src='male_halfling_lookout\out-20240219-214804.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: 60463</p>
+                        <p>Prompt: slender attractive male D&D Halfling Lookout  with piercing violet eyes, a delicate  mouth,  a button nose, and shiny black hair wearing a tailored turquoise velvet-lined waistcoat, black lightweight leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_lookout\out-20240219-214846.png' target='_blank'>
+                        <img src='male_halfling_lookout\out-20240219-214846.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: 12807</p>
+                        <p>Prompt: slender attractive male D&D Halfling Lookout  with piercing violet eyes, a delicate  mouth,  a button nose, and shiny black hair wearing a tailored turquoise velvet-lined waistcoat, black lightweight leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_lookout\out-20240221-152612.png' target='_blank'>
+                        <img src='female_human_lookout\out-20240221-152612.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-17")'>Details</button>
+                    <div class='details' id='details-17'>
+                        <p>Seed: 40008</p>
+                        <p>Prompt: broad-shouldered average looking female human Lookout  with mesmerizing emerald eyes, a luscious  mouth,  a bulbous nose, and wavy chestnut hair wearing a comfortable blue ornate waistcoat, red sturdy leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_lookout\out-20240225-040443.png' target='_blank'>
+                        <img src='female_human_lookout\out-20240225-040443.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-18")'>Details</button>
+                    <div class='details' id='details-18'>
+                        <p>Seed: 34898</p>
+                        <p>Prompt: sturdy charming female human Potioneer  with piercing lavender eyes, a delicate  mouth,  a thin nose, and silky platinum hair wearing a snug black plaintunic, grey ragged woolen leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_lookout\out-20240225-102621.png' target='_blank'>
+                        <img src='female_human_lookout\out-20240225-102621.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-19")'>Details</button>
+                    <div class='details' id='details-19'>
+                        <p>Seed: 17399</p>
+                        <p>Prompt: broad-shouldered extrodanarily attractive female human Portrait painter  with mesmerizing blue eyes, a captivating  mouth,  a chisiled nose, and glossy strawberry blonde hair wearing a tapered black wollencloak, grey ragged woolen leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_lookout\out-20240225-112121.png' target='_blank'>
+                        <img src='female_human_lookout\out-20240225-112121.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-20")'>Details</button>
+                    <div class='details' id='details-20'>
+                        <p>Seed: 46377</p>
+                        <p>Prompt:  ugly female human Landlord  with electric brown eyes, a sensouos  mouth,  a button nose, and coarse golden hair wearing a comfortable red plaincloak, black ragged woolen leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_lookout\out-20240220-165656.png' target='_blank'>
+                        <img src='male_human_lookout\out-20240220-165656.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-21")'>Details</button>
+                    <div class='details' id='details-21'>
+                        <p>Seed: 4049</p>
+                        <p>Prompt: slender ordinary looking male human Lookout  with transfixing green eyes, a luscious  mouth,  a bulbous nose, and straight silver hair wearing a tight-fitting red velvet-lined waistcoat, black rumpled leggings and matching red sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_lookout\out-20240220-165842.png' target='_blank'>
+                        <img src='male_human_lookout\out-20240220-165842.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-22")'>Details</button>
+                    <div class='details' id='details-22'>
+                        <p>Seed: 46272</p>
+                        <p>Prompt: slender ordinary looking male human Lookout  with transfixing green eyes, a luscious  mouth,  a bulbous nose, and straight silver hair wearing a tight-fitting red velvet-lined waistcoat, black rumpled leggings and matching red sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_lookout\out-20240219-013452.png' target='_blank'>
+                        <img src='male_elf_lookout\out-20240219-013452.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-23")'>Details</button>
+                    <div class='details' id='details-23'>
+                        <p>Seed: 29909</p>
+                        <p>Prompt: broad-shouldered attractive male Lord of The Rings Elf Lookout  with soulful amber eyes, a luscious  mouth,  a dainty nose, and silky blonde hair wearing a snug blue plain waistcoat, matching blue rumpled leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf male'>
+                    <div class='additional-info'>Male, Elf</div>
+                    <a href='male_elf_lookout\out-20240219-013536.png' target='_blank'>
+                        <img src='male_elf_lookout\out-20240219-013536.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-24")'>Details</button>
+                    <div class='details' id='details-24'>
+                        <p>Seed: 28122</p>
+                        <p>Prompt: broad-shouldered attractive male Lord of The Rings Elf Lookout  with soulful amber eyes, a luscious  mouth,  a dainty nose, and silky blonde hair wearing a snug blue plain waistcoat, matching blue rumpled leggings and black buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_lookout\out-20240219-011808.png' target='_blank'>
+                        <img src='male_tabaxi_lookout\out-20240219-011808.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-25")'>Details</button>
+                    <div class='details' id='details-25'>
+                        <p>Seed: 7965</p>
+                        <p>Prompt: gangly ugly male tabaxi fluffy humanoid catlike person covered in fur Lookout  with bewitching brown eyes, a sensouos  mouth,  a dainty nose, and silky auburn hair wearing a comfortable coral very elegant waistcoat, black lightweight leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_lookout\out-20240219-011830.png' target='_blank'>
+                        <img src='male_tabaxi_lookout\out-20240219-011830.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-26")'>Details</button>
+                    <div class='details' id='details-26'>
+                        <p>Seed: 61585</p>
+                        <p>Prompt: gangly ugly male tabaxi fluffy humanoid catlike person covered in fur Lookout  with bewitching brown eyes, a sensouos  mouth,  a dainty nose, and silky auburn hair wearing a comfortable coral very elegant waistcoat, black lightweight leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_lookout\out-20240219-074442.png' target='_blank'>
+                        <img src='male_tabaxi_lookout\out-20240219-074442.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-27")'>Details</button>
+                    <div class='details' id='details-27'>
+                        <p>Seed: 45725</p>
+                        <p>Prompt: sturdy ordinary looking male tabaxi fluffy humanoid catlike person covered in fur Lookout  with electric brown eyes, a plump  mouth,  a snub nose, and wavy auburn hair wearing a snug blue simple waistcoat, red war-torn leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_lookout\out-20240219-074504.png' target='_blank'>
+                        <img src='male_tabaxi_lookout\out-20240219-074504.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-28")'>Details</button>
+                    <div class='details' id='details-28'>
+                        <p>Seed: 11644</p>
+                        <p>Prompt: sturdy ordinary looking male tabaxi fluffy humanoid catlike person covered in fur Lookout  with electric brown eyes, a plump  mouth,  a snub nose, and wavy auburn hair wearing a snug blue simple waistcoat, red war-torn leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_lookout\out-20240219-074526.png' target='_blank'>
+                        <img src='male_tabaxi_lookout\out-20240219-074526.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-29")'>Details</button>
+                    <div class='details' id='details-29'>
+                        <p>Seed: 15311</p>
+                        <p>Prompt: sturdy ordinary looking male tabaxi fluffy humanoid catlike person covered in fur Lookout  with electric brown eyes, a plump  mouth,  a snub nose, and wavy auburn hair wearing a snug blue simple waistcoat, red war-torn leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_lookout\out-20240219-074548.png' target='_blank'>
+                        <img src='male_tabaxi_lookout\out-20240219-074548.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-30")'>Details</button>
+                    <div class='details' id='details-30'>
+                        <p>Seed: 48583</p>
+                        <p>Prompt: sturdy ordinary looking male tabaxi fluffy humanoid catlike person covered in fur Lookout  with electric brown eyes, a plump  mouth,  a snub nose, and wavy auburn hair wearing a snug blue simple waistcoat, red war-torn leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

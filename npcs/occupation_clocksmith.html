@@ -1,0 +1,359 @@
+
+    <html>
+    <head>
+    <title>clocksmith Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>clocksmith</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'gnome')">Gnome</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_clocksmith\out-20240219-004333.png' target='_blank'>
+                        <img src='female_dwarf_clocksmith\out-20240219-004333.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 55602</p>
+                        <p>Prompt: sturdy average looking female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Clocksmith  with sparkling hazel eyes, a tempting  mouth,  a bulbous nose, and silky auburn hair wearing a comfortable black very elegant waistcoat, grey war-torn leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_clocksmith\out-20240219-004354.png' target='_blank'>
+                        <img src='female_dwarf_clocksmith\out-20240219-004354.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 8585</p>
+                        <p>Prompt: sturdy average looking female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Clocksmith  with sparkling hazel eyes, a tempting  mouth,  a bulbous nose, and silky auburn hair wearing a comfortable black very elegant waistcoat, grey war-torn leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_clocksmith\out-20240219-004416.png' target='_blank'>
+                        <img src='female_dwarf_clocksmith\out-20240219-004416.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 14961</p>
+                        <p>Prompt: sturdy average looking female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Clocksmith  with sparkling hazel eyes, a tempting  mouth,  a bulbous nose, and silky auburn hair wearing a comfortable black very elegant waistcoat, grey war-torn leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_clocksmith\out-20240219-004438.png' target='_blank'>
+                        <img src='female_dwarf_clocksmith\out-20240219-004438.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 33112</p>
+                        <p>Prompt: sturdy average looking female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Clocksmith  with sparkling hazel eyes, a tempting  mouth,  a bulbous nose, and silky auburn hair wearing a comfortable black very elegant waistcoat, grey war-torn leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_clocksmith\out-20240219-083053.png' target='_blank'>
+                        <img src='female_dwarf_clocksmith\out-20240219-083053.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 33287</p>
+                        <p>Prompt: slender charming female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Clocksmith  with intense grey eyes, a captivating  mouth,  a snub nose, and wavy golden hair wearing a tight-fitting red embroidered waistcoat, black shimmering leggings and matching red buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_clocksmith\out-20240219-083116.png' target='_blank'>
+                        <img src='female_dwarf_clocksmith\out-20240219-083116.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 22352</p>
+                        <p>Prompt: slender charming female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Clocksmith  with intense grey eyes, a captivating  mouth,  a snub nose, and wavy golden hair wearing a tight-fitting red embroidered waistcoat, black shimmering leggings and matching red buckled shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_clocksmith\out-20240219-212404.png' target='_blank'>
+                        <img src='female_dwarf_clocksmith\out-20240219-212404.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 1605</p>
+                        <p>Prompt: gangly plain looking female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Clocksmith  with sparkling turquoise eyes, a delicate  mouth,  a snub nose, and curly platinum hair wearing a tight-fitting blue wollen waistcoat, red rumpled leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_clocksmith\out-20240219-212436.png' target='_blank'>
+                        <img src='female_dwarf_clocksmith\out-20240219-212436.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 25104</p>
+                        <p>Prompt: gangly plain looking female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Clocksmith  with sparkling turquoise eyes, a delicate  mouth,  a snub nose, and curly platinum hair wearing a tight-fitting blue wollen waistcoat, red rumpled leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_clocksmith\out-20240219-212539.png' target='_blank'>
+                        <img src='female_dwarf_clocksmith\out-20240219-212539.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 50926</p>
+                        <p>Prompt: gangly plain looking female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Clocksmith  with sparkling turquoise eyes, a delicate  mouth,  a snub nose, and curly platinum hair wearing a tight-fitting blue wollen waistcoat, red rumpled leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_clocksmith\out-20240220-141220.png' target='_blank'>
+                        <img src='female_elf_clocksmith\out-20240220-141220.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 28240</p>
+                        <p>Prompt: gangly extrodanarily attractive female Lord of The Rings Elf Clocksmith  with transfixing lavender eyes, a pouty  mouth,  a angular nose, and curly platinum hair wearing a tapered blue embroidered waistcoat, red shimmering leggings and black scuffed leather shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_clocksmith\out-20240220-122613.png' target='_blank'>
+                        <img src='female_gnome_clocksmith\out-20240220-122613.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 12727</p>
+                        <p>Prompt: sturdy ugly female gnome Clocksmith  with intense emerald eyes, a plump  mouth,  a petite nose, and coarse red hair wearing a tight-fitting green finely-tailored waistcoat, white war-torn leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_clocksmith\out-20240220-122804.png' target='_blank'>
+                        <img src='female_gnome_clocksmith\out-20240220-122804.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 50753</p>
+                        <p>Prompt: sturdy ugly female gnome Clocksmith  with intense emerald eyes, a plump  mouth,  a petite nose, and coarse red hair wearing a tight-fitting green finely-tailored waistcoat, white war-torn leggings and black woolen shoes</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome male'>
+                    <div class='additional-info'>Male, Gnome</div>
+                    <a href='male_gnome_clocksmith\out-20240218-225412.png' target='_blank'>
+                        <img src='male_gnome_clocksmith\out-20240218-225412.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 1165</p>
+                        <p>Prompt: sturdy ordinary looking male gnome Clocksmith  with intense amber eyes, an alluring  mouth,  a chisiled nose, and coarse sandy hair wearing a form-fitting black simple waistcoat, grey war-torn leggings and black fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_clocksmith\out-20240219-194859.png' target='_blank'>
+                        <img src='female_halfling_clocksmith\out-20240219-194859.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 57603</p>
+                        <p>Prompt: sturdy charming female D&D Halfling Clocksmith  with mysterious turquoise eyes, an enchanting  mouth,  a straight nose, and straight strawberry blonde hair wearing a tailored coral ornate waistcoat, black ragged woolen leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_clocksmith\out-20240219-194923.png' target='_blank'>
+                        <img src='female_halfling_clocksmith\out-20240219-194923.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 61241</p>
+                        <p>Prompt: sturdy charming female D&D Halfling Clocksmith  with mysterious turquoise eyes, an enchanting  mouth,  a straight nose, and straight strawberry blonde hair wearing a tailored coral ornate waistcoat, black ragged woolen leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_clocksmith\out-20240219-194945.png' target='_blank'>
+                        <img src='female_halfling_clocksmith\out-20240219-194945.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: 3389</p>
+                        <p>Prompt: sturdy charming female D&D Halfling Clocksmith  with mysterious turquoise eyes, an enchanting  mouth,  a straight nose, and straight strawberry blonde hair wearing a tailored coral ornate waistcoat, black ragged woolen leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_clocksmith\out-20240221-124019.png' target='_blank'>
+                        <img src='male_halfling_clocksmith\out-20240221-124019.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: 9846</p>
+                        <p>Prompt:  average looking male D&D Halfling Clocksmith  with sparkling amber eyes, a delicate  mouth,  a bulbous nose, and wavy platinum hair wearing a form-fitting black finely-tailored waistcoat, white loose-fitting leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_clocksmith\out-20240220-224409.png' target='_blank'>
+                        <img src='male_human_clocksmith\out-20240220-224409.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-17")'>Details</button>
+                    <div class='details' id='details-17'>
+                        <p>Seed: 52416</p>
+                        <p>Prompt: broad-shouldered extrodanarily attractive male human Clocksmith  with enigmatic brown eyes, an enchanting  mouth,  a dainty nose, and thick sandy hair wearing a form-fitting red simple waistcoat, black sturdy leggings and matching red wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>

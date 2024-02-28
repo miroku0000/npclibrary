@@ -1,0 +1,855 @@
+
+    <html>
+    <head>
+    <title>innkeeper Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 10px;
+        }
+        .image {
+            flex: 1 0 10%; /* More images per row */
+            box-sizing: border-box;
+            margin-bottom: 20px; /* Space for details button and additional info */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .details, .details-button, .additional-info {
+            display: none; /* Initially hide details and button */
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .details-button, .additional-info {
+            display: block; /* Show the button and additional info */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let currentGender = '';
+        let currentRace = '';
+
+        function filterImages(filterType, value) {
+            if (filterType === 'gender') {
+                currentGender = value;
+            } else if (filterType === 'race') {
+                currentRace = value;
+            }
+
+            let images = document.querySelectorAll('div.image');
+            images.forEach((image) => {
+                let genderMatch = !currentGender || image.classList.contains(currentGender);
+                let raceMatch = !currentRace || image.classList.contains(currentRace);
+
+                image.style.display = genderMatch && raceMatch ? 'block' : 'none';
+            });
+        }
+
+        function toggleDetails(id) {
+            let details = document.getElementById(id);
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function resetFilters() {
+            currentGender = '';
+            currentRace = '';
+            filterImages('all', 'all');
+        }
+    </script>
+    </head>
+    <body>
+    <h1>innkeeper</h1>
+    <button onclick="resetFilters()">Show All</button>
+    <button onclick="filterImages('gender', 'male')">Male</button>
+    <button onclick="filterImages('gender', 'female')">Female</button>
+    <button onclick="filterImages('race', 'dwarf')">Dwarf</button><button onclick="filterImages('race', 'elf')">Elf</button><button onclick="filterImages('race', 'gnome')">Gnome</button><button onclick="filterImages('race', 'halfling')">Halfling</button><button onclick="filterImages('race', 'human')">Human</button><button onclick="filterImages('race', 'tabaxi')">Tabaxi</button><button onclick="filterImages('race', 'all')">Show All Races</button><div class='container'>
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_innkeeper\out-20240219-031809.png' target='_blank'>
+                        <img src='female_dwarf_innkeeper\out-20240219-031809.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-0")'>Details</button>
+                    <div class='details' id='details-0'>
+                        <p>Seed: 63770</p>
+                        <p>Prompt: slender plain looking female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Innkeeper  with radiant grey eyes, a eloquent  mouth,  a chisiled nose, and curly sandy hair wearing a tapered black velvet-lined waistcoat, grey ragged woolen leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf female'>
+                    <div class='additional-info'>Female, Dwarf</div>
+                    <a href='female_dwarf_innkeeper\out-20240219-031832.png' target='_blank'>
+                        <img src='female_dwarf_innkeeper\out-20240219-031832.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-1")'>Details</button>
+                    <div class='details' id='details-1'>
+                        <p>Seed: 49180</p>
+                        <p>Prompt: slender plain looking female Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Innkeeper  with radiant grey eyes, a eloquent  mouth,  a chisiled nose, and curly sandy hair wearing a tapered black velvet-lined waistcoat, grey ragged woolen leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_innkeeper\out-20240219-063440.png' target='_blank'>
+                        <img src='male_dwarf_innkeeper\out-20240219-063440.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-2")'>Details</button>
+                    <div class='details' id='details-2'>
+                        <p>Seed: 60612</p>
+                        <p>Prompt:  average looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Innkeeper  with radiant lavender eyes, an irresistable  mouth,  a broad nose, and thick strawberry blonde hair wearing a form-fitting coral embroidered waistcoat, black close-fitting leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_innkeeper\out-20240219-063502.png' target='_blank'>
+                        <img src='male_dwarf_innkeeper\out-20240219-063502.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-3")'>Details</button>
+                    <div class='details' id='details-3'>
+                        <p>Seed: 19784</p>
+                        <p>Prompt:  average looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Innkeeper  with radiant lavender eyes, an irresistable  mouth,  a broad nose, and thick strawberry blonde hair wearing a form-fitting coral embroidered waistcoat, black close-fitting leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_innkeeper\out-20240219-063524.png' target='_blank'>
+                        <img src='male_dwarf_innkeeper\out-20240219-063524.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-4")'>Details</button>
+                    <div class='details' id='details-4'>
+                        <p>Seed: 30874</p>
+                        <p>Prompt:  average looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Innkeeper  with radiant lavender eyes, an irresistable  mouth,  a broad nose, and thick strawberry blonde hair wearing a form-fitting coral embroidered waistcoat, black close-fitting leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_innkeeper\out-20240219-063546.png' target='_blank'>
+                        <img src='male_dwarf_innkeeper\out-20240219-063546.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-5")'>Details</button>
+                    <div class='details' id='details-5'>
+                        <p>Seed: 26570</p>
+                        <p>Prompt:  average looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Innkeeper  with radiant lavender eyes, an irresistable  mouth,  a broad nose, and thick strawberry blonde hair wearing a form-fitting coral embroidered waistcoat, black close-fitting leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_innkeeper\out-20240220-160838.png' target='_blank'>
+                        <img src='male_dwarf_innkeeper\out-20240220-160838.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-6")'>Details</button>
+                    <div class='details' id='details-6'>
+                        <p>Seed: 10549</p>
+                        <p>Prompt: gangly charming male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. inkeeper  with alluring blue eyes, a captivating  mouth,  a angular nose, and coarse blonde hair wearing a comfortable coral velvet-lined waistcoat, black war-torn leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_innkeeper\out-20240220-161016.png' target='_blank'>
+                        <img src='male_dwarf_innkeeper\out-20240220-161016.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-7")'>Details</button>
+                    <div class='details' id='details-7'>
+                        <p>Seed: 57658</p>
+                        <p>Prompt: gangly charming male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. inkeeper  with alluring blue eyes, a captivating  mouth,  a angular nose, and coarse blonde hair wearing a comfortable coral velvet-lined waistcoat, black war-torn leggings and black rugged leather boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image dwarf male'>
+                    <div class='additional-info'>Male, Dwarf</div>
+                    <a href='male_dwarf_innkeeper\out-20240221-121405.png' target='_blank'>
+                        <img src='male_dwarf_innkeeper\out-20240221-121405.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-8")'>Details</button>
+                    <div class='details' id='details-8'>
+                        <p>Seed: 45083</p>
+                        <p>Prompt: broad-shouldered average looking male Lord of The Rings Dwarf, Short and sturdy humanoid with broad shoulders and a solid build, known for their impressive beards and braided hair. Innkeeper  with soulful green eyes, a captivating  mouth,  a thin nose, and silky red hair wearing a tight-fitting black simple waistcoat, grey ragged woolen leggings and black felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_innkeeper\out-20240219-030254.png' target='_blank'>
+                        <img src='female_elf_innkeeper\out-20240219-030254.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-9")'>Details</button>
+                    <div class='details' id='details-9'>
+                        <p>Seed: 46855</p>
+                        <p>Prompt: gangly ugly female Lord of The Rings Elf Innkeeper  with enigmatic lavender eyes, an enchanting  mouth,  a button nose, and glossy ashen hair wearing a comfortable blue embroidered waistcoat, matching blue sturdy leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_innkeeper\out-20240219-030316.png' target='_blank'>
+                        <img src='female_elf_innkeeper\out-20240219-030316.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-10")'>Details</button>
+                    <div class='details' id='details-10'>
+                        <p>Seed: 56686</p>
+                        <p>Prompt: gangly ugly female Lord of The Rings Elf Innkeeper  with enigmatic lavender eyes, an enchanting  mouth,  a button nose, and glossy ashen hair wearing a comfortable blue embroidered waistcoat, matching blue sturdy leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_innkeeper\out-20240219-030337.png' target='_blank'>
+                        <img src='female_elf_innkeeper\out-20240219-030337.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-11")'>Details</button>
+                    <div class='details' id='details-11'>
+                        <p>Seed: 44803</p>
+                        <p>Prompt: gangly ugly female Lord of The Rings Elf Innkeeper  with enigmatic lavender eyes, an enchanting  mouth,  a button nose, and glossy ashen hair wearing a comfortable blue embroidered waistcoat, matching blue sturdy leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_innkeeper\out-20240219-030359.png' target='_blank'>
+                        <img src='female_elf_innkeeper\out-20240219-030359.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-12")'>Details</button>
+                    <div class='details' id='details-12'>
+                        <p>Seed: 2963</p>
+                        <p>Prompt: gangly ugly female Lord of The Rings Elf Innkeeper  with enigmatic lavender eyes, an enchanting  mouth,  a button nose, and glossy ashen hair wearing a comfortable blue embroidered waistcoat, matching blue sturdy leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_innkeeper\out-20240219-101533.png' target='_blank'>
+                        <img src='female_elf_innkeeper\out-20240219-101533.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-13")'>Details</button>
+                    <div class='details' id='details-13'>
+                        <p>Seed: 65348</p>
+                        <p>Prompt: gangly average looking female Lord of The Rings Elf Innkeeper  with expressive lavender eyes, an enchanting  mouth,  a dainty nose, and glossy black hair wearing a form-fitting black finely-tailored waistcoat, matching black close-fitting leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_innkeeper\out-20240219-101556.png' target='_blank'>
+                        <img src='female_elf_innkeeper\out-20240219-101556.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-14")'>Details</button>
+                    <div class='details' id='details-14'>
+                        <p>Seed: 4034</p>
+                        <p>Prompt: gangly average looking female Lord of The Rings Elf Innkeeper  with expressive lavender eyes, an enchanting  mouth,  a dainty nose, and glossy black hair wearing a form-fitting black finely-tailored waistcoat, matching black close-fitting leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_innkeeper\out-20240219-101620.png' target='_blank'>
+                        <img src='female_elf_innkeeper\out-20240219-101620.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-15")'>Details</button>
+                    <div class='details' id='details-15'>
+                        <p>Seed: 47316</p>
+                        <p>Prompt: gangly average looking female Lord of The Rings Elf Innkeeper  with expressive lavender eyes, an enchanting  mouth,  a dainty nose, and glossy black hair wearing a form-fitting black finely-tailored waistcoat, matching black close-fitting leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image elf female'>
+                    <div class='additional-info'>Female, Elf</div>
+                    <a href='female_elf_innkeeper\out-20240219-101643.png' target='_blank'>
+                        <img src='female_elf_innkeeper\out-20240219-101643.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-16")'>Details</button>
+                    <div class='details' id='details-16'>
+                        <p>Seed: 18642</p>
+                        <p>Prompt: gangly average looking female Lord of The Rings Elf Innkeeper  with expressive lavender eyes, an enchanting  mouth,  a dainty nose, and glossy black hair wearing a form-fitting black finely-tailored waistcoat, matching black close-fitting leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_innkeeper\out-20240219-041842.png' target='_blank'>
+                        <img src='female_gnome_innkeeper\out-20240219-041842.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-17")'>Details</button>
+                    <div class='details' id='details-17'>
+                        <p>Seed: 3948</p>
+                        <p>Prompt: gangly ugly female gnome Innkeeper  with intense lavender eyes, an alluring  mouth,  a angular nose, and thick chestnut hair wearing a comfortable red ornate waistcoat, black reinforced leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_innkeeper\out-20240219-041904.png' target='_blank'>
+                        <img src='female_gnome_innkeeper\out-20240219-041904.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-18")'>Details</button>
+                    <div class='details' id='details-18'>
+                        <p>Seed: 56171</p>
+                        <p>Prompt: gangly ugly female gnome Innkeeper  with intense lavender eyes, an alluring  mouth,  a angular nose, and thick chestnut hair wearing a comfortable red ornate waistcoat, black reinforced leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_innkeeper\out-20240219-041926.png' target='_blank'>
+                        <img src='female_gnome_innkeeper\out-20240219-041926.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-19")'>Details</button>
+                    <div class='details' id='details-19'>
+                        <p>Seed: 5162</p>
+                        <p>Prompt: gangly ugly female gnome Innkeeper  with intense lavender eyes, an alluring  mouth,  a angular nose, and thick chestnut hair wearing a comfortable red ornate waistcoat, black reinforced leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image gnome female'>
+                    <div class='additional-info'>Female, Gnome</div>
+                    <a href='female_gnome_innkeeper\out-20240219-041947.png' target='_blank'>
+                        <img src='female_gnome_innkeeper\out-20240219-041947.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-20")'>Details</button>
+                    <div class='details' id='details-20'>
+                        <p>Seed: 31773</p>
+                        <p>Prompt: gangly ugly female gnome Innkeeper  with intense lavender eyes, an alluring  mouth,  a angular nose, and thick chestnut hair wearing a comfortable red ornate waistcoat, black reinforced leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling female'>
+                    <div class='additional-info'>Female, Halfling</div>
+                    <a href='female_halfling_innkeeper\out-20240221-091227.png' target='_blank'>
+                        <img src='female_halfling_innkeeper\out-20240221-091227.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-21")'>Details</button>
+                    <div class='details' id='details-21'>
+                        <p>Seed: 57537</p>
+                        <p>Prompt: towering ugly female D&D Halfling Innkeeper  with expressive green eyes, an irresistable  mouth,  a broad nose, and silky black hair wearing a form-fitting coral plain waistcoat, white lightweight leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_innkeeper\out-20240219-053918.png' target='_blank'>
+                        <img src='male_halfling_innkeeper\out-20240219-053918.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-22")'>Details</button>
+                    <div class='details' id='details-22'>
+                        <p>Seed: 23635</p>
+                        <p>Prompt: sturdy average looking male D&D Halfling Innkeeper  with intense amber eyes, a sensouos  mouth,  a dainty nose, and glossy golden hair wearing a tailored coral finely-tailored waistcoat, black close-fitting leggings and brown fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_innkeeper\out-20240219-053940.png' target='_blank'>
+                        <img src='male_halfling_innkeeper\out-20240219-053940.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-23")'>Details</button>
+                    <div class='details' id='details-23'>
+                        <p>Seed: 40403</p>
+                        <p>Prompt: sturdy average looking male D&D Halfling Innkeeper  with intense amber eyes, a sensouos  mouth,  a dainty nose, and glossy golden hair wearing a tailored coral finely-tailored waistcoat, black close-fitting leggings and brown fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_innkeeper\out-20240219-054001.png' target='_blank'>
+                        <img src='male_halfling_innkeeper\out-20240219-054001.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-24")'>Details</button>
+                    <div class='details' id='details-24'>
+                        <p>Seed: 52900</p>
+                        <p>Prompt: sturdy average looking male D&D Halfling Innkeeper  with intense amber eyes, a sensouos  mouth,  a dainty nose, and glossy golden hair wearing a tailored coral finely-tailored waistcoat, black close-fitting leggings and brown fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_innkeeper\out-20240219-054023.png' target='_blank'>
+                        <img src='male_halfling_innkeeper\out-20240219-054023.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-25")'>Details</button>
+                    <div class='details' id='details-25'>
+                        <p>Seed: 18088</p>
+                        <p>Prompt: sturdy average looking male D&D Halfling Innkeeper  with intense amber eyes, a sensouos  mouth,  a dainty nose, and glossy golden hair wearing a tailored coral finely-tailored waistcoat, black close-fitting leggings and brown fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_innkeeper\out-20240219-063312.png' target='_blank'>
+                        <img src='male_halfling_innkeeper\out-20240219-063312.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-26")'>Details</button>
+                    <div class='details' id='details-26'>
+                        <p>Seed: 15624</p>
+                        <p>Prompt: slender charming male D&D Halfling Innkeeper  with intense amber eyes, a pouty  mouth,  a regal nose, and silky golden hair wearing a snug coral finely-tailored waistcoat, black finely made leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_innkeeper\out-20240219-063334.png' target='_blank'>
+                        <img src='male_halfling_innkeeper\out-20240219-063334.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-27")'>Details</button>
+                    <div class='details' id='details-27'>
+                        <p>Seed: 5286</p>
+                        <p>Prompt: slender charming male D&D Halfling Innkeeper  with intense amber eyes, a pouty  mouth,  a regal nose, and silky golden hair wearing a snug coral finely-tailored waistcoat, black finely made leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_innkeeper\out-20240219-063356.png' target='_blank'>
+                        <img src='male_halfling_innkeeper\out-20240219-063356.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-28")'>Details</button>
+                    <div class='details' id='details-28'>
+                        <p>Seed: 37196</p>
+                        <p>Prompt: slender charming male D&D Halfling Innkeeper  with intense amber eyes, a pouty  mouth,  a regal nose, and silky golden hair wearing a snug coral finely-tailored waistcoat, black finely made leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image halfling male'>
+                    <div class='additional-info'>Male, Halfling</div>
+                    <a href='male_halfling_innkeeper\out-20240219-063418.png' target='_blank'>
+                        <img src='male_halfling_innkeeper\out-20240219-063418.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-29")'>Details</button>
+                    <div class='details' id='details-29'>
+                        <p>Seed: 48544</p>
+                        <p>Prompt: slender charming male D&D Halfling Innkeeper  with intense amber eyes, a pouty  mouth,  a regal nose, and silky golden hair wearing a snug coral finely-tailored waistcoat, black finely made leggings and black velvet slippers</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_innkeeper\out-20240219-112520.png' target='_blank'>
+                        <img src='female_human_innkeeper\out-20240219-112520.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-30")'>Details</button>
+                    <div class='details' id='details-30'>
+                        <p>Seed: 28594</p>
+                        <p>Prompt: gangly extrodanarily attractive female human Innkeeper  with piercing emerald eyes, an enchanting  mouth,  a snub nose, and shiny black hair wearing a tapered turquoise plain waistcoat, black shimmering leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_innkeeper\out-20240219-112542.png' target='_blank'>
+                        <img src='female_human_innkeeper\out-20240219-112542.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-31")'>Details</button>
+                    <div class='details' id='details-31'>
+                        <p>Seed: 23663</p>
+                        <p>Prompt: gangly extrodanarily attractive female human Innkeeper  with piercing emerald eyes, an enchanting  mouth,  a snub nose, and shiny black hair wearing a tapered turquoise plain waistcoat, black shimmering leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_innkeeper\out-20240219-112604.png' target='_blank'>
+                        <img src='female_human_innkeeper\out-20240219-112604.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-32")'>Details</button>
+                    <div class='details' id='details-32'>
+                        <p>Seed: 29334</p>
+                        <p>Prompt: gangly extrodanarily attractive female human Innkeeper  with piercing emerald eyes, an enchanting  mouth,  a snub nose, and shiny black hair wearing a tapered turquoise plain waistcoat, black shimmering leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_innkeeper\out-20240219-112628.png' target='_blank'>
+                        <img src='female_human_innkeeper\out-20240219-112628.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-33")'>Details</button>
+                    <div class='details' id='details-33'>
+                        <p>Seed: 15169</p>
+                        <p>Prompt: gangly extrodanarily attractive female human Innkeeper  with piercing emerald eyes, an enchanting  mouth,  a snub nose, and shiny black hair wearing a tapered turquoise plain waistcoat, black shimmering leggings and black sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_innkeeper\out-20240219-162757.png' target='_blank'>
+                        <img src='female_human_innkeeper\out-20240219-162757.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-34")'>Details</button>
+                    <div class='details' id='details-34'>
+                        <p>Seed: 63579</p>
+                        <p>Prompt: broad-shouldered attractive female human Innkeeper  with radiant turquoise eyes, an alluring  mouth,  a thin nose, and shiny red hair wearing a loose-fitting turquoise plain waistcoat, black lightweight leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_innkeeper\out-20240219-162940.png' target='_blank'>
+                        <img src='female_human_innkeeper\out-20240219-162940.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-35")'>Details</button>
+                    <div class='details' id='details-35'>
+                        <p>Seed: 28009</p>
+                        <p>Prompt: broad-shouldered attractive female human Innkeeper  with radiant turquoise eyes, an alluring  mouth,  a thin nose, and shiny red hair wearing a loose-fitting turquoise plain waistcoat, black lightweight leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_innkeeper\out-20240219-163127.png' target='_blank'>
+                        <img src='female_human_innkeeper\out-20240219-163127.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-36")'>Details</button>
+                    <div class='details' id='details-36'>
+                        <p>Seed: 48009</p>
+                        <p>Prompt: broad-shouldered attractive female human Innkeeper  with radiant turquoise eyes, an alluring  mouth,  a thin nose, and shiny red hair wearing a loose-fitting turquoise plain waistcoat, black lightweight leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_innkeeper\out-20240219-163316.png' target='_blank'>
+                        <img src='female_human_innkeeper\out-20240219-163316.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-37")'>Details</button>
+                    <div class='details' id='details-37'>
+                        <p>Seed: 47300</p>
+                        <p>Prompt: broad-shouldered attractive female human Innkeeper  with radiant turquoise eyes, an alluring  mouth,  a thin nose, and shiny red hair wearing a loose-fitting turquoise plain waistcoat, black lightweight leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human female'>
+                    <div class='additional-info'>Female, Human</div>
+                    <a href='female_human_innkeeper\out-20240225-085037.png' target='_blank'>
+                        <img src='female_human_innkeeper\out-20240225-085037.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-38")'>Details</button>
+                    <div class='details' id='details-38'>
+                        <p>Seed: 52628</p>
+                        <p>Prompt: sturdy ordinary looking female human Medieval Apprentice, working on a medieval craft,    with mesmerizing emerald eyes, a seductive  mouth,  a thin nose, and shiny sandy hair wearing a tailored white embroideredmantle, matching white sturdy leggings and white fur-lined boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_innkeeper\out-20240219-014603.png' target='_blank'>
+                        <img src='male_human_innkeeper\out-20240219-014603.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-39")'>Details</button>
+                    <div class='details' id='details-39'>
+                        <p>Seed: 15986</p>
+                        <p>Prompt: gangly plain looking male human inkeeper  with haunting turquoise eyes, a seductive  mouth,  a petite nose, and glossy ashen hair wearing a snug coral very elegant waistcoat, black rumpled leggings and brown felted boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_innkeeper\out-20240219-193615.png' target='_blank'>
+                        <img src='male_human_innkeeper\out-20240219-193615.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-40")'>Details</button>
+                    <div class='details' id='details-40'>
+                        <p>Seed: 26687</p>
+                        <p>Prompt: broad-shouldered ordinary looking male human Innkeeper  with enigmatic amber eyes, a delicate  mouth,  a regal nose, and frizzy golden hair wearing a snug black ornate waistcoat, white war-torn leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_innkeeper\out-20240219-193637.png' target='_blank'>
+                        <img src='male_human_innkeeper\out-20240219-193637.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-41")'>Details</button>
+                    <div class='details' id='details-41'>
+                        <p>Seed: 34147</p>
+                        <p>Prompt: broad-shouldered ordinary looking male human Innkeeper  with enigmatic amber eyes, a delicate  mouth,  a regal nose, and frizzy golden hair wearing a snug black ornate waistcoat, white war-torn leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_innkeeper\out-20240219-193659.png' target='_blank'>
+                        <img src='male_human_innkeeper\out-20240219-193659.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-42")'>Details</button>
+                    <div class='details' id='details-42'>
+                        <p>Seed: 14911</p>
+                        <p>Prompt: broad-shouldered ordinary looking male human Innkeeper  with enigmatic amber eyes, a delicate  mouth,  a regal nose, and frizzy golden hair wearing a snug black ornate waistcoat, white war-torn leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_innkeeper\out-20240219-193721.png' target='_blank'>
+                        <img src='male_human_innkeeper\out-20240219-193721.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-43")'>Details</button>
+                    <div class='details' id='details-43'>
+                        <p>Seed: 44604</p>
+                        <p>Prompt: broad-shouldered ordinary looking male human Innkeeper  with enigmatic amber eyes, a delicate  mouth,  a regal nose, and frizzy golden hair wearing a snug black ornate waistcoat, white war-torn leggings and black velvet boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_innkeeper\out-20240220-223006.png' target='_blank'>
+                        <img src='male_human_innkeeper\out-20240220-223006.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-44")'>Details</button>
+                    <div class='details' id='details-44'>
+                        <p>Seed: 46277</p>
+                        <p>Prompt: petite attractive male human Innkeeper  with bewitching turquoise eyes, an enchanting  mouth,  a broad nose, and thick red hair wearing a loose-fitting coral finely-tailored waistcoat, black ragged woolen leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_innkeeper\out-20240220-223129.png' target='_blank'>
+                        <img src='male_human_innkeeper\out-20240220-223129.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-45")'>Details</button>
+                    <div class='details' id='details-45'>
+                        <p>Seed: 9886</p>
+                        <p>Prompt: petite attractive male human Innkeeper  with bewitching turquoise eyes, an enchanting  mouth,  a broad nose, and thick red hair wearing a loose-fitting coral finely-tailored waistcoat, black ragged woolen leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image human male'>
+                    <div class='additional-info'>Male, Human</div>
+                    <a href='male_human_innkeeper\out-20240221-100408.png' target='_blank'>
+                        <img src='male_human_innkeeper\out-20240221-100408.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-46")'>Details</button>
+                    <div class='details' id='details-46'>
+                        <p>Seed: 29749</p>
+                        <p>Prompt: slender average looking male human inkeeper  with intense lavender eyes, a sensouos  mouth,  a straight nose, and coarse sandy hair wearing a tailored red embroidered waistcoat, black sturdy leggings and matching red sheepskin boots</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 1024px</p>
+                        <p>Height: 1024px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_innkeeper\out-20240219-044754.png' target='_blank'>
+                        <img src='male_tabaxi_innkeeper\out-20240219-044754.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-47")'>Details</button>
+                    <div class='details' id='details-47'>
+                        <p>Seed: 60145</p>
+                        <p>Prompt: sturdy plain looking male tabaxi fluffy humanoid catlike person covered in fur Innkeeper  with enigmatic turquoise eyes, a plump  mouth,  a button nose, and thick auburn hair wearing a snug black very elegant waistcoat, white rumpled leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                
+                <div class='image tabaxi male'>
+                    <div class='additional-info'>Male, Tabaxi</div>
+                    <a href='male_tabaxi_innkeeper\out-20240219-044817.png' target='_blank'>
+                        <img src='male_tabaxi_innkeeper\out-20240219-044817.png' alt='Image'>
+                    </a>
+                    <button class='details-button' onclick='toggleDetails("details-48")'>Details</button>
+                    <div class='details' id='details-48'>
+                        <p>Seed: 21702</p>
+                        <p>Prompt: sturdy plain looking male tabaxi fluffy humanoid catlike person covered in fur Innkeeper  with enigmatic turquoise eyes, a plump  mouth,  a button nose, and thick auburn hair wearing a snug black very elegant waistcoat, white rumpled leggings and black wooden clogs</p>
+                        <p>Model: SimianLuo/LCM_Dreamshaper_v7</p>
+                        <p>Width: 512px</p>
+                        <p>Height: 512px</p>
+                        <p>Steps: 32</p>
+                    </div>
+                </div>
+                </div></body></html>
