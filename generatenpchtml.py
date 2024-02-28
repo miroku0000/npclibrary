@@ -171,7 +171,7 @@ def generate_html(title, data, category_type):
     """
 
     if category_type == "occupation":
-        for race in categories:
+        for race in sorted(categories):
             html_content += f"<button onclick=\"filterImages('race', '{race}')\">{race.capitalize()}</button>"
         html_content += "<button onclick=\"filterImages('race', 'all')\">Show All Races</button>"
 
@@ -218,7 +218,11 @@ def generate_html(title, data, category_type):
 # Start generating HTML files for each occupation and race, and compile index.html content
 index_content = "<html><head><title>Index Page</title></head><body><h1>Index Page</h1><h2>Occupations</h2><ul>"
 
+occupations=[]
 for occupation in images_metadata:
+    occupations.append(occupation.lower()) 
+
+for occupation in sorted(occupations):
     display_name = occupation.replace('_', ' ').title()  # Capitalize the first letter of each word
     filename = f"occupation_{occupation.replace(' ', '_').lower()}.html"
     with open(os.path.join(output_directory, filename), "w") as file:
