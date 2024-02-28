@@ -35,6 +35,7 @@ for file in os.listdir(output_directory):
 # Initialize nested defaultdict structures for storing image paths and metadata
 images_metadata = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
 races_metadata = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
+rename_dirs_to_lowercase('npcs')
 
 remove_empty_subdirs("npcs")
 
