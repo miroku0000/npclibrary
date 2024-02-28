@@ -2,6 +2,22 @@ import os
 import json
 from collections import defaultdict
 
+def delete_empty_subdirs(directory):
+    try:
+        # Iterate over each item in the directory
+        for item in os.listdir(directory):
+            item_path = os.path.join(directory, item)
+            # Check if the item is a directory and starts with "male_" or "female_"
+            if os.path.isdir(item_path) and (item.startswith('male_') or item.startswith('female_')):
+                # Check if the directory is empty or contains only 'desktop.ini'
+                if not os.listdir(item_path) or (len(os.listdir(item_path)) == 1 and 'desktop.ini' in os.listdir(item_path)):
+                    # Delete the directory
+                    shutil.rmtree(item_path)
+                    print(f"Deleted {item_path}")
+
+    except:
+        pass
+
 
 def remove_empty_subdirs(dir_path):
     try:
@@ -35,7 +51,7 @@ for file in os.listdir(output_directory):
 # Initialize nested defaultdict structures for storing image paths and metadata
 images_metadata = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
 races_metadata = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
-
+delete_empty_subdirs("npcs")
 remove_empty_subdirs("npcs")
 
 # Traverse through each folder in the data directory
