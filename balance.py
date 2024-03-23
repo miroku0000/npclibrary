@@ -1,4 +1,17 @@
 import os
+import os
+
+def remove_desktop_ini_files(directory_path):
+    for root, dirs, files in os.walk(directory_path):
+        for file in files:
+            if file.lower() == "desktop.ini":
+                os.remove(os.path.join(root, file))
+                print(f"Removed: {os.path.join(root, file)}")
+
+# Assuming "npcs" directory is located at a certain path, e.g., "/mnt/data/npcs"
+# Uncomment and modify the path as necessary when running the function.
+# remove_desktop_ini_files("/mnt/data/npcs")
+
 
 def clean_directory(directory):
     for root, dirs, files in os.walk(directory):
@@ -22,6 +35,8 @@ def clean_directory(directory):
 if  os.path.isdir('output'):
 	print("cleaning output")
 	clean_directory("output")
+    remove_desktop_ini_files("output")
 if  os.path.isdir('npcs'):
 	print("cleaning npcs")
 	clean_directory("npcs")
+    remove_desktop_ini_files("npcs")
