@@ -1,0 +1,24 @@
+{
+    "prompt": "slender average looking female D&D halfling thug with intense lavender eyes a eloquent mouth a snub nose and coarse chestnut hair wearing a snug black plain cloak matching black lightweight leggings and brown velvet slippers",
+    "width": 1024,
+    "height": 1024,
+    "steps": 32,
+    "model": "SimianLuo/LCM_Dreamshaper_v7",
+    "seed": 50184,
+    "metadata": [
+        {
+            "Answer with an integer only: how many people are in the picture?": "1",
+            "Answer yes or no: is everyone wearing a top?": "Yes",
+            "On a scale of 1-10, how much does this look like a single person who is a Medieval female halfling thug": "8",
+            "Answer as an integer: what is the height of the person rounded to the nearest foot in feet?": "5",
+            "Answer yes or no: does this person have a beard?": "No"
+        },
+        {
+            "Answer with an integer only: how many people are in the picture?": "1",
+            "Answer yes or no: is everyone wearing a top?": "Yes",
+            "On a scale of 1-10, how much does this look like a single person who is a Medieval female halfling thug": "8",
+            "Answer as an integer: what is the height of the person rounded to the nearest foot in feet?": "5",
+            "Answer yes or no: does this person have a beard?": "No"
+        }
+    ]
+}
