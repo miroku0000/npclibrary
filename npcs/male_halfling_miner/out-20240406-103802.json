@@ -1,0 +1,24 @@
+{
+    "prompt": "sturdy extrodanarily attractive male D&D halfling miner ending his shift as the sun sets his face smeared with dust but satisfaction in his contribution to the day's work standing alone with electric turquoise eyes a delicate mouth a snub nose and thick blonde hair wearing a loose-fitting blue very elegant mantle black loose-fitting leggings and black felted boots. Please ensure there is only 1 person in the image",
+    "width": 1024,
+    "height": 1024,
+    "steps": 50,
+    "model": "Hipsterusername/InvokeAI_Fantasy_and_Art_by_Zovya",
+    "seed": 12596,
+    "metadata": [
+        {
+            "Answer with an integer only: how many people are in the picture?": "1",
+            "Answer yes or no: is everyone wearing a top?": "Yes",
+            "On a scale of 1-10, how much does this look like a single person who is a Medieval male halfling miner": "8",
+            "Answer as an integer: what is the height of the person rounded to the nearest foot in feet?": "5",
+            "Answer yes or no: does this person have a beard?": "Yes"
+        },
+        {
+            "Answer with an integer only: how many people are in the picture?": "1",
+            "Answer yes or no: is everyone wearing a top?": "Yes",
+            "On a scale of 1-10, how much does this look like a single person who is a Medieval male halfling miner": "8",
+            "Answer as an integer: what is the height of the person rounded to the nearest foot in feet?": "5",
+            "Answer yes or no: does this person have a beard?": "Yes"
+        }
+    ]
+}

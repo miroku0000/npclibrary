@@ -1,0 +1,24 @@
+{
+    "prompt": "gangly plain looking male D&D halfling lighthouse keeper standing alone with soulful hazel eyes a luscious mouth a snub nose and silky sandy hair wearing a tailored coral simple waistcoat black loose-fitting leggings and brown scuffed leather shoes. Please ensure there is only 1 person in the image",
+    "width": 1024,
+    "height": 1024,
+    "steps": 50,
+    "model": "Hipsterusername/InvokeAI_Fantasy_and_Art_by_Zovya",
+    "seed": 1132,
+    "metadata": [
+        {
+            "Answer with an integer only: how many people are in the picture?": "1",
+            "Answer yes or no: is everyone wearing a top?": "Yes",
+            "On a scale of 1-10, how much does this look like a single person who is a Medieval male halfling lighthouse keeper": "9",
+            "Answer as an integer: what is the height of the person rounded to the nearest foot in feet?": "4",
+            "Answer yes or no: does this person have a beard?": "Yes"
+        },
+        {
+            "Answer with an integer only: how many people are in the picture?": "1",
+            "Answer yes or no: is everyone wearing a top?": "Yes",
+            "On a scale of 1-10, how much does this look like a single person who is a Medieval male halfling lighthouse keeper": "9",
+            "Answer as an integer: what is the height of the person rounded to the nearest foot in feet?": "4",
+            "Answer yes or no: does this person have a beard?": "Yes"
+        }
+    ]
+}

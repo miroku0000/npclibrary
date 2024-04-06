@@ -1,0 +1,24 @@
+{
+    "prompt": "sturdy average looking male D&D 3 foot tall gnome knight standing alone with enigmatic lavender eyes a plump mouth a angular nose and glossy red hair wearing a loose-fitting turquoise wollen waistcoat black ragged woolen leggings and black fur-lined boots. Please ensure there is only 1 person in the image",
+    "width": 1024,
+    "height": 1024,
+    "steps": 50,
+    "model": "Hipsterusername/InvokeAI_Fantasy_and_Art_by_Zovya",
+    "seed": 45371,
+    "metadata": [
+        {
+            "Answer with an integer only: how many people are in the picture?": "1",
+            "Answer yes or no: is everyone wearing a top?": "Yes",
+            "On a scale of 1-10, how much does this look like a single person who is a Medieval male gnome knight": "9",
+            "Answer as an integer: what is the height of the person rounded to the nearest foot in feet?": "4",
+            "Answer yes or no: does this person have a beard?": "Yes"
+        },
+        {
+            "Answer with an integer only: how many people are in the picture?": "1",
+            "Answer yes or no: is everyone wearing a top?": "Yes",
+            "On a scale of 1-10, how much does this look like a single person who is a Medieval male gnome knight": "9",
+            "Answer as an integer: what is the height of the person rounded to the nearest foot in feet?": "4",
+            "Answer yes or no: does this person have a beard?": "Yes"
+        }
+    ]
+}

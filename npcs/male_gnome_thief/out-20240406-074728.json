@@ -1,0 +1,24 @@
+{
+    "prompt": "petite ugly male D&D 3 foot tall gnome thief standing alone with intense amber eyes an alluring mouth a broad nose and wavy auburn hair wearing a snug coral simple cloak black rumpled leggings and brown fur-lined boots. Please ensure there is only 1 person in the image",
+    "width": 1024,
+    "height": 1024,
+    "steps": 50,
+    "model": "Hipsterusername/InvokeAI_Fantasy_and_Art_by_Zovya",
+    "seed": 62454,
+    "metadata": [
+        {
+            "Answer with an integer only: how many people are in the picture?": "1",
+            "Answer yes or no: is everyone wearing a top?": "Yes",
+            "On a scale of 1-10, how much does this look like a single person who is a Medieval male gnome thief": "9",
+            "Answer as an integer: what is the height of the person rounded to the nearest foot in feet?": "3",
+            "Answer yes or no: does this person have a beard?": "Yes"
+        },
+        {
+            "Answer with an integer only: how many people are in the picture?": "1",
+            "Answer yes or no: is everyone wearing a top?": "Yes",
+            "On a scale of 1-10, how much does this look like a single person who is a Medieval male gnome thief": "9",
+            "Answer as an integer: what is the height of the person rounded to the nearest foot in feet?": "3",
+            "Answer yes or no: does this person have a beard?": "Yes"
+        }
+    ]
+}
