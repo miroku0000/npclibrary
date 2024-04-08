@@ -1,0 +1,24 @@
+{
+    "prompt": "D&D Character tabaxi a female treasure hunter ",
+    "width": 1024,
+    "height": 1024,
+    "steps": 12,
+    "model": "MysteriousAI/NSFW-gen",
+    "seed": 27449,
+    "metadata": [
+        {
+            "Answer with an integer only: how many people are in the picture?": "1",
+            "Answer yes or no: is everyone wearing a top?": "Yes",
+            "On a scale of 1-10, how much does this look like a single person who is a Medieval female tabaxi treasure hunter": "9",
+            "Answer as an integer: what is the height of the person rounded to the nearest foot in feet?": "3",
+            "Answer yes or no: does this person have a beard?": "No"
+        },
+        {
+            "Answer with an integer only: how many people are in the picture?": "1",
+            "Answer yes or no: is everyone wearing a top?": "Yes",
+            "On a scale of 1-10, how much does this look like a single person who is a Medieval female tabaxi treasure hunter": "9",
+            "Answer as an integer: what is the height of the person rounded to the nearest foot in feet?": "3",
+            "Answer yes or no: does this person have a beard?": "No"
+        }
+    ]
+}
